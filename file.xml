@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CNCE_FlussoInput>
+  <DataCreazione>2019-01-01</DataCreazione>
+  <TotDenunceFornite>5</TotDenunceFornite>
+  <IDProdSoftware>QWERT12345</IDProdSoftware>
+  <NomeProdSoftware>Iubar</NomeProdSoftware>
+  <VersioneFlusso>2.3</VersioneFlusso>
+  <CNCE_Denuncia>
+    <CassaEdileDest />
+    <CodiceImpresa />
+    <AnnoDenuncia />
+    <MeseDenuncia />
+    <SequenzaDenuncia />
+    <SedeOperativa>
+      <SO_CAP />
+      <SO_TipoVia />
+      <SO_Indirizzo />
+      <SO_NumeroCivico />
+      <SO_Località />
+      <SO_CodiceComune />
+      <SO_Comune />
+      <SO_Provincia />
+      <SO_Email />
+      <SO_Telefono />
+      <SO_Fax />
+      <SO_EmailPEC />
+    </SedeOperativa>
+    <SedeLegale>
+      <SL_CAP />
+      <SL_TipoVia />
+      <SL_Indirizzo />
+      <SL_NumeroCivico />
+      <SL_Località />
+      <SL_CodiceComune />
+      <SL_Comune />
+      <SL_Provincia />
+      <SL_Email />
+      <SL_Telefono />
+      <SL_Fax />
+      <SL_EmailPEC />
+    </SedeLegale>
+    <CoordinateBancarie>
+      <IM_CodPaese />
+      <IM_CheckDigit />
+      <IM_CIN />
+      <IM_ABI />
+      <IM_CAB />
+      <IM_ContoCorrente />
+    </CoordinateBancarie>
+    <CodiceFiscale />
+    <PartitaIVA />
+    <RagioneSociale />
+    <CCNLApplicato />
+    <DE_SituazioneDenuncia />
+    <DE_GiornoSituazione />
+    <DE_TotDipImpresa />
+    <DE_TotOpeIndeterm />
+    <DE_TotOpePT />
+    <AltriDatiImpresa>
+      <CodiceINAIL />
+      <CodiceINPS />
+      <NumeroIscrCCIAA />
+      <CodiceOrdinamento />
+    </AltriDatiImpresa>
+    <Compilatore>
+      <CodiceConsulente />
+      <CodiceFiscaleConsulent />
+      <ReferenteCompil />
+      <TelefonoCompil />
+    </Compilatore>
+    <TotaleCantieri />
+    <TotaleLavoratori />
+  </CNCE_Denuncia>
+</CNCE_FlussoInput>
+
