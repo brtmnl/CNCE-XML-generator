@@ -70,6 +70,125 @@
     </Compilatore>
     <TotaleCantieri />
     <TotaleLavoratori />
+    <CNCE_Cantieree>
+      <A_NumeroProg />
+      <CA_CodCantierCE />
+      <CA_CodiceIdentificativoMUT />
+      <CA_Denominazione1 />
+      <CA_Denominazione2 />
+      <CA_ProtocolloNormPostSisma />
+      <CA_FlagCantierePostSisma />
+      <CA_ProtocolloSisma2016 />
+      <CA_FlagCantiereSisma2016 />
+      <CA_CantiereGenerico />
+      <CNCE_Cantiere>
+        <CA_CAP />
+        <CA_TipoVia />
+        <CA_Indirizzo />
+        <CA_NumeroCivico />
+        <CA_Località />
+        <CA_CodiceComune />
+        <CA_Comune />
+        <CA_Provincia />
+      </CNCE_Cantiere>
+      <CA_AnnoInizio />
+      <CA_MeseInizio />
+      <CA_TipoCommittente />
+      <CA_TipoLavoro />
+      <CA_CodFiscCommittente />
+      <CA_DenominazioneCommittente />
+      <CA_TipoViaComm />
+      <CA_IndirizzoComm />
+      <CA_NumeroCivicoComm />
+      <CA_CAPCommittente />
+      <CA_CodiceComuneComm />
+      <CA_ComuneComm />
+      <CA_ProvinciaComm />
+      <CA_CodFiscaleAppaltator />
+      <CA_DenominazioneAppaltator />
+      <CA_Attivita07 />
+      <CA_ImponibileINPS />
+      <CA_ImponibileContr />
+      <CA_Situazione />
+      <CA_GiornoSituazione />
+      <CA_LavoratoriTrasfertisti />
+      <CA_Subappalti />
+      <CA_LavoratoriInterinali />
+      <CA_Note />
+      <DatiAppalto>
+        <AP_CIP />
+        <AP_ProtocolloAppalto />
+        <AP_DataAppalto />
+        <AP_CodiceCIG />
+      </DatiAppalto>
+      <NotificaPreliminare>
+        <NP_CodNotifica />
+        <NP_DataNotifica />
+      </NotificaPreliminare>
+      <DatiOpera>
+        <OP_ValoreComplessivo />
+        <OP_ImportoLavoriEdili />
+        <OP_DataPresuntaFineLavori />
+      </DatiOpera>
+      <CNCE_Subappalti>
+        <SU_CodiceFiscale />
+        <SU_Denominazione />
+        <SU_TipoVia />
+        <SU_Indirizzo />
+        <SU_NumeroCivico />
+        <SU_Localita />
+        <SU_CAP />
+        <SU_CodiceComune />
+        <SU_Comune />
+        <SU_Provincia />
+        <SU_DescrizioneLavori />
+        <SU_ImportoLavoriSubappalto />
+        <SU_DataPresuntaInizioLavori />
+        <SU_DataPresuntaIFineLavori />
+      </CNCE_Subappalti>
+    </CNCE_Cantieree>
+    <CNCE_Lavoratore>
+      <LV_CodIscrizioneCE />
+      <LV_Cognome />
+      <LV_Nome />
+      <LV_CodiceFiscale />
+      <LV_RigaBis />
+      <DatiAnagrafici>
+        <LV_DatadiNascita />
+        <LV_CodComunediNascita />
+        <LV_ComunediNascita />
+        <LV_ProvinciadiNascita />
+        <LV_Sesso />
+        <LV_Nazionalita />
+      </DatiAnagrafici>
+      <IndirizzoLavoratore>
+        <LV_TipoViaResidenza />
+        <LV_IndirizzoResidenza />
+        <LV_NumCivicoResidenza />
+        <LV_CAPResidenza />
+        <LV_LocalitaResidenza />
+        <LV_CodComuneResidenza />
+        <LV_ComuneResidenza />
+        <LV_ProvinciaResidenza />
+        <LV_Email />
+        <LV_Cellulare />
+      </IndirizzoLavoratore>
+      <DatiBancariLavoratore>
+        <LV_CodPaese />
+        <LV_CheckDigit />
+        <LV_CIN />
+        <LV_ABI />
+        <LV_CAB />
+        <LV_ContoCorrente />
+      </DatiBancariLavoratore>
+      <LV_LavFuoriProvincia />
+      <LV_AltraCasa />
+      <LV_ImportoRimborsoCIG />
+      <LV_OreTrimPreced />
+      <LV_SantoPatrono />
+      <LV_NormaPremiali />
+      <LV_Note />
+    </CNCE_Lavoratore>
   </CNCE_Denuncia>
 </CNCE_FlussoInput>
 
