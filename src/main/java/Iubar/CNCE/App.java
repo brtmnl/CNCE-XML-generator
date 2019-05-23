@@ -7,11 +7,12 @@ import java.util.logging.*;
 
 
 public class App {
-	private static final Logger LOGGER = Logger.getLogger(App.class.getName());
 	
+	private static final Logger LOGGER = Logger.getLogger(App.class.getName());
+
 	public static Element generateCNCE_Denuncia() {
 		Element elem_CNCE_Denuncia = new Element("CNCE_Denuncia");
-		
+
 		Element elem_CassaEdileDest = new Element("CassaEdileDest");
 		elem_CNCE_Denuncia.addContent(elem_CassaEdileDest);
 		Element elem_CodiceImpresa = new Element("CodiceImpresa");
@@ -22,11 +23,11 @@ public class App {
 		elem_CNCE_Denuncia.addContent(elem_MeseDenuncia);
 		Element elem_SequenzaDenuncia = new Element("SequenzaDenuncia");
 		elem_CNCE_Denuncia.addContent(elem_SequenzaDenuncia);
-		
+
 		elem_CNCE_Denuncia.addContent(generateSedeOperativa());
 		elem_CNCE_Denuncia.addContent(generateSedeLegale());
 		elem_CNCE_Denuncia.addContent(generateCoordinateBancarie());
-		
+
 		Element elem_CodiceFiscale = new Element("CodiceFiscale");
 		elem_CNCE_Denuncia.addContent(elem_CodiceFiscale);
 		Element elem_PartitaIVA = new Element("PartitaIVA");
@@ -37,7 +38,7 @@ public class App {
 		elem_CNCE_Denuncia.addContent(elem_CCNLApplicato);
 		Element elem_DE_SituazioneDenuncia = new Element("DE_SituazioneDenuncia");
 		elem_CNCE_Denuncia.addContent(elem_DE_SituazioneDenuncia);
-		
+
 		Element elem_DE_GiornoSituazione = new Element("DE_GiornoSituazione");
 		elem_CNCE_Denuncia.addContent(elem_DE_GiornoSituazione);
 		Element elem_DE_TotDipImpresa  = new Element("DE_TotDipImpresa");
@@ -46,24 +47,24 @@ public class App {
 		elem_CNCE_Denuncia.addContent(elem_DE_TotOpeIndeterm);
 		Element elem_DE_TotOpePT = new Element("DE_TotOpePT");
 		elem_CNCE_Denuncia.addContent(elem_DE_TotOpePT);
-		
+
 		elem_CNCE_Denuncia.addContent(generateAltriDatiImpresa());
 		elem_CNCE_Denuncia.addContent(generateCompilatore());
-		
+
 		Element elem_TotaleCantieri = new Element("TotaleCantieri");
 		elem_CNCE_Denuncia.addContent(elem_TotaleCantieri);
 		Element elem_TotaleLavoratori = new Element("TotaleLavoratori");
 		elem_CNCE_Denuncia.addContent(elem_TotaleLavoratori);
-		
+
 		elem_CNCE_Denuncia.addContent(generateCNCE_Cantiere());
 		elem_CNCE_Denuncia.addContent(generateCNCE_Lavoratore());
-		
+
 		return elem_CNCE_Denuncia;
 	}
-	
+
 	public static Element generateSedeOperativa() {
 		Element elem_SedeOperativa = new Element("SedeOperativa");
-		
+
 		Element elem_SO_CAP = new Element("SO_CAP");
 		elem_SedeOperativa.addContent(elem_SO_CAP);
 		Element elem_SO_TipoVia = new Element("SO_TipoVia");
@@ -88,13 +89,13 @@ public class App {
 		elem_SedeOperativa.addContent(elem_SO_Fax);
 		Element elem_SO_EmailPEC = new Element("SO_EmailPEC");
 		elem_SedeOperativa.addContent(elem_SO_EmailPEC);
-		
+
 		return elem_SedeOperativa;
 	}
-	
+
 	public static Element generateSedeLegale() {
 		Element elem_SedeLegale = new Element("SedeLegale");
-		
+
 		Element elem_SL_CAP = new Element("SL_CAP");
 		elem_SedeLegale.addContent(elem_SL_CAP);
 		Element elem_SL_TipoVia = new Element("SL_TipoVia");
@@ -119,13 +120,13 @@ public class App {
 		elem_SedeLegale.addContent(elem_SL_Fax);
 		Element elem_SL_EmailPEC = new Element("SL_EmailPEC");
 		elem_SedeLegale.addContent(elem_SL_EmailPEC);
-		
+
 		return elem_SedeLegale;
 	}
-	
+
 	public static Element generateCoordinateBancarie() {
 		Element elem_CoordinateBancarie = new Element("CoordinateBancarie");
-		
+
 		Element elem_IM_CodPaese = new Element("IM_CodPaese");
 		elem_CoordinateBancarie.addContent(elem_IM_CodPaese);
 		Element elem_IM_CheckDigit = new Element("IM_CheckDigit");
@@ -138,13 +139,13 @@ public class App {
 		elem_CoordinateBancarie.addContent(elem_IM_CAB);
 		Element elem_IM_ContoCorrente = new Element("IM_ContoCorrente");
 		elem_CoordinateBancarie.addContent(elem_IM_ContoCorrente);
-		
+
 		return elem_CoordinateBancarie;
 	}
-	
+
 	public static Element generateCompilatore() {
 		Element elem_Compilatore = new Element("Compilatore");
-		
+
 		Element elem_CodiceConsulente = new Element("CodiceConsulente");
 		elem_Compilatore.addContent(elem_CodiceConsulente);
 		Element elem_CodiceFiscaleConsulent = new Element("CodiceFiscaleConsulent");
@@ -153,13 +154,13 @@ public class App {
 		elem_Compilatore.addContent(elem_ReferenteCompil);
 		Element elem_TelefonoCompil = new Element("TelefonoCompil");
 		elem_Compilatore.addContent(elem_TelefonoCompil);
-		
+
 		return elem_Compilatore;
 	}
-	 
+
 	public static Element generateAltriDatiImpresa() {
 		Element elem_AltriDatiImpresa = new Element("AltriDatiImpresa");
-		
+
 		Element elem_CodiceINAIL = new Element("CodiceINAIL");
 		elem_AltriDatiImpresa.addContent(elem_CodiceINAIL);
 		Element elem_CodiceINPS = new Element("CodiceINPS");
@@ -168,13 +169,13 @@ public class App {
 		elem_AltriDatiImpresa.addContent(elem_NumeroIscrCCIAA);
 		Element elem_CodiceOrdinamento = new Element("CodiceOrdinamento");
 		elem_AltriDatiImpresa.addContent(elem_CodiceOrdinamento);
-		
+
 		return elem_AltriDatiImpresa;
 	}
-	
+
 	public static Element generateIndirizzoCantiere() {
 		Element elem_CNCE_Cantiere = new Element("CNCE_Cantiere");
-		
+
 		Element elem_CA_CAP = new Element("CA_CAP");
 		elem_CNCE_Cantiere.addContent(elem_CA_CAP);
 		Element elem_CA_TipoVia = new Element("CA_TipoVia");
@@ -191,13 +192,13 @@ public class App {
 		elem_CNCE_Cantiere.addContent(elem_CA_Comune);
 		Element elem_CA_Provincia = new Element("CA_Provincia");
 		elem_CNCE_Cantiere.addContent(elem_CA_Provincia);
-		
+
 		return elem_CNCE_Cantiere;
 	}
-	
+
 	public static Element generateCNCE_Cantiere() {
 		Element elem_CNCE_Cantieree = new Element("CNCE_Cantieree");
-		
+
 		Element elem_CA_NumeroProg = new Element("A_NumeroProg");
 		elem_CNCE_Cantieree.addContent(elem_CA_NumeroProg);
 		Element elem_CA_CodCantierCE = new Element("CA_CodCantierCE");
@@ -218,9 +219,9 @@ public class App {
 		elem_CNCE_Cantieree.addContent(elem_CA_FlagCantiereSisma2016);
 		Element elem_CA_CantiereGenerico = new Element("CA_CantiereGenerico");
 		elem_CNCE_Cantieree.addContent(elem_CA_CantiereGenerico);
-		
+
 		elem_CNCE_Cantieree.addContent(generateIndirizzoCantiere());
-		
+
 		Element elem_CA_AnnoInizio = new Element("CA_AnnoInizio");
 		elem_CNCE_Cantieree.addContent(elem_CA_AnnoInizio);
 		Element elem_CA_MeseInizio = new Element("CA_MeseInizio");
@@ -269,18 +270,18 @@ public class App {
 		elem_CNCE_Cantieree.addContent(elem_CA_LavoratoriInterinali);
 		Element elem_CA_Note = new Element("CA_Note");
 		elem_CNCE_Cantieree.addContent(elem_CA_Note);
-		
+
 		elem_CNCE_Cantieree.addContent(generateDatiAppalto());
 		elem_CNCE_Cantieree.addContent(generateNotificaPreliminare());
 		elem_CNCE_Cantieree.addContent(generateDatiOpera());
 		elem_CNCE_Cantieree.addContent(generateCNCE_Subappalti());
-		
+
 		return elem_CNCE_Cantieree;
 	}
-	
+
 	public static Element generateCNCE_Subappalti() {
 		Element elem_CNCE_Subappalti = new Element("CNCE_Subappalti");
-		
+
 		Element elem_SU_CodiceFiscale = new Element("SU_CodiceFiscale");
 		elem_CNCE_Subappalti.addContent(elem_SU_CodiceFiscale);
 		Element elem_SU_Denominazione = new Element("SU_Denominazione");
@@ -309,13 +310,13 @@ public class App {
 		elem_CNCE_Subappalti.addContent(elem_SU_DataPresuntaInizioLavori);
 		Element elem_SU_DataPresuntaIFineLavori = new Element("SU_DataPresuntaIFineLavori");
 		elem_CNCE_Subappalti.addContent(elem_SU_DataPresuntaIFineLavori);
-		
+
 		return elem_CNCE_Subappalti;
 	}
-	
+
 	public static Element generateDatiAppalto() {
 		Element elem_DatiAppalto = new Element("DatiAppalto");
-		
+
 		Element elem_AP_CIP = new Element("AP_CIP");
 		elem_DatiAppalto.addContent(elem_AP_CIP);
 		Element elem_AP_ProtocolloAppalto = new Element("AP_ProtocolloAppalto");
@@ -324,37 +325,37 @@ public class App {
 		elem_DatiAppalto.addContent(elem_AP_DataAppalto);
 		Element elem_AP_CodiceCIG = new Element("AP_CodiceCIG");
 		elem_DatiAppalto.addContent(elem_AP_CodiceCIG);
-		
+
 		return elem_DatiAppalto;
 	}
-	
+
 	public static Element generateNotificaPreliminare() {
 		Element elem_NotificaPreliminare = new Element("NotificaPreliminare");
-		
+
 		Element elem_NP_CodNotifica = new Element("NP_CodNotifica");
 		elem_NotificaPreliminare.addContent(elem_NP_CodNotifica);
 		Element elem_NP_DataNotifica = new Element("NP_DataNotifica");
 		elem_NotificaPreliminare.addContent(elem_NP_DataNotifica);
-		
+
 		return elem_NotificaPreliminare;
 	}
-	
+
 	public static Element generateDatiOpera() {
 		Element elem_DatiOpera = new Element("DatiOpera");
-		
+
 		Element elem_OP_ValoreComplessivo = new Element("OP_ValoreComplessivo");
 		elem_DatiOpera.addContent(elem_OP_ValoreComplessivo);
 		Element elem_OP_ImportoLavoriEdili = new Element("OP_ImportoLavoriEdili");
 		elem_DatiOpera.addContent(elem_OP_ImportoLavoriEdili);
 		Element elem_OP_DataPresuntaFineLavori = new Element("OP_DataPresuntaFineLavori");
 		elem_DatiOpera.addContent(elem_OP_DataPresuntaFineLavori);
-		
+
 		return elem_DatiOpera;
 	}
-	
+
 	public static Element generateCNCE_Lavoratore() {
 		Element elem_CNCE_Lavoratore = new Element("CNCE_Lavoratore");
-		
+
 		Element elem_LV_CodIscrizioneCE = new Element("LV_CodIscrizioneCE");
 		elem_CNCE_Lavoratore.addContent(elem_LV_CodIscrizioneCE);
 		Element elem_LV_Cognome = new Element("LV_Cognome");
@@ -365,16 +366,16 @@ public class App {
 		elem_CNCE_Lavoratore.addContent(elem_LV_CodiceFiscale);
 		Element elem_LV_RigaBis = new Element("LV_RigaBis");
 		elem_CNCE_Lavoratore.addContent(elem_LV_RigaBis);
-		
+
 		elem_CNCE_Lavoratore.addContent(generateDatiAnagrafici());
 		elem_CNCE_Lavoratore.addContent(generateIndirizzoLavoratore());
 		elem_CNCE_Lavoratore.addContent(generateDatiBancariLavoratore());
-		
+
 		Element elem_LV_LavFuoriProvincia = new Element("LV_LavFuoriProvincia");
 		elem_CNCE_Lavoratore.addContent(elem_LV_LavFuoriProvincia);
 		Element elem_LV_AltraCasa = new Element("LV_AltraCasa");
 		elem_CNCE_Lavoratore.addContent(elem_LV_AltraCasa);
-		
+
 		elem_CNCE_Lavoratore.addContent(generateRapportoDiLavoro());
 		elem_CNCE_Lavoratore.addContent(generateElementiPaga());
 		elem_CNCE_Lavoratore.addContent(generateLavoroCantiere());
@@ -399,13 +400,13 @@ public class App {
 		elem_CNCE_Lavoratore.addContent(elem_LV_Note);
 		//cnce malattia
 		//cnce recuprev
-		
+
 		return elem_CNCE_Lavoratore;
 	}
-	
+
 	public static Element generateDatiAnagrafici() {
 		Element elem_DatiAnagrafici = new Element("DatiAnagrafici");
-		
+
 		Element elem_LV_DatadiNascita = new Element("LV_DatadiNascita");
 		elem_DatiAnagrafici.addContent(elem_LV_DatadiNascita);
 		Element elem_LV_CodComunediNascita = new Element("LV_CodComunediNascita");
@@ -418,13 +419,13 @@ public class App {
 		elem_DatiAnagrafici.addContent(elem_LV_Sesso);
 		Element elem_LV_Nazionalita = new Element("LV_Nazionalita");
 		elem_DatiAnagrafici.addContent(elem_LV_Nazionalita);
-		
+
 		return elem_DatiAnagrafici;
 	}
-	
+
 	public static Element generateIndirizzoLavoratore() {
 		Element elem_IndirizzoLavoratore = new Element("IndirizzoLavoratore");
-		
+
 		Element elem_LV_TipoViaResidenza = new Element("LV_TipoViaResidenza");
 		elem_IndirizzoLavoratore.addContent(elem_LV_TipoViaResidenza);
 		Element elem_LV_IndirizzoResidenza = new Element("LV_IndirizzoResidenza");
@@ -445,13 +446,13 @@ public class App {
 		elem_IndirizzoLavoratore.addContent(elem_LV_Email);
 		Element elem_LV_Cellulare = new Element("LV_Cellulare");
 		elem_IndirizzoLavoratore.addContent(elem_LV_Cellulare);
-		
+
 		return elem_IndirizzoLavoratore;
 	}
-	
+
 	public static Element generateDatiBancariLavoratore() {
 		Element elem_DatiBancariLavoratore = new Element("DatiBancariLavoratore");
-		
+
 		Element elem_LV_CodPaese = new Element("LV_CodPaese");
 		elem_DatiBancariLavoratore.addContent(elem_LV_CodPaese);
 		Element elem_LV_CheckDigit = new Element("LV_CheckDigit");
@@ -464,13 +465,13 @@ public class App {
 		elem_DatiBancariLavoratore.addContent(elem_LV_CAB);
 		Element elem_LV_ContoCorrente = new Element("LV_ContoCorrente");
 		elem_DatiBancariLavoratore.addContent(elem_LV_ContoCorrente);
-		
+
 		return elem_DatiBancariLavoratore;
 	}
-	
+
 	public static Element generateRapportoDiLavoro() {
 		Element elem_RapportoDiLavoro = new Element("RapportoDiLavoro");
-		
+
 		Element elem_LV_DataAssunzione = new Element("LV_DataAssunzione");
 		elem_RapportoDiLavoro.addContent(elem_LV_DataAssunzione);
 		Element elem_LV_TipoAssunzione = new Element("LV_TipoAssunzione");
@@ -493,13 +494,13 @@ public class App {
 		elem_RapportoDiLavoro.addContent(elem_LV_OreSettimanali);
 		Element elem_LV_PercPartTime = new Element("LV_PercPartTime");
 		elem_RapportoDiLavoro.addContent(elem_LV_PercPartTime);
-		
+
 		return elem_RapportoDiLavoro;
 	}
-	
+
 	public static Element generateElementiPaga() {
 		Element elem_ElementiPaga = new Element("ElementiPaga");
-		
+
 		Element elem_LV_PagaOraria = new Element("LV_PagaOraria");
 		elem_ElementiPaga.addContent(elem_LV_PagaOraria);
 		Element elem_LV_SuperminimoOrario = new Element("LV_SuperminimoOrario");
@@ -510,13 +511,13 @@ public class App {
 		elem_ElementiPaga.addContent(elem_LV_Cottimo);
 		Element elem_LV_SuperminimoMensile = new Element("LV_SuperminimoMensile");
 		elem_ElementiPaga.addContent(elem_LV_SuperminimoMensile);
-		
+
 		return elem_ElementiPaga;
 	}
-	
+
 	public static Element generateLavoroCantiere() {
 		Element elem_LavoroCantiere = new Element("Imponibili");
-		
+
 		Element elem_LC_NumCantiere = new Element("LV_NumCantiere");
 		elem_LavoroCantiere.addContent(elem_LC_NumCantiere);
 		Element elem_LC_OREOrdinarie = new Element("LV_OREOrdinarie");
@@ -531,13 +532,13 @@ public class App {
 		elem_LavoroCantiere.addContent(elem_LC_AccantonGNF);
 		Element elem_LC_AccantonFerie = new Element("LV_AccantonFerie");
 		elem_LavoroCantiere.addContent(elem_LC_AccantonFerie);
-		
+
 		return elem_LavoroCantiere;
 	}
-	
+
 	public static Element generateImponibili() {
 		Element elem_Imponibili = new Element("Imponibili");
-		
+
 		Element elem_LV_ImponibileGNF = new Element("LV_ImponibileGNF");
 		elem_Imponibili.addContent(elem_LV_ImponibileGNF);
 		Element elem_LV_ImponibileContributivo = new Element("LV_ImponibileContributivo");
@@ -548,10 +549,10 @@ public class App {
 		elem_Imponibili.addContent(elem_LV_ImponibileTFR);
 		Element elem_TFR_ImponibileINPS = new Element("TFR_ImponibileINPS");
 		elem_Imponibili.addContent(elem_TFR_ImponibileINPS);
-		
+
 		return elem_Imponibili;
 	}
-	
+
 	public static void main(String[] args) {
 
 		try {
@@ -559,7 +560,7 @@ public class App {
 			Element elem_CNCE_FlussoInput = new Element("CNCE_FlussoInput");
 			Document doc = new Document(elem_CNCE_FlussoInput);
 			//doc.setRootElement(elem_CNCE_FlussoInput);
-			
+
 			Element elem_DataCreazione = new Element("DataCreazione");
 			elem_CNCE_FlussoInput.addContent(elem_DataCreazione.setText("2019-01-01"));
 			Element elem_TotDenunceFornite = new Element("TotDenunceFornite");
@@ -570,10 +571,10 @@ public class App {
 			elem_CNCE_FlussoInput.addContent(elem_NomeProdSoftware.setText("Iubar"));
 			Element elem_VersioneFlusso = new Element("VersioneFlusso");
 			elem_CNCE_FlussoInput.addContent(elem_VersioneFlusso.setText("2.3"));
-			
-			
+
+
 			elem_CNCE_FlussoInput.addContent(generateCNCE_Denuncia());
-	
+
 
 
 			XMLOutputter xmlOutput = new XMLOutputter(Format.getPrettyFormat());
@@ -581,11 +582,11 @@ public class App {
 			//display nice nice
 
 			xmlOutput.output(doc, new FileWriter("file.xml"));
-			
+
 			LOGGER.info(xmlOutput.outputString(doc));
 			LOGGER.info("File Saved!");
-			
-	
+
+
 		} catch (IOException io) {
 			System.out.println(io.getMessage());
 		}
