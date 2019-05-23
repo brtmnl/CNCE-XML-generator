@@ -398,7 +398,8 @@ public class App {
 		Element elem_LV_Note = new Element("LV_Note");
 		elem_CNCE_Lavoratore.addContent(elem_LV_Note);
 		
-		// cnce malattia
+		elem_CNCE_Lavoratore.addContent(generateCNCE_Malattia());
+		elem_CNCE_Lavoratore.addContent(generateRecuperoPREVCOMPL());
 		
 
 		return elem_CNCE_Lavoratore;
