@@ -378,15 +378,15 @@ public class App {
 		elem_CNCE_Lavoratore.addContent(generateElementiPaga());
 		elem_CNCE_Lavoratore.addContent(generateLavoroCantiere());
 		elem_CNCE_Lavoratore.addContent(generateImponibili());
-		// ore lav
+		elem_CNCE_Lavoratore.addContent(generateOreLavoratore());
 		// accantonamenti
 		// arrestrati fsn
+		elem_CNCE_Lavoratore.addContent(generateDatiPREVIDENZACOMPLEMENTARE());
 		elem_CNCE_Lavoratore.addContent(generateDatiContributoContrattualeCooperativo());
-		// dati contribut
-		// opzioni prev
+		elem_CNCE_Lavoratore.addContent(generateOpzioniPREVIDENZACOMPLEMENTARE());
 		elem_CNCE_Lavoratore.addContent(generateRecuperoPREVCOMPL());
 		elem_CNCE_Lavoratore.addContent(generateDatiIstitutoTFR());
-		
+
 		Element elem_LV_ImportoRimborsoCIG = new Element("LV_ImportoRimborsoCIG");
 		elem_CNCE_Lavoratore.addContent(elem_LV_ImportoRimborsoCIG);
 		Element elem_LV_OreTrimPreced = new Element("LV_OreTrimPreced");
@@ -397,8 +397,9 @@ public class App {
 		elem_CNCE_Lavoratore.addContent(elem_LV_NormaPremiali);
 		Element elem_LV_Note = new Element("LV_Note");
 		elem_CNCE_Lavoratore.addContent(elem_LV_Note);
+		
 		// cnce malattia
-		// cnce recuprev
+		
 
 		return elem_CNCE_Lavoratore;
 	}
@@ -614,6 +615,198 @@ public class App {
 		return elem_RecuperoPREVCOMPL;
 	}
 
+	public static Element generateOreLavoratore() {
+		Element elem_OreLavoratore = new Element("OreLavoratore");
+
+		Element elem_ORE_Malattia = new Element("ORE_Malattia");
+		elem_OreLavoratore.addContent(elem_ORE_Malattia);
+		Element elem_ORE_Infortunio = new Element("ORE_Infortunio");
+		elem_OreLavoratore.addContent(elem_ORE_Infortunio);
+		Element elem_ORE_Carenza = new Element("ORE_Carenza");
+		elem_OreLavoratore.addContent(elem_ORE_Carenza);
+
+		elem_OreLavoratore.addContent(generateORE_Ferie());
+		elem_OreLavoratore.addContent(generateORE_CassaIntegrazione());
+		elem_OreLavoratore.addContent(generateORE_Congedi());
+
+		Element elem_ORE_PermNonRetr = new Element("ORE_PermNonRetr");
+		elem_OreLavoratore.addContent(elem_ORE_PermNonRetr);
+		Element elem_ORE_RiduzioneOrario = new Element("ORE_RiduzioneOrario");
+		elem_OreLavoratore.addContent(elem_ORE_RiduzioneOrario);
+		Element elem_ORE_AggiuntiveAPE = new Element("ORE_AggiuntiveAPE");
+		elem_OreLavoratore.addContent(elem_ORE_AggiuntiveAPE);
+
+		elem_OreLavoratore.addContent(generateORE_AssenzaGiust());
+		elem_OreLavoratore.addContent(generateORE_Sanzionabili());
+
+		return elem_OreLavoratore;
+	}
+
+	public static Element generateORE_Ferie() {
+		Element elem_ORE_Ferie = new Element("ORE_Ferie");
+
+		Element elem_ORE_Ferie2 = new Element("ORE_Ferie");
+		elem_ORE_Ferie.addContent(elem_ORE_Ferie2);
+		Element elem_OREFE_FerieAC = new Element("OREFE_FerieAC");
+		elem_ORE_Ferie.addContent(elem_OREFE_FerieAC);
+		Element elem_OREFE_FerieResudueAP = new Element("OREFE_FerieResudueAP");
+		elem_ORE_Ferie.addContent(elem_OREFE_FerieResudueAP);
+
+		return elem_ORE_Ferie;
+	}
+
+	public static Element generateORE_CassaIntegrazione() {
+		Element elem_ORE_CassaIntegrazione = new Element("ORE_CassaIntegrazione");
+
+		Element elem_ORE_CiG = new Element("ORE_CiG");
+		elem_ORE_CassaIntegrazione.addContent(elem_ORE_CiG);
+		Element elem_ORECIG_Maltempo = new Element("ORECIG_Maltempo");
+		elem_ORE_CassaIntegrazione.addContent(elem_ORECIG_Maltempo);
+		Element elem_ORECIG_Altro = new Element("ORECIG_Altro");
+		elem_ORE_CassaIntegrazione.addContent(elem_ORECIG_Altro);
+		Element elem_ORECIG_Ordinaria = new Element("ORECIG_Ordinaria");
+		elem_ORE_CassaIntegrazione.addContent(elem_ORECIG_Ordinaria);
+		Element elem_ORECIG_Straordinaria = new Element("ORECIG_Straordinaria");
+		elem_ORE_CassaIntegrazione.addContent(elem_ORECIG_Straordinaria);
+		Element elem_ORECIG_Deroga = new Element("ORECIG_Deroga");
+		elem_ORE_CassaIntegrazione.addContent(elem_ORECIG_Deroga);
+
+		return elem_ORE_CassaIntegrazione;
+	}
+
+	public static Element generateORE_Congedi() {
+		Element elem_ORE_Congedi = new Element("ORE_Congedi");
+
+		Element elem_ORECO_TotaleOreCo = new Element("ORECO_TotaleOreCo");
+		elem_ORE_Congedi.addContent(elem_ORECO_TotaleOreCo);
+		Element elem_ORECO_Matrim = new Element("ORECO_Matrim");
+		elem_ORE_Congedi.addContent(elem_ORECO_Matrim);
+		Element elem_ORECO_Matern = new Element("ORECO_Matern");
+		elem_ORE_Congedi.addContent(elem_ORECO_Matern);
+		Element elem_ORECO_ServMil = new Element("ORECO_ServMil");
+		elem_ORE_Congedi.addContent(elem_ORECO_ServMil);
+
+		return elem_ORE_Congedi;
+	}
+
+	public static Element generateORE_AssenzaGiust() {
+		Element elem_ORE_AssenzaGiust = new Element("ORE_AssenzaGiust");
+
+		Element elem_OREAG_TotaleOreAG = new Element("OREAG_TotaleOreAG");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_TotaleOreAG);
+		Element elem_OREAG_PermSind = new Element("OREAG_PermSind");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_PermSind);
+		Element elem_OREAG_AssembSind = new Element("OREAG_AssembSind");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_AssembSind);
+
+		elem_ORE_AssenzaGiust.addContent(generateORE_PermessiRetribuiti());
+
+		Element elem_OREAG_MaternFacolt = new Element("OREAG_MaternFacolt");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_MaternFacolt);
+		Element elem_OREAG_CorsiForm = new Element("OREAG_CorsiForm");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_CorsiForm);
+		Element elem_OREAG_PermStud = new Element("OREAG_PermStud");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_PermStud);
+		Element elem_OREAG_ProvvDiscip = new Element("OREAG_ProvvDiscip");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_ProvvDiscip);
+		Element elem_OREAG_FunzElett = new Element("OREAG_FunzElett");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_FunzElett);
+		Element elem_OREAG_CongParent = new Element("OREAG_CongParent");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_CongParent);
+		Element elem_OREAG_ProvvAutGiud = new Element("OREAG_ProvvAutGiud");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_ProvvAutGiud);
+		Element elem_OREAG_FerieCollNonMat = new Element("OREAG_FerieCollNonMat");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_FerieCollNonMat);
+		Element elem_OREAG_DichAltreCE = new Element("OREAG_DichAltreCE");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_DichAltreCE);
+		Element elem_OREAG_Scioperi = new Element("OREAG_Scioperi");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_Scioperi);
+		Element elem_OREAG_AssIngSanz = new Element("OREAG_AssIngSanz");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_AssIngSanz);
+		Element elem_OREAG_AspettNonRetr = new Element("OREAG_AspettNonRetr");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_AspettNonRetr);
+		Element elem_OREAG_DonazSangue = new Element("OREAG_DonazSangue");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_DonazSangue);
+		Element elem_OREAG_L104 = new Element("OREAG_L104");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_L104);
+		Element elem_OREAG_CongStraord = new Element("OREAG_CongStraord");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_CongStraord);
+		Element elem_OREAG_PermLutto = new Element("OREAG_PermLutto");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_PermLutto);
+		Element elem_OREAG_AspettSindac = new Element("OREAG_AspettSindac");
+		elem_ORE_AssenzaGiust.addContent(elem_OREAG_AspettSindac);
+
+		return elem_ORE_AssenzaGiust;
+	}
+
+	public static Element generateORE_PermessiRetribuiti() {
+		Element elem_ORE_PermessiRetribuiti = new Element("ORE_PermessiRetribuiti");
+
+		Element elem_OREAG_PermRetrib = new Element("OREAG_PermRetrib ");
+		elem_ORE_PermessiRetribuiti.addContent(elem_OREAG_PermRetrib);
+		Element elem_OREAG_PermRetribAC = new Element("OREAG_PermRetribAC");
+		elem_ORE_PermessiRetribuiti.addContent(elem_OREAG_PermRetribAC);
+		Element elem_OREAG_PermRetribAP = new Element("OREAG_PermRetribAP");
+		elem_ORE_PermessiRetribuiti.addContent(elem_OREAG_PermRetribAP);
+
+		return elem_ORE_PermessiRetribuiti;
+	}
+
+	public static Element generateORE_Sanzionabili() {
+		Element elem_ORE_Sanzionabili = new Element("ORE_sanzionabili");
+
+		Element elem_ORESA_TotaleOreSanz = new Element("ORESA_TotaleOreSanz");
+		elem_ORE_Sanzionabili.addContent(elem_ORESA_TotaleOreSanz);
+		Element elem_ORESA_FerieSanzionabili = new Element("ORESA_FerieSanzionabili");
+		elem_ORE_Sanzionabili.addContent(elem_ORESA_FerieSanzionabili);
+		Element elem_ORESA_PermNonRetrSanz = new Element("ORESA_PermNonRetrSanz");
+		elem_ORE_Sanzionabili.addContent(elem_ORESA_PermNonRetrSanz);
+		Element elem_ORESA_PermRetrSanz = new Element("ORESA_PermRetrSanz");
+		elem_ORE_Sanzionabili.addContent(elem_ORESA_PermRetrSanz);
+
+		return elem_ORE_Sanzionabili;
+	}
+
+	public static Element generateOpzioniPREVIDENZACOMPLEMENTARE() {
+		Element elem_OpzioniPREVIDENZACOMPLEMENTARE = new Element("OpzioniPREVIDENZACOMPLEMENTARE");
+		
+		Element elem_PRE_CodiceFondo = new Element("PRE_CodiceFondo");
+		elem_OpzioniPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_CodiceFondo);
+		Element elem_PRE_NumAlboCOVIP = new Element("PRE_NumAlboCOVIP");
+		elem_OpzioniPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_NumAlboCOVIP);
+		Element elem_PRE_SceltaPrevidenza = new Element("PRE_SceltaPrevidenza");
+		elem_OpzioniPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_SceltaPrevidenza);
+		Element elem_PRE_DataSorroscrTFR = new Element("PRE_DataSorroscrTFR");
+		elem_OpzioniPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_DataSorroscrTFR);
+		
+		return elem_OpzioniPREVIDENZACOMPLEMENTARE;
+	}
+	
+	public static Element generateDatiPREVIDENZACOMPLEMENTARE() {
+		Element elem_DatiPREVIDENZACOMPLEMENTARE = new Element("DatiPREVIDENZACOMPLEMENTARE");
+		
+		Element elem_PRE_AdesioneFondo = new Element("PRE_AdesioneFondo");
+		elem_DatiPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_AdesioneFondo);
+		Element elem_PRE_AdesioneSilente = new Element("PRE_AdesioneSilente");
+		elem_DatiPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_AdesioneSilente);
+		Element elem_PRE_TipoAdesione = new Element("PRE_TipoAdesione");
+		elem_DatiPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_TipoAdesione);
+		Element elem_PRE_FlagDataAdesione = new Element("PRE_FlagDataAdesione");
+		elem_DatiPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_FlagDataAdesione);
+		Element elem_PRE_ContribLavoratore = new Element("PRE_ContribLavoratore");
+		elem_DatiPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_ContribLavoratore);
+		Element elem_PRE_ContribVolontario = new Element("PRE_ContribVolontario");
+		elem_DatiPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_ContribVolontario);
+		Element elem_PRE_ContribDitta = new Element("PRE_ContribDitta");
+		elem_DatiPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_ContribDitta);
+		Element elem_PRE_ContribContrattuale = new Element("PRE_ContribContrattuale");
+		elem_DatiPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_ContribContrattuale);
+		Element elem_PRE_QuotaTFR = new Element("PRE_QuotaTFR");
+		elem_DatiPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_QuotaTFR);
+		
+		return elem_DatiPREVIDENZACOMPLEMENTARE;
+	}
+	
 	public static void main(String[] args) {
 
 		try {
