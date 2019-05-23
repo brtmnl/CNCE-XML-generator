@@ -547,6 +547,51 @@ public class App {
 		
 		return elem_Accantonamenti;
 	}
+	
+	public static Element generateCNCE_Malattia() {
+		
+		Element elem_CNCE_Malattia = new Element("CNCE_Malattia");
+		
+			Element elem_MAL_DataInizio = new Element("MAL_DataInizio");
+			elem_CNCE_Malattia.addContent(elem_MAL_DataInizio);
+			Element elem_MAL_GiornoFine = new Element("MAL_GiornoFine");
+			elem_CNCE_Malattia.addContent(elem_MAL_GiornoFine);
+			Element elem_MAL_ContinuazMalattia = new Element("MAL_ContinuazMalattia");
+			elem_CNCE_Malattia.addContent(elem_MAL_ContinuazMalattia);
+			Element elem_MAL_Tipo = new Element("MAL_Tipo");
+			elem_CNCE_Malattia.addContent(elem_MAL_Tipo);
+			Element elem_MAL_Ricaduta = new Element("MAL_Ricaduta");
+			elem_CNCE_Malattia.addContent(elem_MAL_Ricaduta);
+			Element elem_MAL_GiornoInizio = new Element("MAL_GiornoInizio");
+			elem_CNCE_Malattia.addContent(elem_MAL_GiornoInizio);
+			Element elem_MAL_OreCarenza = new Element("MAL_OreCarenza");
+			elem_CNCE_Malattia.addContent(elem_MAL_OreCarenza);
+			Element elem_MAL_OreMalattiaInfort = new Element("MAL_OreMalattiaInfort");
+			elem_CNCE_Malattia.addContent(elem_MAL_OreMalattiaInfort);
+			Element elem_MAL_OreAssenzaIngiust = new Element("MAL_OreAssenzaIngiust");
+			elem_CNCE_Malattia.addContent(elem_MAL_OreAssenzaIngiust);
+			Element elem_MAL_ConguaglioRimborso = new Element("MAL_ConguaglioRimborso");
+			elem_CNCE_Malattia.addContent(elem_MAL_ConguaglioRimborso);
+			Element elem_MAL_NumProtocolloCert1 = new Element("MAL_NumProtocolloCert1");
+			elem_CNCE_Malattia.addContent(elem_MAL_NumProtocolloCert1);
+			Element elem_MAL_NumProtocolloCert2 = new Element("MAL_NumProtocolloCert2");
+			elem_CNCE_Malattia.addContent(elem_MAL_NumProtocolloCert2);
+			Element elem_MAL_NumProtocolloCert3 = new Element("MAL_NumProtocolloCert3");
+			elem_CNCE_Malattia.addContent(elem_MAL_NumProtocolloCert3);
+			Element elem_MAL_NumProtocolloCert4 = new Element("MAL_NumProtocolloCert4");
+			elem_CNCE_Malattia.addContent(elem_MAL_NumProtocolloCert4);
+			Element elem_MAL_NumProtocolloCert5 = new Element("MAL_NumProtocolloCert5");
+			elem_CNCE_Malattia.addContent(elem_MAL_NumProtocolloCert5);
+			Element elem_MAL_RetrGGINPSS = new Element("elem_MAL_RetrGGINPSS");
+			elem_CNCE_Malattia.addContent(elem_MAL_RetrGGINPSS);
+			
+			return elem_CNCE_Malattia; 
+			
+			
+			
+			
+			
+			}
 
 	public static Element generateDatiAnagrafici() {
 		Element elem_DatiAnagrafici = new Element("DatiAnagrafici");
