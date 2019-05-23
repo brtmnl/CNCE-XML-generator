@@ -183,6 +183,56 @@
       </DatiBancariLavoratore>
       <LV_LavFuoriProvincia />
       <LV_AltraCasa />
+      <RapportoDiLavoro>
+        <LV_DataAssunzione />
+        <LV_TipoAssunzione />
+        <LV_TipoOccupazione />
+        <LV_EsenzLimitiCCNL />
+        <LV_SpecificaRapporto />
+        <LV_GiornoCessazione />
+        <LV_TipoCessazione />
+        <LV_CodiceQualifica />
+        <LV_CodiceMansione />
+        <LV_OreSettimanali />
+        <LV_PercPartTime />
+      </RapportoDiLavoro>
+      <ElementiPaga>
+        <LV_PagaOraria />
+        <LV_SuperminimoOrario />
+        <LV_MaggCaposquadra />
+        <LV_Cottimo />
+        <LV_SuperminimoMensile />
+      </ElementiPaga>
+      <Imponibili>
+        <LV_NumCantiere />
+        <LV_OREOrdinarie />
+        <LV_OREFestiva />
+        <LV_ImponibileGNF />
+        <TFR_ImponibileContributivo />
+        <LV_AccantonGNF />
+        <LV_AccantonFerie />
+      </Imponibili>
+      <Imponibili>
+        <LV_ImponibileGNF />
+        <LV_ImponibileContributivo />
+        <LV_ImponibileContrSanz />
+        <LV_ImponibileTFR />
+        <TFR_ImponibileINPS />
+      </Imponibili>
+      <DatiContributoContrattualeCooperativo>
+        <PRE_VersContribContrattCOOP />
+        <PRE_ContribContrattCOOP />
+      </DatiContributoContrattualeCooperativo>
+      <DatiIstitutoTFR>
+        <TFR_TFRDaVersare />
+        <TFR_OreFigurative />
+        <TFR_GiorniLavorabili />
+        <TFR_ImportoFAP />
+        <TFR_ImportoAumDim />
+        <TFR_SegnoImportoAD />
+        <TFR_OreUtili />
+        <TFR_PagaOraria />
+      </DatiIstitutoTFR>
       <LV_ImportoRimborsoCIG />
       <LV_OreTrimPreced />
       <LV_SantoPatrono />

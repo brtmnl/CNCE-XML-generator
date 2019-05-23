@@ -5,9 +5,7 @@ import org.jdom.*;
 import org.jdom.output.*;
 import java.util.logging.*;
 
-
 public class App {
-	
 	private static final Logger LOGGER = Logger.getLogger(App.class.getName());
 
 	public static Element generateCNCE_Denuncia() {
@@ -41,8 +39,8 @@ public class App {
 
 		Element elem_DE_GiornoSituazione = new Element("DE_GiornoSituazione");
 		elem_CNCE_Denuncia.addContent(elem_DE_GiornoSituazione);
-		Element elem_DE_TotDipImpresa  = new Element("DE_TotDipImpresa");
-		elem_CNCE_Denuncia.addContent(elem_DE_TotDipImpresa );
+		Element elem_DE_TotDipImpresa = new Element("DE_TotDipImpresa");
+		elem_CNCE_Denuncia.addContent(elem_DE_TotDipImpresa);
 		Element elem_DE_TotOpeIndeterm = new Element("DE_TotOpeIndeterm");
 		elem_CNCE_Denuncia.addContent(elem_DE_TotOpeIndeterm);
 		Element elem_DE_TotOpePT = new Element("DE_TotOpePT");
@@ -133,7 +131,7 @@ public class App {
 		elem_CoordinateBancarie.addContent(elem_IM_CheckDigit);
 		Element elem_IM_CIN = new Element("IM_CIN");
 		elem_CoordinateBancarie.addContent(elem_IM_CIN);
-		Element elem_IM_ABI= new Element("IM_ABI");
+		Element elem_IM_ABI = new Element("IM_ABI");
 		elem_CoordinateBancarie.addContent(elem_IM_ABI);
 		Element elem_IM_CAB = new Element("IM_CAB");
 		elem_CoordinateBancarie.addContent(elem_IM_CAB);
@@ -380,14 +378,15 @@ public class App {
 		elem_CNCE_Lavoratore.addContent(generateElementiPaga());
 		elem_CNCE_Lavoratore.addContent(generateLavoroCantiere());
 		elem_CNCE_Lavoratore.addContent(generateImponibili());
-		//ore lav
-		//accantonamenti
-		//arrestrati fsn
-		//dati previdenza sociale
-		//dati contribut
-		//opzioni prev
-		//recupero prevcompl
-		//datisititutoTFR
+		// ore lav
+		// accantonamenti
+		// arrestrati fsn
+		elem_CNCE_Lavoratore.addContent(generateDatiContributoContrattualeCooperativo());
+		// dati contribut
+		// opzioni prev
+		elem_CNCE_Lavoratore.addContent(generateRecuperoPREVCOMPL());
+		elem_CNCE_Lavoratore.addContent(generateDatiIstitutoTFR());
+		
 		Element elem_LV_ImportoRimborsoCIG = new Element("LV_ImportoRimborsoCIG");
 		elem_CNCE_Lavoratore.addContent(elem_LV_ImportoRimborsoCIG);
 		Element elem_LV_OreTrimPreced = new Element("LV_OreTrimPreced");
@@ -398,8 +397,8 @@ public class App {
 		elem_CNCE_Lavoratore.addContent(elem_LV_NormaPremiali);
 		Element elem_LV_Note = new Element("LV_Note");
 		elem_CNCE_Lavoratore.addContent(elem_LV_Note);
-		//cnce malattia
-		//cnce recuprev
+		// cnce malattia
+		// cnce recuprev
 
 		return elem_CNCE_Lavoratore;
 	}
@@ -553,13 +552,75 @@ public class App {
 		return elem_Imponibili;
 	}
 
+	public static Element generateDatiIstitutoTFR() {
+
+		Element elem_DatiIstitutoTFR = new Element("DatiIstitutoTFR");
+
+		Element elem_TFR_TFRDaVersare = new Element("TFR_TFRDaVersare");
+		elem_DatiIstitutoTFR.addContent(elem_TFR_TFRDaVersare);
+		Element elem_TFR_OreFigurative = new Element("TFR_OreFigurative");
+		elem_DatiIstitutoTFR.addContent(elem_TFR_OreFigurative);
+		Element elem_TFR_GiorniLavorabili = new Element("TFR_GiorniLavorabili");
+		elem_DatiIstitutoTFR.addContent(elem_TFR_GiorniLavorabili);
+		Element elem_TFR_ImportoFAP = new Element("TFR_ImportoFAP");
+		elem_DatiIstitutoTFR.addContent(elem_TFR_ImportoFAP);
+		Element elem_TFR_ImportoAumDim = new Element("TFR_ImportoAumDim");
+		elem_DatiIstitutoTFR.addContent(elem_TFR_ImportoAumDim);
+		Element elem_TFR_SegnoImportoAD = new Element("TFR_SegnoImportoAD");
+		elem_DatiIstitutoTFR.addContent(elem_TFR_SegnoImportoAD);
+		Element elem_TFR_OreUtili = new Element("TFR_OreUtili");
+		elem_DatiIstitutoTFR.addContent(elem_TFR_OreUtili);
+		Element elem_TFR_PagaOraria = new Element("TFR_PagaOraria");
+		elem_DatiIstitutoTFR.addContent(elem_TFR_PagaOraria);
+
+		return elem_DatiIstitutoTFR;
+	}
+
+	public static Element generateDatiContributoContrattualeCooperativo() {
+		Element elem_DatiContributoContrattualeCooperativo = new Element("DatiContributoContrattualeCooperativo");
+
+		Element elem_PRE_VersContribContrattCOOP = new Element("PRE_VersContribContrattCOOP");
+		elem_DatiContributoContrattualeCooperativo.addContent(elem_PRE_VersContribContrattCOOP);
+		Element elem_PRE_ContribContrattCOOP = new Element("PRE_ContribContrattCOOP");
+		elem_DatiContributoContrattualeCooperativo.addContent(elem_PRE_ContribContrattCOOP);
+
+		return elem_DatiContributoContrattualeCooperativo;
+	}
+
+	public static Element generateRecuperoPREVCOMPL() {
+		Element elem_RecuperoPREVCOMPL = new Element("RecuperoPREVCOMPL");
+
+		Element elem_PREP_AnnoDa = new Element("PREP_AnnoDa");
+		elem_RecuperoPREVCOMPL.addContent(elem_PREP_AnnoDa);
+		Element elem_PREP_MeseDa = new Element("PREP_MeseDa");
+		elem_RecuperoPREVCOMPL.addContent(elem_PREP_MeseDa);
+		Element elem_PREP_AnnoA = new Element("PREP_AnnoA");
+		elem_RecuperoPREVCOMPL.addContent(elem_PREP_AnnoA);
+		Element elem_PREP_MeseA = new Element("PREP_MeseA");
+		elem_RecuperoPREVCOMPL.addContent(elem_PREP_MeseA);
+		Element elem_PREP_ContribLavoratore = new Element("PREP_ContribLavoratore");
+		elem_RecuperoPREVCOMPL.addContent(elem_PREP_ContribLavoratore);
+		Element elem_PREP_ContribVolontario = new Element("PREP_ContribVolontario");
+		elem_RecuperoPREVCOMPL.addContent(elem_PREP_ContribVolontario);
+		Element elem_PREP_ContribDitta = new Element("PREP_ContribDitta");
+		elem_RecuperoPREVCOMPL.addContent(elem_PREP_ContribDitta);
+		Element elem_PREP_ContribContrattuale = new Element("PREP_ContribContrattuale");
+		elem_RecuperoPREVCOMPL.addContent(elem_PREP_ContribContrattuale);
+		Element elem_PREP_QuotaTFR = new Element("PREP_QuotaTFR");
+		elem_RecuperoPREVCOMPL.addContent(elem_PREP_QuotaTFR);
+		Element elem_PREP_Rivalutazione = new Element("PREP_Rivalutazione");
+		elem_RecuperoPREVCOMPL.addContent(elem_PREP_Rivalutazione);
+
+		return elem_RecuperoPREVCOMPL;
+	}
+
 	public static void main(String[] args) {
 
 		try {
 
 			Element elem_CNCE_FlussoInput = new Element("CNCE_FlussoInput");
 			Document doc = new Document(elem_CNCE_FlussoInput);
-			//doc.setRootElement(elem_CNCE_FlussoInput);
+			// doc.setRootElement(elem_CNCE_FlussoInput);
 
 			Element elem_DataCreazione = new Element("DataCreazione");
 			elem_CNCE_FlussoInput.addContent(elem_DataCreazione.setText("2019-01-01"));
@@ -572,20 +633,16 @@ public class App {
 			Element elem_VersioneFlusso = new Element("VersioneFlusso");
 			elem_CNCE_FlussoInput.addContent(elem_VersioneFlusso.setText("2.3"));
 
-
 			elem_CNCE_FlussoInput.addContent(generateCNCE_Denuncia());
-
-
 
 			XMLOutputter xmlOutput = new XMLOutputter(Format.getPrettyFormat());
 
-			//display nice nice
+			// display nice nice
 
 			xmlOutput.output(doc, new FileWriter("file.xml"));
 
 			LOGGER.info(xmlOutput.outputString(doc));
 			LOGGER.info("File Saved!");
-
 
 		} catch (IOException io) {
 			System.out.println(io.getMessage());
