@@ -379,8 +379,9 @@ public class App {
 		elem_CNCE_Lavoratore.addContent(generateLavoroCantiere());
 		elem_CNCE_Lavoratore.addContent(generateImponibili());
 		// ore lav
-		// accantonamenti
-		// arrestrati fsn
+		elem_CNCE_Lavoratore.addContent(generateAccantonamenti());
+		elem_CNCE_Lavoratore.addContent(generateArretrati_FSN());
+
 		elem_CNCE_Lavoratore.addContent(generateDatiContributoContrattualeCooperativo());
 		// dati contribut
 		// opzioni prev
@@ -401,6 +402,149 @@ public class App {
 		// cnce recuprev
 
 		return elem_CNCE_Lavoratore;
+	}
+	
+	public static Element generateArretrati_FSN() {
+		
+		Element elem_Arretrati_FSN = new Element("Arretrati_FSN");
+		
+		Element elem_LV_RecuperoFSNAnno1 = new Element("LV_RecuperoFSNAnno1");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNAnno1);
+		Element elem_LV_RecuperoFSNMese1 = new Element("LV_RecuperoFSNMese1");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNMese1);
+		Element elem_LV_RecuperoFSNImporto1 = new Element("LV_RecuperoFSNImporto1");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNImporto1);
+
+		Element elem_LV_RecuperoFSNAnno2 = new Element("LV_RecuperoFSNAnno2");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNAnno2);
+		Element elem_LV_RecuperoFSNMese2 = new Element("LV_RecuperoFSNMese2");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNMese2);
+		Element elem_LV_RecuperoFSNImporto2 = new Element("LV_RecuperoFSNImporto2");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNImporto2);
+
+		Element elem_LV_RecuperoFSNAnno3 = new Element("LV_RecuperoFSNAnno3");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNAnno3);
+		Element elem_LV_RecuperoFSNMese3 = new Element("LV_RecuperoFSNMese3");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNMese3);
+		Element elem_LV_RecuperoFSNImporto3 = new Element("LV_RecuperoFSNImporto3");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNImporto3);
+
+		Element elem_LV_RecuperoFSNAnno4 = new Element("LV_RecuperoFSNAnno4");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNAnno4);
+		Element elem_LV_RecuperoFSNMese4 = new Element("LV_RecuperoFSNMese4");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNMese4);
+		Element elem_LV_RecuperoFSNImporto4 = new Element("LV_RecuperoFSNImporto4");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNImporto4);
+
+		Element elem_LV_RecuperoFSNAnno5 = new Element("LV_RecuperoFSNAnno5");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNAnno5);
+		Element elem_LV_RecuperoFSNMese5 = new Element("LV_RecuperoFSNMese5");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNMese5);
+		Element elem_LV_RecuperoFSNImporto5 = new Element("LV_RecuperoFSNImporto5");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNImporto5);
+
+		Element elem_LV_RecuperoFSNAnno6 = new Element("LV_RecuperoFSNAnno6");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNAnno6);
+		Element elem_LV_RecuperoFSNMese6 = new Element("LV_RecuperoFSNMese6");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNMese6);
+		Element elem_LV_RecuperoFSNImporto6 = new Element("LV_RecuperoFSNImporto6");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNImporto6);
+
+		Element elem_LV_RecuperoFSNAnno7 = new Element("LV_RecuperoFSNAnno7");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNAnno7);
+		Element elem_LV_RecuperoFSNMese7 = new Element("LV_RecuperoFSNMese7");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNMese7);
+		Element elem_LV_RecuperoFSNImporto7 = new Element("LV_RecuperoFSNImporto7");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNImporto7);
+
+		Element elem_LV_RecuperoFSNAnno8 = new Element("LV_RecuperoFSNAnno8");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNAnno8);
+		Element elem_LV_RecuperoFSNMese8 = new Element("LV_RecuperoFSNMese8");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNMese8);
+		Element elem_LV_RecuperoFSNImporto8 = new Element("LV_RecuperoFSNImporto8");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNImporto8);
+
+		Element elem_LV_RecuperoFSNAnno9 = new Element("LV_RecuperoFSNAnno9");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNAnno9);
+		Element elem_LV_RecuperoFSNMese9 = new Element("LV_RecuperoFSNMese9");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNMese9);
+		Element elem_LV_RecuperoFSNImporto9 = new Element("LV_RecuperoFSNImporto9");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNImporto9);
+
+		Element elem_LV_RecuperoFSNAnno10 = new Element("LV_RecuperoFSNAnno10");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNAnno10);
+		Element elem_LV_RecuperoFSNMese10 = new Element("LV_RecuperoFSNMese10");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNMese10);
+		Element elem_LV_RecuperoFSNImporto10 = new Element("LV_RecuperoFSNImporto10");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNImporto10);
+
+		Element elem_LV_RecuperoFSNAnno11 = new Element("LV_RecuperoFSNAnno11");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNAnno11);
+		Element elem_LV_RecuperoFSNMese11 = new Element("LV_RecuperoFSNMese11");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNMese11);
+		Element elem_LV_RecuperoFSNImporto11 = new Element("LV_RecuperoFSNImporto11");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNImporto11);
+
+		Element elem_LV_RecuperoFSNAnno12 = new Element("LV_RecuperoFSNAnno12");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNAnno12);
+		Element elem_LV_RecuperoFSNMese12 = new Element("LV_RecuperoFSNMese12");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNMese12);
+		Element elem_LV_RecuperoFSNImporto12 = new Element("LV_RecuperoFSNImporto12");
+		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNImporto12);
+		
+		
+		return elem_Arretrati_FSN;
+	}
+	
+	public static Element generateAccantonamenti() {
+		
+		Element elem_Accantonamenti = new Element("Accantonamenti");
+		
+		
+		Element elem_LV_AccantonGNF = new Element("LV_AccantonGNF");
+		elem_Accantonamenti.addContent(elem_LV_AccantonGNF);
+		Element elem_LV_AccantonGNFMalInf = new Element("LV_AccantonGNFMalInf");
+		elem_Accantonamenti.addContent(elem_LV_AccantonGNFMalInf);
+		Element elem_LV_AccantonRiposiAnnui = new Element("LV_AccantonRiposiAnnui");
+		elem_Accantonamenti.addContent(elem_LV_AccantonRiposiAnnui);
+		Element elem_LV_AccantonFerie = new Element("LV_AccantonFerie");
+		elem_Accantonamenti.addContent(elem_LV_AccantonFerie);
+		Element elem_LV_AnticipoAccantonamento = new Element("LV_AnticipoAccantonamento");
+		elem_Accantonamenti.addContent(elem_LV_AnticipoAccantonamento);
+		Element elem_LV_AltroAccantonamento = new Element("LV_AltroAccantonamento");
+		elem_Accantonamenti.addContent(elem_LV_AltroAccantonamento);
+		Element elem_LV_GGOreAltroAccantonamento = new Element("LV_GGOreAltroAccantonamento");
+		elem_Accantonamenti.addContent(elem_LV_GGOreAltroAccantonamento);
+		Element elem_LV_FlagGGOreAltroAccantonamento = new Element("LV_FlagGGOreAltroAccantonamento");
+		elem_Accantonamenti.addContent(elem_LV_FlagGGOreAltroAccantonamento);
+		Element elem_LV_ContributoAPE = new Element("LV_ContributoAPE");
+		elem_Accantonamenti.addContent(elem_LV_ContributoAPE);
+		Element elem_LV_IntegrazioneAPE = new Element("LV_IntegrazioneAPE");
+		elem_Accantonamenti.addContent(elem_LV_IntegrazioneAPE);
+		Element elem_LV_PagaFondoSanitarioNaz = new Element("LV_PagaFondoSanitarioNaz");
+		elem_Accantonamenti.addContent(elem_LV_PagaFondoSanitarioNaz);
+		Element elem_LV_ImponibileFondoSanitarioNazOperaio = new Element("LV_ImponibileFondoSanitarioNazOperaio");
+		elem_Accantonamenti.addContent(elem_LV_ImponibileFondoSanitarioNazOperaio);
+		Element elem_LV_ImponibileFondoSanitarioNazImpiegato = new Element("LV_ImponibileFondoSanitarioNazImpiegato");
+		elem_Accantonamenti.addContent(elem_LV_ImponibileFondoSanitarioNazImpiegato);
+		Element elem_LV_OreLavorateAltreCasse = new Element("LV_OreLavorateAltreCasse");
+		elem_Accantonamenti.addContent(elem_LV_OreLavorateAltreCasse);
+		Element elem_LV_CassaIntegrazioneFondoSanitario = new Element("LV_CassaIntegrazioneFondoSanitario");
+		elem_Accantonamenti.addContent(elem_LV_CassaIntegrazioneFondoSanitario);
+		Element elem_LV_ContributoFondoSanitarioNaz = new Element("LV_ContributoFondoSanitarioNaz");
+		elem_Accantonamenti.addContent(elem_LV_ContributoFondoSanitarioNaz);
+		Element elem_LV_ContributoFondoSanitarioNaz201810 = new Element("LV_ContributoFondoSanitarioNaz201810");
+		elem_Accantonamenti.addContent(elem_LV_ContributoFondoSanitarioNaz201810);
+		Element elem_LV_ContributoFondoSanitarioNaz201811 = new Element("LV_ContributoFondoSanitarioNaz201811");
+		elem_Accantonamenti.addContent(elem_LV_ContributoFondoSanitarioNaz201811);
+		Element elem_LV_ContributoFondoSanitarioNaz201812 = new Element("LV_ContributoFondoSanitarioNaz201812");
+		elem_Accantonamenti.addContent(elem_LV_ContributoFondoSanitarioNaz201812);
+		Element elem_LV_ContributoFondoSanitarioNaz201901 = new Element("LV_ContributoFondoSanitarioNaz201901");
+		elem_Accantonamenti.addContent(elem_LV_ContributoFondoSanitarioNaz201901);
+		Element elem_LV_ContributoFondoSanitarioNazAC = new Element("LV_ContributoFondoSanitarioNazAC");
+		elem_Accantonamenti.addContent(elem_LV_ContributoFondoSanitarioNazAC);
+		
+		return elem_Accantonamenti;
 	}
 
 	public static Element generateDatiAnagrafici() {

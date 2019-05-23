@@ -219,10 +219,83 @@
         <LV_ImponibileTFR />
         <TFR_ImponibileINPS />
       </Imponibili>
+      <Accantonamenti>
+        <LV_AccantonGNF />
+        <LV_AccantonGNFMalInf />
+        <LV_AccantonRiposiAnnui />
+        <LV_AccantonFerie />
+        <LV_AnticipoAccantonamento />
+        <LV_AltroAccantonamento />
+        <LV_GGOreAltroAccantonamento />
+        <LV_FlagGGOreAltroAccantonamento />
+        <LV_ContributoAPE />
+        <LV_IntegrazioneAPE />
+        <LV_PagaFondoSanitarioNaz />
+        <LV_ImponibileFondoSanitarioNazOperaio />
+        <LV_ImponibileFondoSanitarioNazImpiegato />
+        <LV_OreLavorateAltreCasse />
+        <LV_CassaIntegrazioneFondoSanitario />
+        <LV_ContributoFondoSanitarioNaz />
+        <LV_ContributoFondoSanitarioNaz201810 />
+        <LV_ContributoFondoSanitarioNaz201811 />
+        <LV_ContributoFondoSanitarioNaz201812 />
+        <LV_ContributoFondoSanitarioNaz201901 />
+        <LV_ContributoFondoSanitarioNazAC />
+      </Accantonamenti>
+      <Arretrati_FSN>
+        <LV_RecuperoFSNAnno1 />
+        <LV_RecuperoFSNMese1 />
+        <LV_RecuperoFSNImporto1 />
+        <LV_RecuperoFSNAnno2 />
+        <LV_RecuperoFSNMese2 />
+        <LV_RecuperoFSNImporto2 />
+        <LV_RecuperoFSNAnno3 />
+        <LV_RecuperoFSNMese3 />
+        <LV_RecuperoFSNImporto3 />
+        <LV_RecuperoFSNAnno4 />
+        <LV_RecuperoFSNMese4 />
+        <LV_RecuperoFSNImporto4 />
+        <LV_RecuperoFSNAnno5 />
+        <LV_RecuperoFSNMese5 />
+        <LV_RecuperoFSNImporto5 />
+        <LV_RecuperoFSNAnno6 />
+        <LV_RecuperoFSNMese6 />
+        <LV_RecuperoFSNImporto6 />
+        <LV_RecuperoFSNAnno7 />
+        <LV_RecuperoFSNMese7 />
+        <LV_RecuperoFSNImporto7 />
+        <LV_RecuperoFSNAnno8 />
+        <LV_RecuperoFSNMese8 />
+        <LV_RecuperoFSNImporto8 />
+        <LV_RecuperoFSNAnno9 />
+        <LV_RecuperoFSNMese9 />
+        <LV_RecuperoFSNImporto9 />
+        <LV_RecuperoFSNAnno10 />
+        <LV_RecuperoFSNMese10 />
+        <LV_RecuperoFSNImporto10 />
+        <LV_RecuperoFSNAnno11 />
+        <LV_RecuperoFSNMese11 />
+        <LV_RecuperoFSNImporto11 />
+        <LV_RecuperoFSNAnno12 />
+        <LV_RecuperoFSNMese12 />
+        <LV_RecuperoFSNImporto12 />
+      </Arretrati_FSN>
       <DatiContributoContrattualeCooperativo>
         <PRE_VersContribContrattCOOP />
         <PRE_ContribContrattCOOP />
       </DatiContributoContrattualeCooperativo>
+      <RecuperoPREVCOMPL>
+        <PREP_AnnoDa />
+        <PREP_MeseDa />
+        <PREP_AnnoA />
+        <PREP_MeseA />
+        <PREP_ContribLavoratore />
+        <PREP_ContribVolontario />
+        <PREP_ContribDitta />
+        <PREP_ContribContrattuale />
+        <PREP_QuotaTFR />
+        <PREP_Rivalutazione />
+      </RecuperoPREVCOMPL>
       <DatiIstitutoTFR>
         <TFR_TFRDaVersare />
         <TFR_OreFigurative />
