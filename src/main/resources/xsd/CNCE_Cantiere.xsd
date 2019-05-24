@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 (x64) (http://www.altova.com) by Mario Zoppellari (Zucchetti SPA) -->
+<xs:schema xmlns="http://mut.cnce.it/schemas/denunce/cantiere" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://mut.cnce.it/schemas/denunce/cantiere" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:element name="CNCE_Cantiere">
+		<xs:annotation>
+			<xs:documentation>Dati di un singolo cantiere</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CA_NumeroProgr">
+					<xs:annotation>
+						<xs:documentation>Codice progressivo della scheda cantiere </xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="5"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_CodCantiereCE">
+					<xs:annotation>
+						<xs:documentation>Codice con cui il cantiere è censito presso la Cassa Edile</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="10"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_CodiceIdentificativoMUT"/>
+				<xs:element name="CA_Denominazione_1">
+					<xs:annotation>
+						<xs:documentation>Denominazione-descrizione del cantiere (parte 1)</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="30"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_Denominazione_2">
+					<xs:annotation>
+						<xs:documentation>Denominazione-descrizione del cantiere (parte 2)</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="30"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_ProtocolloNormPostSisma">
+					<xs:annotation>
+						<xs:documentation>Numero di Protocollo Normalizzato per Cantiere relativo a lavori Post Sisma regione Abruzzo. Codice di Protocollo normalizzato rilasciato dalla Prefettura dell’Aquila per Lavori “post-sisma” in Abruzzo</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="25"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_FlagCantierePostSisma">
+					<xs:annotation>
+						<xs:documentation>Flag  cantiere relativo a lavori post sisma Abruzzo: S= Cantiere relativo a Lavori “post-sisma”, Blank=Lavori NON relativi a cantiere ”post-sisma” in Abruzzo</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_ProtocolloSisma2016">
+					<xs:annotation>
+						<xs:documentation>Numero di Protocollo CUP per Cantiere relativo a lavori Post Sisma 2016 Ordinanza 58 del 4 luglio 2018</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="25"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_FlagCantiereSisma2016">
+					<xs:annotation>
+						<xs:documentation>Flag  cantiere relativo a lavori post sisma 2016. S= Cantiere relativo a Lavori “post-sisma” 2016</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_CantiereGenerico"/>
+				<xs:group ref="IndirizzoCantiere"/>
+				<xs:element name="CA_AnnoInizio">
+					<xs:annotation>
+						<xs:documentation>Anno di inizio dell'attività del cantiere</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_MeseInizio">
+					<xs:annotation>
+						<xs:documentation>Mese di inizio dell'attività del cantiere</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_TipoCommittente">
+					<xs:annotation>
+						<xs:documentation>Tipologia del commitente (vedi tabella CNCE per i valori ammessi, Specifica Tecnica, Allegato 3)</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_TipoLavoro"/>
+				<xs:element name="CA_CodFiscCommittente">
+					<xs:annotation>
+						<xs:documentation>Codice fiscale del commitente / stazione appaltante</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="16"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_DenominazioneCommittente">
+					<xs:annotation>
+						<xs:documentation>Denominazione del committente / stazione appaltante. Da compilare nel caso in cui l'impresa che presenta la denuncia stia operando in subappalto. In questo caso infatti il campo CA_Committnte_1 riportano la denominazione dell'impresa appaltatrice.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="60"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_TipoViaComm" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Tipologia (Via, Piazza, Vicolo etc.) della sede legale del committente</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="10"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_IndirizzoComm" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Nome della Via, Piazza, etc. della sede legale del committente.  
+NOTA BENE: nel caso non sia temporaneamente possibile suddividere l’indirizzo nelle 3 parti componenti, è possibile accorpare l’intero indirizzo comprensivo di tipo via e n.civico in questo campo.
+</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="30"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_NumeroCivicoComm" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Numero civico, Scala, Interno, etc. della sede legale del committente. Se il numero civico non e' disponibile indicare "snc"</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="10"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_CAPCommittente" minOccurs="0"/>
+				<xs:element name="CA_CodiceComuneComm" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Codice catastale del comune delle sede legale del committente</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_ComuneComm" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Denominazione del comune della sede legale del cantiere </xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="30"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_ProvinciaComm" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Provincia della sede legale del cantiere</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_CodFiscaleAppaltatore">
+					<xs:annotation>
+						<xs:documentation>Nel caso di azienda che opera in subappalto (CA_TipoCommittente = 4) indicare il codice fiscale dell'appaltatore.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="16"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_DenominazioneAppaltatore"/>
+				<xs:element name="CA_Attivita07">
+					<xs:annotation>
+						<xs:documentation>Attività produtiva (prevalente) dell'impresa del cantiere (vedi tabella CNCE per i valori ammessi , Specifica Tecnica, Allegato 3). In questo campo va inserita la codifica in vigore a partire dalle denunce di competenza del mese di Ottobre 2007</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_RetrImponibileINPS">
+					<xs:annotation>
+						<xs:documentation>Retribuzione imponibile complessiva ai fini INPS per il lavoro prestato nel cantiere.    </xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="6"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_RetrImponibileContr">
+					<xs:annotation>
+						<xs:documentation>Imponibile contributivo Casa Edile complessivo del lavoro prestato sul cantiere. La sommatoria degli imponibili retributivi relativi a tutti i cantieri deve corrispondere alla sommatoria degli imponibili contributivi di tutti i lavoratori presenti nella denuncia.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="6"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_Situazione">
+					<xs:annotation>
+						<xs:documentation>Situazione del cantiere (vedi tabella CNCE per i valori ammessi , Specifica Tecnica, Allegato 3)</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="1"/>
+							<xs:whiteSpace value="collapse"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_GiornoSituazione">
+					<xs:annotation>
+						<xs:documentation>Giorno in cui si è verificato la situazione del cantiere. Va indicato solo se presente un valore nel campo "situazione"</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_LavoratoriTrasfertisti">
+					<xs:annotation>
+						<xs:documentation>Indicare "S" in caso di impiego nel cantiere di operai in trasferta iscritti ad altra Cassa Edile</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_Subappalti">
+					<xs:annotation>
+						<xs:documentation>Indicare "S" in caso di affidamento di lavori del cantiere ad altra impresa edile, in appalto o subappalto</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_LavoratoriInterinali">
+					<xs:annotation>
+						<xs:documentation>Indicare "S" in caso in cui l'impresa si avvalga di lavoratori inviati da Società di lavoro interinale</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CA_Note">
+					<xs:annotation>
+						<xs:documentation>Campo a disposizione per l’inserimento di annotazioni riguardanti il cantiere</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="140"/>
+							<xs:minLength value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:group ref="DatiAppalto" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Descrizione dettagliata dell'appalto da cui è derivato il cantiere. Deve essere compilato obbligatoriamente per i cantieri pubblici (CA_TipoCommittente = 1 e CA_TipoCommittente = 4). I dati necessari sono ricavabili dal Documento Unico di Regolarità Contributiva (DURC) richiesto per le fasi di aggiudicazione dell'appalto e per le successive fasi di liquidazione dei pagamenti all'impresa.</xs:documentation>
+					</xs:annotation>
+				</xs:group>
+				<xs:group ref="NotificaPreliminare" minOccurs="0"/>
+				<xs:group ref="DatiOpera"/>
+				<xs:element ref="CNCE_Subappalti" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="IndirizzoCantiere">
+		<xs:annotation>
+			<xs:documentation>Descrizione dettagliata dell'indirizzo del cantiere.  Qualora l'indirizzo dettagliato non sia disponibile, indicare comunque il CAP del luogo dove si svolgono i lavori.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CA_CAP">
+				<xs:annotation>
+					<xs:documentation>CAP del cantiere.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CA_TipoVia" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Tipologia (Via, Piazza, Vicolo etc.) dell'indirizzo del cantiere</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CA_Indirizzo" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Nome della Via, Piazza, etc. del cantiere. NOTA BENE: nel caso non sia temporaneamente possibile suddividere l’indirizzo nelle 3 parti componenti, è possibile accorpare l’intero indirizzo comprensivo di tipo via e n.civico in questo campo.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CA_NumeroCivico" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Numero civico, Scala, Interno, etc. del cantiere. Se il numero civico non e' disponibile indicare "snc"</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CA_Localita" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Località ove è situato il cantiere</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CA_CodiceComune" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Codice catastale del comune ove è situato il cantiere</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CA_Comune" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Denominazione del comune ove è situato il cantiere. E’ obbligatorio compilare il campo anche se è stato compilato il campo “CA_CodiceComune”</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CA_Provincia" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Provincia ove è situato il cantiere</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="DatiAppalto">
+		<xs:annotation>
+			<xs:documentation>Descrizione dettagliata dell'appalto da cui è derivato il cantiere. Obbligatorio per i lavori pubblici</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="AP_CIP">
+				<xs:annotation>
+					<xs:documentation>Codice Identificativo Pratica assegnato dallo Sportello Unico Previdenziale per il rilascio dei DURC relativi all'appalto</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="15"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="AP_ProtocolloAppalto">
+				<xs:annotation>
+					<xs:documentation>Numero di protocollo dell'appalto assegnato dal committente</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="AP_DataAppalto">
+				<xs:annotation>
+					<xs:documentation>Data dell'appalto</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:union memberTypes="xs:date">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:length value="0"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:union>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="AP_CodiceCIG">
+				<xs:annotation>
+					<xs:documentation>Per i lavori pubblici è il Codice Identificativo Gara, rilasciato dall’Autorità di Viglianza per i Contratti Pubblici</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="NotificaPreliminare">
+		<xs:annotation>
+			<xs:documentation>Estremi identificativi della notifica preliminare</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NP_CodNotifica">
+				<xs:annotation>
+					<xs:documentation>Codice identificativo della notifica preliminare assegnato del sistema telematico territoriale di gestione</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="NP_DataNotifica">
+				<xs:annotation>
+					<xs:documentation>Data di inoltro della notifica preliminare</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:union memberTypes="xs:date">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:length value="0"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:union>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="DatiOpera">
+		<xs:annotation>
+			<xs:documentation>Descrizione dettagliata dell'opera edile ai fini della rilevazione di congruità</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="OP_ValoreComplessivo">
+				<xs:annotation>
+					<xs:documentation>Importo complessivo dell'opera (ad esempio in caso di appalto va indicato l'importo complessivo dell'appalto</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="11"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OP_ImportoLavoriEdili">
+				<xs:annotation>
+					<xs:documentation>Importo deii soli lavori edili da eseguire sull'opera </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="11"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OP_DataPresuntaFineLavori">
+				<xs:annotation>
+					<xs:documentation>Data presunta di fine del lavoro</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:union memberTypes="xs:date">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="0"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:union>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:element name="CNCE_Subappalti">
+		<xs:annotation>
+			<xs:documentation>Nodo che consente l'inserimento della lista dei subappaltatori operanti sul cantiere</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SU_CodiceFiscale">
+					<xs:annotation>
+						<xs:documentation>Codice fiscale del subapplatatore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="16"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SU_Denominazione" minOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Denominazione del subapplatatore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="5"/>
+							<xs:maxLength value="50"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SU_TipoVia" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Toponimo (VIA PIAZZA,...) indirizzo sede del subapplatatore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="10"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SU_Indirizzo" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Indirizzo sede del subapaltatore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="30"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SU_NumeroCivico" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Numro civico sede del subappaltatore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="10"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SU_Localita" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Località o Frazione sede del subappaltatore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="30"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SU_CAP" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>CAP sede del subappaltatore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="5"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SU_CodiceComune" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Ciodice catastale del comune sede del subapplatatore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SU_Comune" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Descirzione del comune sede del subappaltatore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="30"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SU_Provincia" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Provincia sede del subappaltatore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SU_DescrizioneLavori">
+					<xs:annotation>
+						<xs:documentation>Descrizione delle opere in subapplato</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="5"/>
+							<xs:maxLength value="60"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SU_ImportoLavoriSubappalto">
+					<xs:annotation>
+						<xs:documentation>Importo dei lavori edili in subappalto</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="11"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SU_DataPresuntaInizioLavori">
+					<xs:annotation>
+						<xs:documentation>Data presunta di inizio lavori in subappalto</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union memberTypes="xs:date">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SU_DataPresuntaFineLavori">
+					<xs:annotation>
+						<xs:documentation>Data presunta di fine lavori in subapplato</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union memberTypes="xs:date">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

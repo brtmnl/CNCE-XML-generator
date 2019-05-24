@@ -1,0 +1,2291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 (x64) (http://www.altova.com) by Mario Zoppellari (Zucchetti SPA) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://mut.cnce.it/schemas/denunce/lavoratore" xmlns:CNCE_Malattia="http://mut.cnce.it/schemas/denunce/malattia" xmlns:CNCE_RecupPrevCompl="http://mut.cnce.it/schemas/denunce/recupPrevCompl" xmlns:NS="http://mut.cnce.it/schemas/denunce/lavoratore" xmlns:CNCE_LavoroCantiere="http://mut.cnce.it/schemas/denunce/LavoroCantiere" targetNamespace="http://mut.cnce.it/schemas/denunce/lavoratore" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:import namespace="http://mut.cnce.it/schemas/denunce/malattia" schemaLocation="CNCE_Malattia.xsd"/>
+	<xs:import namespace="http://mut.cnce.it/schemas/denunce/recupPrevCompl" schemaLocation="CNCE_RecupPrevCompl.xsd"/>
+	<xs:import namespace="http://mut.cnce.it/schemas/denunce/LavoroCantiere" schemaLocation="CNCE_LavoroCantiere.xsd"/>
+	<xs:element name="CNCE_Lavoratore">
+		<xs:annotation>
+			<xs:documentation>Dati di un singolo lavoratore</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LV_CodIscrizioneCE">
+					<xs:annotation>
+						<xs:documentation>Codice di iscrizione del lavoratore presso la Cassa Edile</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="9"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="LV_Cognome">
+					<xs:annotation>
+						<xs:documentation>Cognome del lavoratore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="30"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="LV_Nome">
+					<xs:annotation>
+						<xs:documentation>Nome del lavoratore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="30"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="LV_CodiceFiscale">
+					<xs:annotation>
+						<xs:documentation>Codice fiscale del lavoratore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="16"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="LV_RigaBis">
+					<xs:annotation>
+						<xs:documentation>Nella normale comunicazione lasciare il campo in bianco. 
+In caso di più rapporti di lavoro nello stesso mese (lavoratore licenziato e riassunto nel mese oppure cambio di livello nel corso del mese), è possibile creare una nuova istanza dello stesso lavoratore, per distinguere le informazioni relative ai diversi rapporti di lavoro.  In tal caso il campo, nelle istanze aggiunte, deve essere valorizzato a “1”.  Non sono consentiti altri utilizzi da quelli espressamente qui descritti
+</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:group ref="DatiAnagrafici"/>
+				<xs:group ref="IndirizzoLavoratore"/>
+				<xs:group ref="DatiBancariLavoratore"/>
+				<xs:element name="LV_LavFuoriProvincia">
+					<xs:annotation>
+						<xs:documentation>Indicare "S" se il lavoratore è impegnato in un cantiere fuori provincia</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="LV_AltraCassa">
+					<xs:annotation>
+						<xs:documentation>Va indicato solo se durante il mese il lavoratore è iscritto anche presso altre Casse Edili (vedi tabella CNCE , allegato 1, per i valori ammessi)</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:group ref="RapportoDiLavoro"/>
+				<xs:group ref="ElementiPaga"/>
+				<xs:element ref="CNCE_LavoroCantiere:CNCE_LavoroCantiere" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:group ref="Imponibili"/>
+				<xs:group ref="OreLavoratore">
+					<xs:annotation>
+						<xs:documentation>Suddivisione delle ore mensili ad eccezione delle ore ordinarie e festività che devono essere imputate ai singoli cantieri nei quali il lavoratore ha operato.</xs:documentation>
+					</xs:annotation>
+				</xs:group>
+				<xs:group ref="Accantonamenti"/>
+				<xs:group ref="Arretrati_FSN" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:group ref="DatiPREVIDENZACOMPLEMENTARE">
+					<xs:annotation>
+						<xs:documentation>Nota: queste informazioni devono essere riportate per tutti i lavoratori che, nell’ambito delle scelte della previdenza complementare, aderiscono ai soli fondi di previdenza gestiti tramite la Cassa Edile (es. PREVEDI). In caso di lavoratori aderenti a fondi diversi, compilare solo la sezione “Opzioni Previdenza Complementare”.  Per un dettaglio delle combinazioni di valori ammessi in relazione alla posizione del lavoratore, consultare l’appendice 6.</xs:documentation>
+					</xs:annotation>
+				</xs:group>
+				<xs:group ref="DatiContributoContrattualeCooperlavoro">
+					<xs:annotation>
+						<xs:documentation>Nota: Queste informazioni vanno compilate per le Imprese che applicano il CCNL Cooperazione per l’indicazione del Contributo Contrattuale dovuto a CooperLavoro e che non deve essere conteggiato nel totale da versare in denuncia</xs:documentation>
+					</xs:annotation>
+				</xs:group>
+				<xs:group ref="OpzioniPREVIDENZACOMPLEMENTARE">
+					<xs:annotation>
+						<xs:documentation>Nota: queste informazioni devono essere riportate per tutti i lavoratori, anche con la qualifica di impiegati, per i quali si applica uno dei contratti di lavoro del settore edile. Per i soli impiegati / quadri che NON aderiscono alla previdenza complementare (LV_SceltaPrevidenza = AZ, questa sezione deve essere compilata solamente una volta, alla prima manifestazione della scelta da parte del lavoratore o in presenza di successivi cambiamenti.  
+Per un dettaglio delle combinazioni di valori ammessi in relazione alla posizione del lavoratore, consultare l’appendice 6.
+</xs:documentation>
+					</xs:annotation>
+				</xs:group>
+				<xs:group ref="RecuperoPREVCOMPL"/>
+				<xs:group ref="DatiIstitutoTFR">
+					<xs:annotation>
+						<xs:documentation>Nota: queste informazioni sono riservate alle Casse Edili per le quali si applica l’istituto del conferimento da parte dell’azeinda delle quote TFR maturate dal lavoratore. Per ulteriori chiarimenti in merito all’utilizzo di questa sezione può essere necessario contattare le Casse Edili interessate</xs:documentation>
+					</xs:annotation>
+				</xs:group>
+				<xs:element name="LV_ImportoRimborsoCIG" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Per i lavoratori apprendisti indicare l'importo corrispondente alle ore CIG per avverse condizioni metereologiche per le quali viene richiesto il rimborso</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="4"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="LV_OreTrimPreced">
+					<xs:annotation>
+						<xs:documentation>Indicare il numero di Ore CassaEdile retribuite nel trimestre precedente.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="3"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="LV_SantoPatrono" nillable="true">
+					<xs:annotation>
+						<xs:documentation>Indicare la data di ricorrenza del Santo Patrono per il lavoratore, qualora essa ricada all'interno del periodo della denuncia</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union memberTypes="xs:date">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="LV_NormaPremiale"/>
+				<xs:element name="LV_Note">
+					<xs:annotation>
+						<xs:documentation>Campo a disposizione per l’inserimento di annotazioni riguardanti il lavoratore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="140"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="CNCE_Malattia:CNCE_Malattia" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="CNCE_RecupPrevCompl:CNCE_RecupPrevCompl" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="OreLavoratore">
+		<xs:annotation>
+			<xs:documentation>Suddivisione Ore mensili</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ORE_Malattia">
+				<xs:annotation>
+					<xs:documentation>Indicare le ore di assenza nel mese per malattia, escluse le ore di carenza. Deve coincidere con la somma delle ore di malattia dichiarate nei singoli nodi di malattia-infortunio.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ORE_Infortunio">
+				<xs:annotation>
+					<xs:documentation>Indicare le ore di assenza nel mese per infortunio e/o malattia professionale, escluse le ore di carenza. Deve coincidere con la somma delle ore di infortunio dichiarate nei singoli nodi di malattia- infortunio</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ORE_Carenza">
+				<xs:annotation>
+					<xs:documentation>Indicare il numero delle ore di carenza nei casi di assenza per malattia, infortunio e malattia professionale. Deve coincidere con la somma delle ore di carenza dichiarate nei singoli eventi di malattia-infortunio</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:group ref="ORE_Ferie">
+				<xs:annotation>
+					<xs:documentation>Dettaglio delle ore di ferie.  </xs:documentation>
+				</xs:annotation>
+			</xs:group>
+			<xs:group ref="ORE_CassaIntegrazione">
+				<xs:annotation>
+					<xs:documentation>Dettaglio delle ore di Cassa Integrazione. Deve sempre essere indicato il totale complessivo delle ore CIG nel mese. Solo per il lavoratore apprendista, deve essere inoltre indicata la distinzione tra le ore CIG dovute ad avverse condizioni atmosferiche e le ore CIG dovute a cause diverse. </xs:documentation>
+				</xs:annotation>
+			</xs:group>
+			<xs:group ref="ORE_Congedi"/>
+			<xs:element name="ORE_PermNonRetr">
+				<xs:annotation>
+					<xs:documentation>Indicare le ore di assenza dovute a permesso non retribuito.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ORE_RiduzOrario">
+				<xs:annotation>
+					<xs:documentation>Ore di riduzione oraria autorizzata dalla Cassa Edile sulla base di idonea documentazione. Queste ore  rientreano nel computo del monte ore lavorabili valide per il mese in corso ai finoi della regolarità dell'impresa.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ORE_AggiuntiveAPE" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore aggiuntive rispetto al monte ore mensile, preautorizzate dalla Cassa Edile e valide ai fini del calcolo del contributo APE. L’utilizzo di questo campo deve essere espressamente concordato con le singole Casse Edili interessate.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:group ref="ORE_AssenzaGiust"/>
+			<xs:group ref="ORE_Sanzionabili">
+				<xs:annotation>
+					<xs:documentation>Ai sensi della circolare CNCE 373 del 11 dicembre 2008</xs:documentation>
+				</xs:annotation>
+			</xs:group>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="DatiPREVIDENZACOMPLEMENTARE">
+		<xs:annotation>
+			<xs:documentation>Nota: queste informazioni devono essere riportate per tutti i lavoratori che, nell’ambito delle scelte della previdenza complementare, aderiscono ai soli fondi di previdenza gestiti tramite la Cassa Edile (es. PREVEDI). In caso di lavoratori aderenti a fondi diversi, compilare solo la sezione “Opzioni Previdenza Complementare”.  Per un dettaglio delle combinazioni di valori ammessi in relazione alla posizione del lavoratore, consultare l’appendice 6.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PRE_AdesioneFondo">
+				<xs:annotation>
+					<xs:documentation>Indicare -S- se il lavoratore aderisce in forma al fondo di Previdenza Complementare prescelto</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PRE_AdesioneSilente">
+				<xs:annotation>
+					<xs:documentation>Indicare -T- se il lavoratore è iscritto al fondo di Previdenza Complementare indicato dalla contrattazione collettiva, per effetto del silenzio assenso; in tal caso dovrà essere  compilato esclusivamente il campo PRE_QuotaTFR
+Indicare –P- se il lavoratore aderisce alla previdenza complementare in forma esplicita, solamente con la quota TFR: in questo caso deve essere compilato il campo PRE_AdesioneFondo = S e NON devono essere compilati i campi PRE_ContribLavoratore, PRE_ContribVolontario, PRE_ContribDitta e PRE_ContribContrattuale (da gennaio 2015). Indicare -X- se il lavoratore viene iscritto al fondo di Previdenza Complementare per Adesione Contrattuale; in tal caso dovrà essere compilato solo il campo PRE_ContribContrattuale e nessun altro dato relativo al Prevedi</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PRE_TipoAdesione">
+				<xs:annotation>
+					<xs:documentation>Indicare -1- se la data di assunzione del lavoratore è antecedente al 28/04/1993; indicare -2- se è successiva:  non compilare se il lavoratore non aderisce al PREVEDI</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PRE_FlagDataAdesione">
+				<xs:annotation>
+					<xs:documentation>Indicare (solo se il campo PRE_AdesioneFondo = S):
+ -1- se il lavoratore ha aderito alla previdenza complementare prima del 31.12.2006 
+- 2- se il lavoratore ha aderito alla previdenza complementare dopo il 31.12.2006</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PRE_ContribLavoratore">
+				<xs:annotation>
+					<xs:documentation>Importo contributo a carico del lavoratore</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PRE_ContribVolontario">
+				<xs:annotation>
+					<xs:documentation>Importo contributo volontario effettuato dal lavoratore</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PRE_ContribDitta">
+				<xs:annotation>
+					<xs:documentation>Importo contributo a carico della ditta</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PRE_ContribContrattuale">
+				<xs:annotation>
+					<xs:documentation>Importo contributo contrattuale a carico della ditta</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="6"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PRE_QuotaTFR">
+				<xs:annotation>
+					<xs:documentation>Importo contributo detratto dal TFR</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="DatiContributoContrattualeCooperlavoro">
+		<xs:annotation>
+			<xs:documentation>Nota: Queste informazioni vanno compilate per le Imprese che applicano il CCNL Cooperazione per l’indicazione del Contributo Contrattuale dovuto a CooperLavoro e che non deve essere conteggiato nel totale da versare in denuncia</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PRE_VersContribContrattCOOP">
+				<xs:annotation>
+					<xs:documentation>Dichiarazione e assunzione di responsabilità da parte dell’Impresa Cooperativa che verserà a Cooperlavoro il contributo contrattuale dichiarato  valore S =Si</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PRE_ContribContrattCOOP">
+				<xs:annotation>
+					<xs:documentation>Importo Contributo Contrattuale Cooperlavoro dichiarato e che verrà versato a Cooperlavoro da parte di Imprese Cooperative
+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="6"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="IndirizzoLavoratore">
+		<xs:sequence>
+			<xs:element name="LV_TipoViaResidenza">
+				<xs:annotation>
+					<xs:documentation>Tipo (Via, Piazza, Vicolo etc.) di residenza del lavoratore</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+						<xs:minLength value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_IndirizzoResidenza">
+				<xs:annotation>
+					<xs:documentation>Nome della Via, Piazza, etc. di residenza del lavoratore. NOTA BENE: nel caso non sia temporaneamente possibile suddividere l’indirizzo nelle 3 parti componenti, è possibile accorpare l’intero indirizzo comprensivo di tipo via e n.civico in questo campo</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_NumCivicoResidenza">
+				<xs:annotation>
+					<xs:documentation>Numero civico, Scala, Interno, etc. di residenza del lavoratore. Se il numero civico non e' disponibile indicare "snc"</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_CAPResidenza">
+				<xs:annotation>
+					<xs:documentation>CAP di residenza del lavoratore</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_LocalitaResidenza">
+				<xs:annotation>
+					<xs:documentation>Località o Frazione di Residenza del lavoratore</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_CodComuneResidenza">
+				<xs:annotation>
+					<xs:documentation>Codice Catastale del comune di residenza del lavoratore</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_ComuneResidenza">
+				<xs:annotation>
+					<xs:documentation>Denominazione del comune di residenza del lavoratore; è obbligatorio compilare il campo anche se si è indicato il valore del campo LV_CodComuneResidenza</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_ProvinciaResidenza">
+				<xs:annotation>
+					<xs:documentation>Provincia di residenza del frazione</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_Email">
+				<xs:annotation>
+					<xs:documentation>Indirizzo e-mail del lavoratore</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_Cellulare">
+				<xs:annotation>
+					<xs:documentation>Numero telefono cellulare del lavoratore</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="ORE_AssenzaGiust">
+		<xs:annotation>
+			<xs:documentation>Dettaglio delle ore di assenza giustificata. Deve essere fornito il valore delle ore in base ai singoli giustificativi.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="OREAG_TotaleOreAG">
+				<xs:annotation>
+					<xs:documentation>Inserire il totale delle ore di assenza giustificata</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_PermSind" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di assenza giustificata per permesso sindacale</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_AssembSind" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di assenza giustificata per assemblea sindacale</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:group ref="ORE_PermessiRetributi" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Dettaglio delle ore di permesso retribuito contrattualmente ammessi si sensi della circolare CNCE 373 del 11 dicembre 2008</xs:documentation>
+				</xs:annotation>
+			</xs:group>
+			<xs:element name="OREAG_MaternFacolt" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di assenza facoltativa per maternità</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_CorsiForm" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di assenza per Corsi di Formazioni</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_PermStud" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_ProvvDiscip" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di assenza per provvedimenti disciplinari</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_FunzElett" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di assenza per funzioni elettive</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_CongParent" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di assenza per congedi parentali</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_ProvvAutGiud" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di assenza per provvedimenti autorità giudiziaria</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_FerieCollNonMat" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di assenza per ferie collettive non maturate</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_DichAltreCE" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore dichiarate ad altre Casse Edili</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_Scioperi" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di assenza per sciopero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_AssIngSanz" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Assenze ingiustificate sanzionate</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_AspettNonRetr" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di aspettativa non retribuita</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_DonazSangue" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di assenza per donazione sangue</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_L104" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di assenza Legge 104/92 assistenza familiari</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_CongStraord" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di assenza per congedi straordinari per assistenza familiari con handicap gravi</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_PermLutto" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di permesso per Lutto</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_AspettSindac" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di assenza per aspettativa sindacale (legge 300)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="ORE_Congedi">
+		<xs:annotation>
+			<xs:documentation>Dettaglio delle Ore di congedo</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ORECO_TotaleOreCO">
+				<xs:annotation>
+					<xs:documentation>Inserire il totale delle altre ore di congedo per licenza matrimoniale, maternità/paternità, servizio militare; deve corrispondere alla somma delle voci dettagliate riportate di seguito.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ORECO_Matrim" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di congedo matrimoniale</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ORECO_Matern" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di congedo per maternità / paternità </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ORECO_ServMil" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di congedo per servizio militare</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="ElementiPaga">
+		<xs:annotation>
+			<xs:documentation>Dettaglio elementi costituenti la paga Oraria</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LV_PagaOraria">
+				<xs:annotation>
+					<xs:documentation>Indicare la Retribuzione Oraria totale del lavoratore, (paga base ex indennità di contingenza, indennità territoriale di settore. E.D.R. , E.E.T. e, se dovuta, I.V.C.) comprendendo anche eventuali superminimi, la specifica maggiorazione per i Capi Squadra, l'utile effettivo di cottimo e cottimi impropri per gli operai che lavorano a cottimo. E’ possibile indicare fino a 5 decimali; il client M.U.T utilizzerà i decimali previsti dal contratto in vigore presso la Cassa Edile di destinazione della denuncia</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="7"/>
+						<xs:fractionDigits value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_SuperminimoOrario">
+				<xs:annotation>
+					<xs:documentation>Indicare la quota di retribuzione oraria dovuta al superminimo orario attribuito al lavoratore; il numero di decimali deve essere uguale a quello utlizzato per il campo LV_PagaOraria</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="7"/>
+						<xs:fractionDigits value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_MaggCaposquadra">
+				<xs:annotation>
+					<xs:documentation>Indicare la quota di retribuzione oraria dovuta alla specifica maggiorazione per i Capi Squadra (LV_CodiceMansione = 20); il numero di decimali deve essere uguale a quello utlizzato per il campo LV_PagaOraria </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="7"/>
+						<xs:fractionDigits value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_Cottimo">
+				<xs:annotation>
+					<xs:documentation>Indicare la quota di retribuzione oraria dovuta all’utile effettivo di cottimo e cottimi impropri per gli operai che lavorano a cottimo; il numero di decimali deve essere uguale a quello utlizzato per il campo LV_PagaOraria </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="7"/>
+						<xs:fractionDigits value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_SuperminimoMensile">
+				<xs:annotation>
+					<xs:documentation>Indicare l’importo complessivo del superminimo mensile attribuito al lavoratore.   Vanno indicati eventuali importi erogati in forma forfetizzata al lavoratore e NON già compresi nel campo LV_PagaOraria.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="DatiBancariLavoratore">
+		<xs:annotation>
+			<xs:documentation>Coordinate bancarie del lavoratore</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LV_CodPaese">
+				<xs:annotation>
+					<xs:documentation>Codice paese delle coordinate bancarie secondo la codifica IBAN (es. IT, SM, ...)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_CheckDigit">
+				<xs:annotation>
+					<xs:documentation>Check Digit di controllo delle coordinate bancarie secondo la codifica IBAN (es. IT, SM, ...)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_CIN">
+				<xs:annotation>
+					<xs:documentation>CIN del conto corrente del lavoratore secondo la codifica BBAN</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_ABI">
+				<xs:annotation>
+					<xs:documentation>Codice ABI del conto corrente del lavoratore</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_CAB">
+				<xs:annotation>
+					<xs:documentation>Codice CAB del conto corrente del lavoratore</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_ContoCorrente">
+				<xs:annotation>
+					<xs:documentation>Numero conto corrente del lavoratore</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="12"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="OpzioniPREVIDENZACOMPLEMENTARE">
+		<xs:annotation>
+			<xs:documentation>Scelte effettuate dal lavoratore in relazione alla Previdenza Complementare</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PRE_CodiceFondo">
+				<xs:annotation>
+					<xs:documentation>Indicare il fondo di previdenza complementare cui aderisce il lavoratore in virtù degli accordi contrattuali applicabili all’impresa, secondo la seguente codifica: - 01: Prevedi; - 02: Cooperlavoro; - 03: Fondapi; NOTE: il campo deve essere valorizzato anche nel caso che il fondo prescelto non preveda il versamento del contributo tramite la  Cassa Edile; il campo non deve essere valorizzato se il lavoratore non aderisce ad uno dei fondi qui elencati.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PRE_NumAlboCOVIP">
+				<xs:annotation>
+					<xs:documentation>Indicare il fondo di previdenza complementare cui aderisce il lavoratore in virtù degli accordi contrattuali applicabili all’impresa, secondo il numero di iscrizione all'albo dei fondi pensione gestito da COVIP: - 136: Prevedi; - 96: Cooperlavoro; - 116: Fondapi; NOTE: il campo deve essere valorizzato anche nel caso che il fondo prescelto non preveda il versamento del contributo tramite la  Cassa Edile; il campo non deve essere valorizzato se il lavoratore non aderisce ad uno dei fondi qui elencati.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PRE_SceltaPrevidenza">
+				<xs:annotation>
+					<xs:documentation>Indicare la scelta effettuata dal lavoratore sul modulo TFR-1 e TFR-2 in relazione alla gestione del TFR, secondo la seguente codifica: - FP: 100% TFR a fondo previdenza; - AZ: 100% TFR ad Azienda/INPS; - VI: 18% al Fondo previdenza e 82% ad Azienda/INPS; - NS=Nessuna Scelta.  Nell’allegato 5 sono riportate le relazioni tra il codice da inserire nel presente campo e le scelte effettuate dal lavoratore nei moduli TFR-1 e TFR-2. Le scelte qui indicate si riferiscono alle opzioni del lavoratore indipendentemente dal contenuto del campo PRE_CodiceFondo</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PRE_DataSottoscrTFR">
+				<xs:annotation>
+					<xs:documentation>Indicare la data di sottoscrizione del Modulo TFR-1 e TFR-2 da parte del lavoratore</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:union memberTypes="xs:date">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="0"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:union>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="RecuperoPREVCOMPL">
+		<xs:annotation>
+			<xs:documentation>Recupero di importi pregressi relativi ai versamenti dovuti al Fondo di Previdenza Complementare del lavoratore</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PREP_AnnoDa">
+				<xs:annotation>
+					<xs:documentation>Anno iniziale di competenza del versamento pregresso</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PREP_MeseDa">
+				<xs:annotation>
+					<xs:documentation>Mese iniziale di competenza del versamento pregresso</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PREP_AnnoA">
+				<xs:annotation>
+					<xs:documentation>Anno finale di competenza del versamento pregresso</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PREP_MeseA">
+				<xs:annotation>
+					<xs:documentation>Mese finale di competenza: il periodo finale PREP_AnnoA + PREP_MeseA deve essere minore del periodo di competenza della denuncia;</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PREP_ContribLavoratore">
+				<xs:annotation>
+					<xs:documentation>Importo contributo obbligatorio a carico del lavoratore. Indicare la somma dei contributi maturati nel periodo indicato</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PREP_ContribVolontario">
+				<xs:annotation>
+					<xs:documentation>Importo contributo facoltativo a carico del lavoratore. Indicare la somma dei contributi maturati nel periodo indicato</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PREP_ContribDitta">
+				<xs:annotation>
+					<xs:documentation>Importo contributo a carico della ditta. Indicare la somma dei contributi maturati nel periodo indicato</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PREP_ContribContrattuale">
+				<xs:annotation>
+					<xs:documentation>Importo contributo Contrattuuale a carico della ditta. Indicare la somma dei contributi maturati nel periodo indicato, valido per periodi dal 2015</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="6"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PREP_QuotaTFR">
+				<xs:annotation>
+					<xs:documentation>Importo contributo detratto dal TFR. Indicare la somma dei contributi maturati nel periodo indicato</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PREP_Rivalutazione">
+				<xs:annotation>
+					<xs:documentation>Importo della rivalutazione effettuata sulla quota TFR per effetto del decreto ex art. 1 comma 765 legge 296/06 del 30 Gennaio 2007,ovvero altri indennizzi richiesti dalla Cassa Edile per il ritardato versamento del contributo</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="DatiIstitutoTFR">
+		<xs:annotation>
+			<xs:documentation>Informazioni relative alle Casse Edili che gestiscono l'istituto del TFR</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TFR_TFRDaVersare">
+				<xs:annotation>
+					<xs:documentation>Inserire l’importo della quota TFR da versare alla Cassa Edile</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TFR_OreFigurative">
+				<xs:annotation>
+					<xs:documentation>Inserire le ore per donazione sangue e eventuali ulteriori ore con versamento volontario della quota mensile (servizio militare, aspettativa, periodo di malattia oltre 270° giorno di assenza)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TFR_GiorniLavorabili">
+				<xs:annotation>
+					<xs:documentation>Inserire la somma delle ore esposte escluse quelle per ferie, assenza giustificata, permessi non retribuiti, festività, diviso le ore lavorabili al giorno, con arrotondamento per eccesso.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TFR_ImportoFAP">
+				<xs:annotation>
+					<xs:documentation>Importo del contributo versato anticipatamente da parte dell'impresa all'INPS in base alla legge 297/1982 art. 3, 15° comma e calcolato sull'imponibile INPS. In particolare attualmente tale importo è pari allo 0,50% dell’imponibile INPS e va indicato in tutti i casi in cui è effettivamente anticipato dall’azienda.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TFR_ImportoAumDim">
+				<xs:annotation>
+					<xs:documentation>Importo correttivo per la retribuzione utile per il TFR (esempio: festività 4 novembre, maggiorazione elettricisti o altro)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TFR_SegnoImportoAD">
+				<xs:annotation>
+					<xs:documentation>A=Importo del campo TFRImportiAurmDim è da considerare in aumento per la retribuzione utile per il TFR; D=Importo del campo TFRImportiAurmDim è da considerare in diminuzione per la retribuzione utile per il TFR</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TFR_OreUtili">
+				<xs:annotation>
+					<xs:documentation>Ore Utili ai fini del calcolo della Retribuzione Utile TFR (Imponibile TFR)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TFR_PagaOraria">
+				<xs:annotation>
+					<xs:documentation>Paga Oraria applicata alle Ore Utili TFR ai fini del calcolo della Retribuzione Utile TFR (Imponibile TFR)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="7"/>
+						<xs:fractionDigits value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="ORE_CassaIntegrazione">
+		<xs:annotation>
+			<xs:documentation>Dettaglio delle ore di Cassa Integrazione</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ORE_CIG">
+				<xs:annotation>
+					<xs:documentation>Indicare il numero totale delle ore di assenza per Cassa Integrazione Guadagni.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ORECIG_Maltempo" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Indicare il numero delle ore di assenza per CIG nel mese dovute ad avverse condizioni metereologiche. Il campo deve essere compilato solo in caso di lavoratore apprendista. In caso di compilazione può essere indicato l'eventuale importo richiesto a rimborso LV_ImportoRimborsoCIG</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ORECIG_Altro" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Indicare il numero delle ore di assenza per CIG nel mese dovute a motivi diversi dalle avverse condizioni metereologiche. Il campo deve essere compilato solo in caso di lavoratore apprendista. </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ORECIG_Ordinaria" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ORECIG_Straordinaria" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ORECIG_Deroga" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="ORE_Ferie">
+		<xs:annotation>
+			<xs:documentation>Dettaglio delle ore di ferie</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ORE_Ferie">
+				<xs:annotation>
+					<xs:documentation>Indicare il numero totale delle ore di assenza per ferie godute nel mese</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREFE_FerieAC" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Indicare il numero delle ore di assenza per ferie maturate nell'anno in corso, godute nel mese</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREFE_FerieResidueAP" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Indicare il numero delle ore di assenza per ferie residue anno precedente godute nel mese</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="ORE_PermessiRetributi">
+		<xs:annotation>
+			<xs:documentation>Dettaglio delle ore di permesso retribuito</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="OREAG_PermRetrib" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Totale Ore di permesso retribuito (88 ore) </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_PermRetribAC" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Totale Ore di permesso retribuito (88 ore) maturate nell'anno in corso, godute nel mese</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OREAG_PermRetribAP" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Totale Ore di permesso retribuito (88 ore) residue dell'anno precedente, godute nel mese</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="ORE_Sanzionabili">
+		<xs:annotation>
+			<xs:documentation>AI sensi della circolare CNCE 373 del 11 dicembre 2008</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ORESA_TotaleOreSanz">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ORESA_FerieSanzionabili" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di ferie,eccedenti i limiti contrattualmente previsti (160 ore nell'anno solare) e dichiarate nel mese corrente, ai quali si applica la contribuzione dovuta alla Cassa Edile, esclusi gli accantonamenti ai sensi della circolare CNCE 373 del 11 dicembre 2008.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ORESA_PermNonRetrSanz" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di peremsso non retribuito,eccedenti i limiti contrattualmente previsti (40 ore nell'anno solare) e dichiarate nel mese corrente, ai quali si applica la contribuzione dovuta alla Cassa Edile, esclusi gli accantonamenti ai sensi della circolare CNCE 373 del 11 dicembre 2008.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ORESA_PermRetrSanz" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore di permesso retribuito,eccedenti i limiti contrattualmente previsti (88 ore nell'anno solare) e dichiarate nel mese corrente, ai quali si applica la contribuzione dovuta alla Cassa Edile, esclusi gli accantonamenti ai sensi della circolare CNCE 373 del 11 dicembre 2008.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="3"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Imponibili">
+		<xs:annotation>
+			<xs:documentation>Elementi imponibili del lavoratore</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LV_ImponibileGNF">
+				<xs:annotation>
+					<xs:documentation>Indicare l'importo totale della retribuzione del lavoratore (compresi eventuali superminimi) su cui è calcolato l'accantonamento di gratifica natalizia e ferie. Deve essere pari o superiore alla somma degli imponibili contributivi relativi ai singoli cantieri (LC_ImponibileGNF). L'importo va arrotondato all'unità di euro</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_ImponibileContributivo">
+				<xs:annotation>
+					<xs:documentation>Indicare l'importo totale della retribuzione del lavoratore su cui sono calcolati i contributi dovuti alla Cassa Edile. Se presente deve essere pari o superiore alla somma degli imponibili contributivi relativi ai singoli cantieri (LC_ImponibileContributivo). L'importo va arrotondato all'unità di euro.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_ImponibileContrSanz">
+				<xs:annotation>
+					<xs:documentation>Indicare l'importo totale per ore sanzionabili dichiarate per il lavoratore, sul quale viene calcolato l'importo della sanzone. L'importo va arrotondato all'unità di euro. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LV_ImponibileTFR">
+				<xs:annotation>
+					<xs:documentation>Indicare l'importo di retribuzione imponibile del lavoratore valevole ai fini del calcolo del trattamento da fine rapporto di lavoro L'importo va arrotandato all'unità di euro.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TFR_ImponibileINPS">
+				<xs:annotation>
+					<xs:documentation>Inserire la retribuzione complessiva imponibile ai fini INPS del lavoratore</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Accantonamenti">
+		<xs:annotation>
+			<xs:documentation>Importi di accantonamento del lavoratore</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LV_AccantonGNF">
+				<xs:annotation>
+					<xs:documentation>Indicare l'importo di accantonamento per gratifica natalizia e ferie relativo alle ore di lavoro prestate.  Deve essere pari o superiore alla somma degli accantonamenti relativi a ciascun cantiere (LC_AccantonGNF).e va arrotondato all'unità di euro.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_AccantonGNFMalInf">
+				<xs:annotation>
+					<xs:documentation>Indicare l'importo di accantonamento per gratifica natalizia e ferie relativo alle ore di assenza per malattia, infortunio o malattia professionale, congedo per maternità / paternità.
+L'importo va arrotondato all'unità di euro.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_AccantonRiposiAnnui">
+				<xs:annotation>
+					<xs:documentation>Importo accantonato per riposi annui (88 ore) secondo eventuali accordi a carattere locale</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_AccantonFerie">
+				<xs:annotation>
+					<xs:documentation>Importo accantonato per ferie secondo eventuali accordi a carattere locale</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_AnticipoAccantonamento">
+				<xs:annotation>
+					<xs:documentation>Importo eventualmente anticipato all’azienda per permessi retribuiti, secondo eventuali accordi a carattere locale</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_AltroAccantonamento" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Eventuale ulteriore importo accantonato presso la Cassa Edile, sulla base di specifici accordi territoriali. L’utilizzo di questo campo deve essere espressamente concordato con le singole Casse Edili interessate.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="6"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_GGOreAltroAccantonamento" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Eventuale valore numerico riferito a Giorni o Ore relativo al calcolo di particolari indennità/accantonamento sulla base di specifici accordi territoriali. L’utilizzo di questo campo deve essere espressamente concordato con le singole Casse Edili interessate. </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="6"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_FlagGGOreAltroAccantonamento" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Eventuale condizione di verifica/abilitazione dell'indicazione del valore del campo LV_GGOreAltroAccantonamento. L’utilizzo di questo campo deve essere espressamente concordato con le singole Casse Edili interessate. 
+- Cassa Edile Imperia (IM00): Condizione di esclusione dall'indicazione del Numero di Giorni Lavorati per Buoni Pasto nel mese. Valori 1=Assenza di giornate con ore lavorate > 4; 2=Pasti forniti dal datore di lavoro; 3=Impresa che applica ccnl integrativo altra prov.
+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_ContributoAPE" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Importo del Contributo APE per il lavoratore comprensivo dell’integrazione al minimo. Da Maggio 2016 Comunicazioni CNCE n. 591-592 2016 </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_IntegrazioneAPE" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Eventuale Importo dell’ integrazione al minimo (35 euro) del Contributo APE Lavoratore (già compreso nel Contributo APE Lavoratore). Da Maggio 2016. FACOLTATIVO: l’integrazione al minimo viene verificata e calcolata nel MUT.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_PagaFondoSanitarioNaz" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Paga oraria imponibile Fondo Sanitario Nazionale operaio. Comunicazione CNCE 652</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="7"/>
+						<xs:fractionDigits value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_ImponibileFondoSanitarioNazOperaio" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Imponibile Fondo Sanitario Nazionale operaio (Campo calcolato nel MUT da Paga Oraria Imponibile FSN x Ore Lavorate). Comunicazione CNCE 652.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="6"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_ImponibileFondoSanitarioNazImpiegato" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Imponibile Fondo Sanitario Nazionale impiegato. Comunicazione CNCE 652</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="6"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_OreLavorateAltreCasse" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ore lavorate denunciate in altre Casse (comprese in OREAG_DichAltreCE Ore dichiarate altre casse) ). Comunicazione CNCE 652</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_CassaIntegrazioneFondoSanitario">
+				<xs:annotation>
+					<xs:documentation>E’ la Cassa Edile dove avviene il versamento dell’integrazione al Fondo Sanitario Nazionale</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_ContributoFondoSanitarioNaz" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Contributo Fondo Sanitario Nazionale (Accordo CCNL Industria/Cooperazione del 18/07/2018).
+Incrementa il campo RI_ContributoFondoSanitarioNaz</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_ContributoFondoSanitarioNaz201810" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Recupero Contributo Fondo Sanitario Nazionale Ottobre 2018. Comunicazioni CNCE 639, 640 e 646.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_ContributoFondoSanitarioNaz201811" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Recupero Contributo Fondo Sanitario Nazionale Novembre 2018. Comunicazioni CNCE 639, 640 e 646.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_ContributoFondoSanitarioNaz201812" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Recupero Contributo Fondo Sanitario Nazionale Dicembre 2018. Comunicazioni CNCE 639, 640 e 646.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_ContributoFondoSanitarioNaz201901" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Recupero Contributo Fondo Sanitario Nazionale Gennaio 2019. Comunicazione CNCE 651</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="DatiAnagrafici">
+		<xs:annotation>
+			<xs:documentation>Dati anagrafici identificativi del lavoratore</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LV_DatadiNascita">
+				<xs:annotation>
+					<xs:documentation>Data di nascita del lavoratore</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:union memberTypes="xs:date">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="0"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:union>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_CodComunediNascita">
+				<xs:annotation>
+					<xs:documentation>Codice Catastale del comune di nascita del lavoratore</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_ComunediNascita">
+				<xs:annotation>
+					<xs:documentation>Denominazione del comune di nascita del lavoratore; è obbligatorio compilare il campo anche se si è indicato il valore del campo LV_CodComunediNascita</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:whiteSpace value="preserve"/>
+						<xs:minLength value="0"/>
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_ProvinciadiNascita">
+				<xs:annotation>
+					<xs:documentation>Provincia di nascita del lavoratore</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_Sesso">
+				<xs:annotation>
+					<xs:documentation>Sesso del lavoratore</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="1"/>
+						<xs:enumeration value="F"/>
+						<xs:enumeration value="M"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_Nazionalita">
+				<xs:annotation>
+					<xs:documentation>Come da tabella CNCE fornita in allegato 2</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="RapportoDiLavoro">
+		<xs:annotation>
+			<xs:documentation>Dati identificativi del rapporto di lavoro</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LV_DataAssunzione">
+				<xs:annotation>
+					<xs:documentation>Indicare la data di inizio del rapporto di lavoro con l'impresa </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:union memberTypes="xs:date">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="0"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:union>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_TipoAssunzione">
+				<xs:annotation>
+					<xs:documentation>Tipologia del rapporto di lavoro (vedi tabella per i valori ammessi)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_TipoOccupazione">
+				<xs:annotation>
+					<xs:documentation>Indicare se il rapporto di lavoro è full-time o part-time. Assume i valori –P se Part Time ed –F se a tempo pieno</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="1"/>
+						<xs:enumeration value="P"/>
+						<xs:enumeration value="F"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_EsenzLimitiCCNL">
+				<xs:annotation>
+					<xs:documentation>Nel caso di occupazione Part Time (LV_TipoOccupazione = P), inserire il tipo di esenzione prevista dal contratto per la regolarità del rapporto di lavoro (vedi tabella in allegato per i valori ammessi) </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_SpecificaRapporto">
+				<xs:annotation>
+					<xs:documentation>Indica eventuali casi particolari del rapporto di lavoro, come da tabella in allegato</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_GiornoCessazione">
+				<xs:annotation>
+					<xs:documentation>Indicare il giorno, del mese cui si riferisce la denuncia della cessazione del rapporto di iscrizione del lavoratore alla Cassa Edile.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_TipoCessazione">
+				<xs:annotation>
+					<xs:documentation>Tipo di causa della cessazione del rapporto di lavoro di iscrizione del lavoratore alla Cassa Edile (vedi tabella CNCE per i valori ammessi)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_CodiceQualifica">
+				<xs:annotation>
+					<xs:documentation>Indicare il codice relativo al livello di inquadramento del lavoratore (vedi tabella CNCE per i valori ammessi, Specifica Tecnica, Allegato 3)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_CodiceSemestreApprendistato" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Campo Facoltativo: Codice del Semestre di Apprendistato ove previsto dal CCNL (esempio Accordo Industria Cooperazione Aprile 2019 semestri da 1S a 8S)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_CodiceMansione">
+				<xs:annotation>
+					<xs:documentation>Indicare il codice relativo alla mansione svolta dal lavoratore (vedi tabella CNCE per i valori ammessi Specifica Tecnica, Allegato 3)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_OreSettimanali" type="xs:integer">
+				<xs:annotation>
+					<xs:documentation>Indicare le effettive ore lavorative contrattuali settimanali, se diverse da 40 (es. lavoratori Part Time, Discontinui, etc.); in tutti gli altri casi il campo assume valore = 40.  </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LV_PercPartTime">
+				<xs:annotation>
+					<xs:documentation>Per i lavoratori Part Time (LV_TipoOccupazione = P) indicare la percentuale di Part Time.  In tutti gli altri casi impostare il campo al valore 0</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Arretrati_FSN">
+		<xs:annotation>
+			<xs:documentation>In questo gruppo di informazioni sono previsti fino a 12 gruppi facoltativi di campi Anno, Mese e Importo recupero FSN per indicare fino a 12 periodi (mesi) di recupero del Contributo Fondo Sanitario Nazionale). </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LV_RecuperoFSNAnno1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al primo periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNMese1" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al primo periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNImporto1" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero Fondo Sanitario Nazionale relativo al periodo 1</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNAnno2" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al secondo periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNMese2" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al secondo periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNImporto2" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero Fondo Sanitario Nazionale relativo al periodo 1</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNAnno3" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al terzo periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNMese3" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al terzo periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNImporto3" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero Fondo Sanitario Nazionale relativo al periodo 3</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNAnno4" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al quarto periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNMese4" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al quarto periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNImporto4" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero Fondo Sanitario Nazionale relativo al periodo 4</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNAnno5" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al quinto periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNMese5" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al quinto periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNImporto5" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero Fondo Sanitario Nazionale relativo al periodo 5</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNAnno6" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al sesto periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNMese6" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al sesto periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNImporto6" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero Fondo Sanitario Nazionale relativo al periodo 6</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNAnno7" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al settimo periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNMese7" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al serttimo periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNImporto7" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero Fondo Sanitario Nazionale relativo al periodo 7</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNAnno8" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al ottavo periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNMese8" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al ottavo periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNImporto8" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero Fondo Sanitario Nazionale relativo al periodo 8</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNAnno9" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al nono periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNMese9" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al nono periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNImporto9" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero Fondo Sanitario Nazionale relativo al periodo 9</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNAnno10" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al decimo periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNMese10" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al decimo periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNImporto10" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero Fondo Sanitario Nazionale relativo al periodo 10</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNAnno11" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al undicesimo periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNMese11" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al undicesimo periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNImporto11" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero Fondo Sanitario Nazionale relativo al periodo 11</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNAnno12" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al dodicesimo periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNMese12" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al dodicesimo periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LV_RecuperoFSNImporto12" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero Fondo Sanitario Nazionale relativo al periodo 12</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+</xs:schema>

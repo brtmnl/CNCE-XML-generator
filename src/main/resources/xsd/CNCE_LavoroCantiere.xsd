@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://mut.cnce.it/schemas/denunce/LavoroCantiere" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://mut.cnce.it/schemas/denunce/LavoroCantiere" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="CNCE_LavoroCantiere">
+		<xs:annotation>
+			<xs:documentation>Contiene le ore di lavoro effettivamente svolte dal lavoratore nei diversi cantieri ed i relativi valori di imponibile ed accantonamento. Deve essere compilato obbligatoriamente almeno un nodo ad eccezione di impiegati e dirigenti che versano solamente gli impoirti relativi al Fondo di Previdenza complementare.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LC_NumCantiere">
+					<xs:annotation>
+						<xs:documentation>Indicare il progressivo del cantiere che identifica l'unità di lavoro svolta dal lavoratore nel mese presso questo cantiere. Il valore indicato deve essere presente nel campo CA_NumeroProgr del nodo CNCE_Cantiere. </xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="5"/>
+							<xs:minLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="LC_OREOrdinarie">
+					<xs:annotation>
+						<xs:documentation>Indicare le ore di lavoro ordinario effettivamente prestate nel mese.  Il formato deve essere HHH,M dove “M” può assumere solo i valori 0 e 5.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:totalDigits value="4"/>
+							<xs:fractionDigits value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="LC_OREFestivita">
+					<xs:annotation>
+						<xs:documentation>Indicare il numero delle ore di assenza per festività</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="3"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="LC_ImponibileGNF">
+					<xs:annotation>
+						<xs:documentation>Indicare l'importo della retribuzione del lavoratore (compresi eventuali superminimi) su cui è calcolato l'accantonamento di gratifica natalizia e ferie. L'importo è relativo al cantiere indicato nel campo LC_NumCantiere e va arrotondato all'unità di euro.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="4"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="LC_ImponibileContributivo">
+					<xs:annotation>
+						<xs:documentation>Indicare l'importo della retribuzione del lavoratore su cui sono calcolati i contributi dovuti alla Cassa Edile per il cantiere, solo se diverso da quello indicato per l'accantonamento GNF. L'importo è relativo al cantiere indicato nel campo LC_NumCantiere e va arrotondato all'unità di euro.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="4"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="LC_AccantonGNF">
+					<xs:annotation>
+						<xs:documentation>Indicare l'importo di accantonamento per gratifica natalizia e ferie relativo alle ore di lavoro prestate. L'importo è determinato dall'imponibile GNF attribuito al singolo cantiere e va arrotondato all'unità di euro.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="4"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="LC_AccantonFerie">
+					<xs:annotation>
+						<xs:documentation>Importo relativo al cantiere indicato nel campo LC_NumCantiere, accantonato per ferie secondo eventuali accordi a carattere locale. </xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="4"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

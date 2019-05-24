@@ -1,14 +1,15 @@
 package Iubar.CNCE;
 
 import java.io.*;
-import org.jdom.*;
-import org.jdom.output.*;
 import java.util.logging.*;
+import org.jdom2.*;
+import org.jdom2.output.*;
 
 public class App {
 	private static final Logger LOGGER = Logger.getLogger(App.class.getName());
 
 	public static Element generateCNCE_Denuncia() {
+		Namespace ns_CNCE_Denuncia = Namespace.getNamespace("CNCE_Denuncia", "");
 		Element elem_CNCE_Denuncia = new Element("CNCE_Denuncia");
 
 		Element elem_CassaEdileDest = new Element("CassaEdileDest");
@@ -397,18 +398,17 @@ public class App {
 		elem_CNCE_Lavoratore.addContent(elem_LV_NormaPremiali);
 		Element elem_LV_Note = new Element("LV_Note");
 		elem_CNCE_Lavoratore.addContent(elem_LV_Note);
-		
+
 		elem_CNCE_Lavoratore.addContent(generateCNCE_Malattia());
 		elem_CNCE_Lavoratore.addContent(generateRecuperoPREVCOMPL());
-		
 
 		return elem_CNCE_Lavoratore;
 	}
-	
+
 	public static Element generateArretrati_FSN() {
-		
+
 		Element elem_Arretrati_FSN = new Element("Arretrati_FSN");
-		
+
 		Element elem_LV_RecuperoFSNAnno1 = new Element("LV_RecuperoFSNAnno1");
 		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNAnno1);
 		Element elem_LV_RecuperoFSNMese1 = new Element("LV_RecuperoFSNMese1");
@@ -492,16 +492,14 @@ public class App {
 		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNMese12);
 		Element elem_LV_RecuperoFSNImporto12 = new Element("LV_RecuperoFSNImporto12");
 		elem_Arretrati_FSN.addContent(elem_LV_RecuperoFSNImporto12);
-		
-		
+
 		return elem_Arretrati_FSN;
 	}
-	
+
 	public static Element generateAccantonamenti() {
-		
+
 		Element elem_Accantonamenti = new Element("Accantonamenti");
-		
-		
+
 		Element elem_LV_AccantonGNF = new Element("LV_AccantonGNF");
 		elem_Accantonamenti.addContent(elem_LV_AccantonGNF);
 		Element elem_LV_AccantonGNFMalInf = new Element("LV_AccantonGNFMalInf");
@@ -544,54 +542,50 @@ public class App {
 		elem_Accantonamenti.addContent(elem_LV_ContributoFondoSanitarioNaz201901);
 		Element elem_LV_ContributoFondoSanitarioNazAC = new Element("LV_ContributoFondoSanitarioNazAC");
 		elem_Accantonamenti.addContent(elem_LV_ContributoFondoSanitarioNazAC);
-		
+
 		return elem_Accantonamenti;
 	}
-	
+
 	public static Element generateCNCE_Malattia() {
-		
+
 		Element elem_CNCE_Malattia = new Element("CNCE_Malattia");
-		
-			Element elem_MAL_DataInizio = new Element("MAL_DataInizio");
-			elem_CNCE_Malattia.addContent(elem_MAL_DataInizio);
-			Element elem_MAL_GiornoFine = new Element("MAL_GiornoFine");
-			elem_CNCE_Malattia.addContent(elem_MAL_GiornoFine);
-			Element elem_MAL_ContinuazMalattia = new Element("MAL_ContinuazMalattia");
-			elem_CNCE_Malattia.addContent(elem_MAL_ContinuazMalattia);
-			Element elem_MAL_Tipo = new Element("MAL_Tipo");
-			elem_CNCE_Malattia.addContent(elem_MAL_Tipo);
-			Element elem_MAL_Ricaduta = new Element("MAL_Ricaduta");
-			elem_CNCE_Malattia.addContent(elem_MAL_Ricaduta);
-			Element elem_MAL_GiornoInizio = new Element("MAL_GiornoInizio");
-			elem_CNCE_Malattia.addContent(elem_MAL_GiornoInizio);
-			Element elem_MAL_OreCarenza = new Element("MAL_OreCarenza");
-			elem_CNCE_Malattia.addContent(elem_MAL_OreCarenza);
-			Element elem_MAL_OreMalattiaInfort = new Element("MAL_OreMalattiaInfort");
-			elem_CNCE_Malattia.addContent(elem_MAL_OreMalattiaInfort);
-			Element elem_MAL_OreAssenzaIngiust = new Element("MAL_OreAssenzaIngiust");
-			elem_CNCE_Malattia.addContent(elem_MAL_OreAssenzaIngiust);
-			Element elem_MAL_ConguaglioRimborso = new Element("MAL_ConguaglioRimborso");
-			elem_CNCE_Malattia.addContent(elem_MAL_ConguaglioRimborso);
-			Element elem_MAL_NumProtocolloCert1 = new Element("MAL_NumProtocolloCert1");
-			elem_CNCE_Malattia.addContent(elem_MAL_NumProtocolloCert1);
-			Element elem_MAL_NumProtocolloCert2 = new Element("MAL_NumProtocolloCert2");
-			elem_CNCE_Malattia.addContent(elem_MAL_NumProtocolloCert2);
-			Element elem_MAL_NumProtocolloCert3 = new Element("MAL_NumProtocolloCert3");
-			elem_CNCE_Malattia.addContent(elem_MAL_NumProtocolloCert3);
-			Element elem_MAL_NumProtocolloCert4 = new Element("MAL_NumProtocolloCert4");
-			elem_CNCE_Malattia.addContent(elem_MAL_NumProtocolloCert4);
-			Element elem_MAL_NumProtocolloCert5 = new Element("MAL_NumProtocolloCert5");
-			elem_CNCE_Malattia.addContent(elem_MAL_NumProtocolloCert5);
-			Element elem_MAL_RetrGGINPSS = new Element("elem_MAL_RetrGGINPSS");
-			elem_CNCE_Malattia.addContent(elem_MAL_RetrGGINPSS);
-			
-			return elem_CNCE_Malattia; 
-			
-			
-			
-			
-			
-			}
+
+		Element elem_MAL_DataInizio = new Element("MAL_DataInizio");
+		elem_CNCE_Malattia.addContent(elem_MAL_DataInizio);
+		Element elem_MAL_GiornoFine = new Element("MAL_GiornoFine");
+		elem_CNCE_Malattia.addContent(elem_MAL_GiornoFine);
+		Element elem_MAL_ContinuazMalattia = new Element("MAL_ContinuazMalattia");
+		elem_CNCE_Malattia.addContent(elem_MAL_ContinuazMalattia);
+		Element elem_MAL_Tipo = new Element("MAL_Tipo");
+		elem_CNCE_Malattia.addContent(elem_MAL_Tipo);
+		Element elem_MAL_Ricaduta = new Element("MAL_Ricaduta");
+		elem_CNCE_Malattia.addContent(elem_MAL_Ricaduta);
+		Element elem_MAL_GiornoInizio = new Element("MAL_GiornoInizio");
+		elem_CNCE_Malattia.addContent(elem_MAL_GiornoInizio);
+		Element elem_MAL_OreCarenza = new Element("MAL_OreCarenza");
+		elem_CNCE_Malattia.addContent(elem_MAL_OreCarenza);
+		Element elem_MAL_OreMalattiaInfort = new Element("MAL_OreMalattiaInfort");
+		elem_CNCE_Malattia.addContent(elem_MAL_OreMalattiaInfort);
+		Element elem_MAL_OreAssenzaIngiust = new Element("MAL_OreAssenzaIngiust");
+		elem_CNCE_Malattia.addContent(elem_MAL_OreAssenzaIngiust);
+		Element elem_MAL_ConguaglioRimborso = new Element("MAL_ConguaglioRimborso");
+		elem_CNCE_Malattia.addContent(elem_MAL_ConguaglioRimborso);
+		Element elem_MAL_NumProtocolloCert1 = new Element("MAL_NumProtocolloCert1");
+		elem_CNCE_Malattia.addContent(elem_MAL_NumProtocolloCert1);
+		Element elem_MAL_NumProtocolloCert2 = new Element("MAL_NumProtocolloCert2");
+		elem_CNCE_Malattia.addContent(elem_MAL_NumProtocolloCert2);
+		Element elem_MAL_NumProtocolloCert3 = new Element("MAL_NumProtocolloCert3");
+		elem_CNCE_Malattia.addContent(elem_MAL_NumProtocolloCert3);
+		Element elem_MAL_NumProtocolloCert4 = new Element("MAL_NumProtocolloCert4");
+		elem_CNCE_Malattia.addContent(elem_MAL_NumProtocolloCert4);
+		Element elem_MAL_NumProtocolloCert5 = new Element("MAL_NumProtocolloCert5");
+		elem_CNCE_Malattia.addContent(elem_MAL_NumProtocolloCert5);
+		Element elem_MAL_RetrGGINPSS = new Element("elem_MAL_RetrGGINPSS");
+		elem_CNCE_Malattia.addContent(elem_MAL_RetrGGINPSS);
+
+		return elem_CNCE_Malattia;
+
+	}
 
 	public static Element generateDatiAnagrafici() {
 		Element elem_DatiAnagrafici = new Element("DatiAnagrafici");
@@ -931,7 +925,7 @@ public class App {
 	public static Element generateORE_PermessiRetribuiti() {
 		Element elem_ORE_PermessiRetribuiti = new Element("ORE_PermessiRetribuiti");
 
-		Element elem_OREAG_PermRetrib = new Element("OREAG_PermRetrib ");
+		Element elem_OREAG_PermRetrib = new Element("OREAG_PermRetrib");
 		elem_ORE_PermessiRetribuiti.addContent(elem_OREAG_PermRetrib);
 		Element elem_OREAG_PermRetribAC = new Element("OREAG_PermRetribAC");
 		elem_ORE_PermessiRetribuiti.addContent(elem_OREAG_PermRetribAC);
@@ -958,7 +952,7 @@ public class App {
 
 	public static Element generateOpzioniPREVIDENZACOMPLEMENTARE() {
 		Element elem_OpzioniPREVIDENZACOMPLEMENTARE = new Element("OpzioniPREVIDENZACOMPLEMENTARE");
-		
+
 		Element elem_PRE_CodiceFondo = new Element("PRE_CodiceFondo");
 		elem_OpzioniPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_CodiceFondo);
 		Element elem_PRE_NumAlboCOVIP = new Element("PRE_NumAlboCOVIP");
@@ -967,13 +961,13 @@ public class App {
 		elem_OpzioniPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_SceltaPrevidenza);
 		Element elem_PRE_DataSorroscrTFR = new Element("PRE_DataSorroscrTFR");
 		elem_OpzioniPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_DataSorroscrTFR);
-		
+
 		return elem_OpzioniPREVIDENZACOMPLEMENTARE;
 	}
-	
+
 	public static Element generateDatiPREVIDENZACOMPLEMENTARE() {
 		Element elem_DatiPREVIDENZACOMPLEMENTARE = new Element("DatiPREVIDENZACOMPLEMENTARE");
-		
+
 		Element elem_PRE_AdesioneFondo = new Element("PRE_AdesioneFondo");
 		elem_DatiPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_AdesioneFondo);
 		Element elem_PRE_AdesioneSilente = new Element("PRE_AdesioneSilente");
@@ -992,17 +986,26 @@ public class App {
 		elem_DatiPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_ContribContrattuale);
 		Element elem_PRE_QuotaTFR = new Element("PRE_QuotaTFR");
 		elem_DatiPREVIDENZACOMPLEMENTARE.addContent(elem_PRE_QuotaTFR);
-		
+
 		return elem_DatiPREVIDENZACOMPLEMENTARE;
 	}
-	
+
+	static void updateNamespace(Element e, Namespace ns) {
+		e.setNamespace(ns);
+		for (Element child : e.getChildren()) {
+			updateNamespace(child, ns);
+			}
+	}
+
 	public static void main(String[] args) {
 
 		try {
 
-			Element elem_CNCE_FlussoInput = new Element("CNCE_FlussoInput");
+			Namespace ns_FlussoInput = Namespace.getNamespace("CNCE_FlussoInput",
+					"http://mut.cnce.it/schemas/denunce/flussoinput");
+			Element elem_CNCE_FlussoInput = new Element("CNCE_FlussoInput", ns_FlussoInput);
 			Document doc = new Document(elem_CNCE_FlussoInput);
-			// doc.setRootElement(elem_CNCE_FlussoInput);
+		
 
 			Element elem_DataCreazione = new Element("DataCreazione");
 			elem_CNCE_FlussoInput.addContent(elem_DataCreazione.setText("2019-01-01"));
@@ -1017,11 +1020,14 @@ public class App {
 
 			elem_CNCE_FlussoInput.addContent(generateCNCE_Denuncia());
 
+			//updateNamespace(doc.getRootElement(), ns_FlussoInput);
+			
 			XMLOutputter xmlOutput = new XMLOutputter(Format.getPrettyFormat());
 
 			// display nice nice
 
-			xmlOutput.output(doc, new FileWriter("file.xml"));
+			xmlOutput.output(doc, new FileWriter(
+					"C:\\Users\\iubar\\iubar\\workspace\\CNCE-XML-generator\\src\\main\\resources\\xml\\file.xml"));
 
 			LOGGER.info(xmlOutput.outputString(doc));
 			LOGGER.info("File Saved!");
