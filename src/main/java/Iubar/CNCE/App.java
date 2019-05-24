@@ -1,6 +1,5 @@
 package Iubar.CNCE;
 
-import java.awt.List;
 import java.io.*;
 import java.util.logging.*;
 import org.jdom2.*;
@@ -198,86 +197,87 @@ public class App {
 	}
 
 	public static Element generateCNCE_Cantiere() {
-		Element elem_CNCE_Cantieree = new Element("CNCE_Cantieree");
+		Namespace ns_CNCE_Cantiere = Namespace.getNamespace("CNCE_Cantiere", "http://mut.cnce.it/schemas/denunce/cantiere");
+		Element elem_CNCE_Cantiere = new Element("CNCE_Cantiere", ns_CNCE_Cantiere);
 
 		Element elem_CA_NumeroProg = new Element("A_NumeroProg");
-		elem_CNCE_Cantieree.addContent(elem_CA_NumeroProg);
+		elem_CNCE_Cantiere.addContent(elem_CA_NumeroProg);
 		Element elem_CA_CodCantierCE = new Element("CA_CodCantierCE");
-		elem_CNCE_Cantieree.addContent(elem_CA_CodCantierCE);
+		elem_CNCE_Cantiere.addContent(elem_CA_CodCantierCE);
 		Element elem_CA_CodiceIdentificativoMUT = new Element("CA_CodiceIdentificativoMUT");
-		elem_CNCE_Cantieree.addContent(elem_CA_CodiceIdentificativoMUT);
+		elem_CNCE_Cantiere.addContent(elem_CA_CodiceIdentificativoMUT);
 		Element elem_CA_Denominazione1 = new Element("CA_Denominazione1");
-		elem_CNCE_Cantieree.addContent(elem_CA_Denominazione1);
+		elem_CNCE_Cantiere.addContent(elem_CA_Denominazione1);
 		Element elem_CA_Denominazione2 = new Element("CA_Denominazione2");
-		elem_CNCE_Cantieree.addContent(elem_CA_Denominazione2);
+		elem_CNCE_Cantiere.addContent(elem_CA_Denominazione2);
 		Element elem_CA_ProtocolloNormPostSisma = new Element("CA_ProtocolloNormPostSisma");
-		elem_CNCE_Cantieree.addContent(elem_CA_ProtocolloNormPostSisma);
+		elem_CNCE_Cantiere.addContent(elem_CA_ProtocolloNormPostSisma);
 		Element elem_CA_FlagCantierePostSisma = new Element("CA_FlagCantierePostSisma");
-		elem_CNCE_Cantieree.addContent(elem_CA_FlagCantierePostSisma);
+		elem_CNCE_Cantiere.addContent(elem_CA_FlagCantierePostSisma);
 		Element elem_CA_ProtocolloSisma2016 = new Element("CA_ProtocolloSisma2016");
-		elem_CNCE_Cantieree.addContent(elem_CA_ProtocolloSisma2016);
+		elem_CNCE_Cantiere.addContent(elem_CA_ProtocolloSisma2016);
 		Element elem_CA_FlagCantiereSisma2016 = new Element("CA_FlagCantiereSisma2016");
-		elem_CNCE_Cantieree.addContent(elem_CA_FlagCantiereSisma2016);
+		elem_CNCE_Cantiere.addContent(elem_CA_FlagCantiereSisma2016);
 		Element elem_CA_CantiereGenerico = new Element("CA_CantiereGenerico");
-		elem_CNCE_Cantieree.addContent(elem_CA_CantiereGenerico);
+		elem_CNCE_Cantiere.addContent(elem_CA_CantiereGenerico);
 
-		elem_CNCE_Cantieree.addContent(generateIndirizzoCantiere());
+		elem_CNCE_Cantiere.addContent(generateIndirizzoCantiere());
 
 		Element elem_CA_AnnoInizio = new Element("CA_AnnoInizio");
-		elem_CNCE_Cantieree.addContent(elem_CA_AnnoInizio);
+		elem_CNCE_Cantiere.addContent(elem_CA_AnnoInizio);
 		Element elem_CA_MeseInizio = new Element("CA_MeseInizio");
-		elem_CNCE_Cantieree.addContent(elem_CA_MeseInizio);
+		elem_CNCE_Cantiere.addContent(elem_CA_MeseInizio);
 		Element elem_CA_TipoCommittente = new Element("CA_TipoCommittente");
-		elem_CNCE_Cantieree.addContent(elem_CA_TipoCommittente);
+		elem_CNCE_Cantiere.addContent(elem_CA_TipoCommittente);
 		Element elem_CA_TipoLavoro = new Element("CA_TipoLavoro");
-		elem_CNCE_Cantieree.addContent(elem_CA_TipoLavoro);
+		elem_CNCE_Cantiere.addContent(elem_CA_TipoLavoro);
 		Element elem_CA_CodFiscCommittente = new Element("CA_CodFiscCommittente");
-		elem_CNCE_Cantieree.addContent(elem_CA_CodFiscCommittente);
+		elem_CNCE_Cantiere.addContent(elem_CA_CodFiscCommittente);
 		Element elem_CA_DenominazioneCommittente = new Element("CA_DenominazioneCommittente");
-		elem_CNCE_Cantieree.addContent(elem_CA_DenominazioneCommittente);
+		elem_CNCE_Cantiere.addContent(elem_CA_DenominazioneCommittente);
 		Element elem_CA_TipoViaComm = new Element("CA_TipoViaComm");
-		elem_CNCE_Cantieree.addContent(elem_CA_TipoViaComm);
+		elem_CNCE_Cantiere.addContent(elem_CA_TipoViaComm);
 		Element elem_CA_IndirizzoComm = new Element("CA_IndirizzoComm");
-		elem_CNCE_Cantieree.addContent(elem_CA_IndirizzoComm);
+		elem_CNCE_Cantiere.addContent(elem_CA_IndirizzoComm);
 		Element elem_CA_NumeroCivicoComm = new Element("CA_NumeroCivicoComm");
-		elem_CNCE_Cantieree.addContent(elem_CA_NumeroCivicoComm);
+		elem_CNCE_Cantiere.addContent(elem_CA_NumeroCivicoComm);
 		Element elem_CA_CAPCommittente = new Element("CA_CAPCommittente");
-		elem_CNCE_Cantieree.addContent(elem_CA_CAPCommittente);
+		elem_CNCE_Cantiere.addContent(elem_CA_CAPCommittente);
 		Element elem_CA_CodiceComuneComm = new Element("CA_CodiceComuneComm");
-		elem_CNCE_Cantieree.addContent(elem_CA_CodiceComuneComm);
+		elem_CNCE_Cantiere.addContent(elem_CA_CodiceComuneComm);
 		Element elem_CA_ComuneComm = new Element("CA_ComuneComm");
-		elem_CNCE_Cantieree.addContent(elem_CA_ComuneComm);
+		elem_CNCE_Cantiere.addContent(elem_CA_ComuneComm);
 		Element elem_CA_ProvinciaComm = new Element("CA_ProvinciaComm");
-		elem_CNCE_Cantieree.addContent(elem_CA_ProvinciaComm);
+		elem_CNCE_Cantiere.addContent(elem_CA_ProvinciaComm);
 		Element elem_CA_CodFiscaleAppaltator = new Element("CA_CodFiscaleAppaltator");
-		elem_CNCE_Cantieree.addContent(elem_CA_CodFiscaleAppaltator);
+		elem_CNCE_Cantiere.addContent(elem_CA_CodFiscaleAppaltator);
 		Element elem_CA_DenominazioneAppaltator = new Element("CA_DenominazioneAppaltator");
-		elem_CNCE_Cantieree.addContent(elem_CA_DenominazioneAppaltator);
+		elem_CNCE_Cantiere.addContent(elem_CA_DenominazioneAppaltator);
 		Element elem_CA_Attivita07 = new Element("CA_Attivita07");
-		elem_CNCE_Cantieree.addContent(elem_CA_Attivita07);
+		elem_CNCE_Cantiere.addContent(elem_CA_Attivita07);
 		Element elem_CA_ImponibileINPS = new Element("CA_ImponibileINPS");
-		elem_CNCE_Cantieree.addContent(elem_CA_ImponibileINPS);
+		elem_CNCE_Cantiere.addContent(elem_CA_ImponibileINPS);
 		Element elem_CA_ImponibileContr = new Element("CA_ImponibileContr");
-		elem_CNCE_Cantieree.addContent(elem_CA_ImponibileContr);
+		elem_CNCE_Cantiere.addContent(elem_CA_ImponibileContr);
 		Element elem_CA_Situazione = new Element("CA_Situazione");
-		elem_CNCE_Cantieree.addContent(elem_CA_Situazione);
+		elem_CNCE_Cantiere.addContent(elem_CA_Situazione);
 		Element elem_CA_GiornoSituazione = new Element("CA_GiornoSituazione");
-		elem_CNCE_Cantieree.addContent(elem_CA_GiornoSituazione);
+		elem_CNCE_Cantiere.addContent(elem_CA_GiornoSituazione);
 		Element elem_CA_LavoratoriTrasfertisti = new Element("CA_LavoratoriTrasfertisti");
-		elem_CNCE_Cantieree.addContent(elem_CA_LavoratoriTrasfertisti);
+		elem_CNCE_Cantiere.addContent(elem_CA_LavoratoriTrasfertisti);
 		Element elem_CA_Subappalti = new Element("CA_Subappalti");
-		elem_CNCE_Cantieree.addContent(elem_CA_Subappalti);
+		elem_CNCE_Cantiere.addContent(elem_CA_Subappalti);
 		Element elem_CA_LavoratoriInterinali = new Element("CA_LavoratoriInterinali");
-		elem_CNCE_Cantieree.addContent(elem_CA_LavoratoriInterinali);
+		elem_CNCE_Cantiere.addContent(elem_CA_LavoratoriInterinali);
 		Element elem_CA_Note = new Element("CA_Note");
-		elem_CNCE_Cantieree.addContent(elem_CA_Note);
+		elem_CNCE_Cantiere.addContent(elem_CA_Note);
 
-		elem_CNCE_Cantieree.addContent(generateDatiAppalto());
-		elem_CNCE_Cantieree.addContent(generateNotificaPreliminare());
-		elem_CNCE_Cantieree.addContent(generateDatiOpera());
-		elem_CNCE_Cantieree.addContent(generateCNCE_Subappalti());
+		elem_CNCE_Cantiere.addContent(generateDatiAppalto());
+		elem_CNCE_Cantiere.addContent(generateNotificaPreliminare());
+		elem_CNCE_Cantiere.addContent(generateDatiOpera());
+		elem_CNCE_Cantiere.addContent(generateCNCE_Subappalti());
 
-		return elem_CNCE_Cantieree;
+		return elem_CNCE_Cantiere;
 	}
 
 	public static Element generateCNCE_Subappalti() {
@@ -355,7 +355,8 @@ public class App {
 	}
 
 	public static Element generateCNCE_Lavoratore() {
-		Element elem_CNCE_Lavoratore = new Element("CNCE_Lavoratore");
+		Namespace ns_CNCE_Lavoratore = Namespace.getNamespace("CNCE_Lavoratore", "http://mut.cnce.it/schemas/denunce/lavoratore");
+		Element elem_CNCE_Lavoratore = new Element("CNCE_Lavoratore", ns_CNCE_Lavoratore);
 
 		Element elem_LV_CodIscrizioneCE = new Element("LV_CodIscrizioneCE");
 		elem_CNCE_Lavoratore.addContent(elem_LV_CodIscrizioneCE);
@@ -379,7 +380,7 @@ public class App {
 
 		elem_CNCE_Lavoratore.addContent(generateRapportoDiLavoro());
 		elem_CNCE_Lavoratore.addContent(generateElementiPaga());
-		elem_CNCE_Lavoratore.addContent(generateLavoroCantiere());
+		elem_CNCE_Lavoratore.addContent(generateCNCE_LavoroCantiere());
 		elem_CNCE_Lavoratore.addContent(generateImponibili());
 		elem_CNCE_Lavoratore.addContent(generateOreLavoratore());
 		elem_CNCE_Lavoratore.addContent(generateAccantonamenti());
@@ -402,7 +403,7 @@ public class App {
 		elem_CNCE_Lavoratore.addContent(elem_LV_Note);
 
 		elem_CNCE_Lavoratore.addContent(generateCNCE_Malattia());
-		elem_CNCE_Lavoratore.addContent(generateRecuperoPREVCOMPL());
+		elem_CNCE_Lavoratore.addContent(generateCNCE_RecupPrevCompl());
 
 		return elem_CNCE_Lavoratore;
 	}
@@ -549,8 +550,8 @@ public class App {
 	}
 
 	public static Element generateCNCE_Malattia() {
-
-		Element elem_CNCE_Malattia = new Element("CNCE_Malattia");
+		Namespace ns_CNCE_Malattia = Namespace.getNamespace("CNCE_Malattia", "http://mut.cnce.it/schemas/denunce/malattia");
+		Element elem_CNCE_Malattia = new Element("CNCE_Malattia", ns_CNCE_Malattia);
 
 		Element elem_MAL_DataInizio = new Element("MAL_DataInizio");
 		elem_CNCE_Malattia.addContent(elem_MAL_DataInizio);
@@ -700,25 +701,26 @@ public class App {
 		return elem_ElementiPaga;
 	}
 
-	public static Element generateLavoroCantiere() {
-		Element elem_LavoroCantiere = new Element("Imponibili");
+	public static Element generateCNCE_LavoroCantiere() {
+		Namespace ns_CNCE_LavoroCantiere = Namespace.getNamespace("CNCE_LavoroCantiere", "http://mut.cnce.it/schemas/denunce/LavoroCantiere");
+		Element elem_CNCE_LavoroCantiere = new Element("CNCE_LavoroCantiere", ns_CNCE_LavoroCantiere);
 
-		Element elem_LC_NumCantiere = new Element("LV_NumCantiere");
-		elem_LavoroCantiere.addContent(elem_LC_NumCantiere);
-		Element elem_LC_OREOrdinarie = new Element("LV_OREOrdinarie");
-		elem_LavoroCantiere.addContent(elem_LC_OREOrdinarie);
-		Element elem_LC_OREFestiva = new Element("LV_OREFestiva");
-		elem_LavoroCantiere.addContent(elem_LC_OREFestiva);
-		Element elem_LC_ImponibileGNF = new Element("LV_ImponibileGNF");
-		elem_LavoroCantiere.addContent(elem_LC_ImponibileGNF);
+		Element elem_LC_NumCantiere = new Element("LC_NumCantiere");
+		elem_CNCE_LavoroCantiere.addContent(elem_LC_NumCantiere);
+		Element elem_LC_OREOrdinarie = new Element("LC_OREOrdinarie");
+		elem_CNCE_LavoroCantiere.addContent(elem_LC_OREOrdinarie);
+		Element elem_LC_OREFestiva = new Element("LC_OREFestiva");
+		elem_CNCE_LavoroCantiere.addContent(elem_LC_OREFestiva);
+		Element elem_LC_ImponibileGNF = new Element("LC_ImponibileGNF");
+		elem_CNCE_LavoroCantiere.addContent(elem_LC_ImponibileGNF);
 		Element elem_LC_ImponibileContributivo = new Element("TFR_ImponibileContributivo");
-		elem_LavoroCantiere.addContent(elem_LC_ImponibileContributivo);
-		Element elem_LC_AccantonGNF = new Element("LV_AccantonGNF");
-		elem_LavoroCantiere.addContent(elem_LC_AccantonGNF);
-		Element elem_LC_AccantonFerie = new Element("LV_AccantonFerie");
-		elem_LavoroCantiere.addContent(elem_LC_AccantonFerie);
+		elem_CNCE_LavoroCantiere.addContent(elem_LC_ImponibileContributivo);
+		Element elem_LC_AccantonGNF = new Element("LC_AccantonGNF");
+		elem_CNCE_LavoroCantiere.addContent(elem_LC_AccantonGNF);
+		Element elem_LC_AccantonFerie = new Element("LC_AccantonFerie");
+		elem_CNCE_LavoroCantiere.addContent(elem_LC_AccantonFerie);
 
-		return elem_LavoroCantiere;
+		return elem_CNCE_LavoroCantiere;
 	}
 
 	public static Element generateImponibili() {
@@ -992,10 +994,34 @@ public class App {
 		return elem_DatiPREVIDENZACOMPLEMENTARE;
 	}
 
+	public static Element generateCNCE_RecupPrevCompl() {
+		Namespace ns_CNCE_RecupPrevCompl = Namespace.getNamespace("CNCE_RecupPrevCompl", "http://mut.cnce.it/schemas/denunce/recupPrevCompl");
+		Element elem_CNCE_RecupPrevCompl = new Element("CNCE_RecupPrevCompl", ns_CNCE_RecupPrevCompl);
+	
+		Element elem_PRER_Anno = new Element("PRER_Anno");
+		elem_CNCE_RecupPrevCompl.addContent(elem_PRER_Anno);
+		Element elem_PRER_Mese = new Element("PRER_Mese");
+		elem_CNCE_RecupPrevCompl.addContent(elem_PRER_Mese);
+		Element elem_PRER_ContribLavoratore = new Element("PRER_ContribLavoratore");
+		elem_CNCE_RecupPrevCompl.addContent(elem_PRER_ContribLavoratore);
+		Element elem_PRER_ContribVolontario = new Element("PRER_ContribVolontario");
+		elem_CNCE_RecupPrevCompl.addContent(elem_PRER_ContribVolontario);
+		Element elem_PRER_ContribDitta = new Element("PRER_ContribDitta");
+		elem_CNCE_RecupPrevCompl.addContent(elem_PRER_ContribDitta);
+		Element elem_PRER_ContribContrattuale = new Element("PRER_ContribContrattuale");
+		elem_CNCE_RecupPrevCompl.addContent(elem_PRER_ContribContrattuale);
+		Element elem_PRER_QuotaTFR = new Element("PRER_QuotaTFR");
+		elem_CNCE_RecupPrevCompl.addContent(elem_PRER_QuotaTFR);
+		Element elem_PRER_Rivalutazione = new Element("PRER_Rivalutazione");
+		elem_CNCE_RecupPrevCompl.addContent(elem_PRER_Rivalutazione);
+		
+		return elem_CNCE_RecupPrevCompl;
+	}
+	
 	static void updateNamespace(Element e) {
 		Namespace ns = e.getNamespace();
 		for (Element child : e.getChildren()) {
-			if(child.getChildren().isEmpty()) {
+			if(child.getNamespace().getPrefix().equals("")) {
 				child.setNamespace(ns);
 			}
 			updateNamespace(child);
