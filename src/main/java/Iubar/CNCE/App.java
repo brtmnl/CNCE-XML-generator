@@ -1,5 +1,6 @@
 package Iubar.CNCE;
 
+import java.awt.List;
 import java.io.*;
 import java.util.logging.*;
 import org.jdom2.*;
@@ -9,8 +10,9 @@ public class App {
 	private static final Logger LOGGER = Logger.getLogger(App.class.getName());
 
 	public static Element generateCNCE_Denuncia() {
-		Namespace ns_CNCE_Denuncia = Namespace.getNamespace("CNCE_Denuncia", "");
-		Element elem_CNCE_Denuncia = new Element("CNCE_Denuncia");
+		Namespace ns_CNCE_Denuncia = Namespace.getNamespace("CNCE_Denuncia",
+				"http://mut.cnce.it/schemas/denunce/denuncia");
+		Element elem_CNCE_Denuncia = new Element("CNCE_Denuncia", ns_CNCE_Denuncia);
 
 		Element elem_CassaEdileDest = new Element("CassaEdileDest");
 		elem_CNCE_Denuncia.addContent(elem_CassaEdileDest);
@@ -990,22 +992,24 @@ public class App {
 		return elem_DatiPREVIDENZACOMPLEMENTARE;
 	}
 
-	static void updateNamespace(Element e, Namespace ns) {
-		e.setNamespace(ns);
+	static void updateNamespace(Element e) {
+		Namespace ns = e.getNamespace();
 		for (Element child : e.getChildren()) {
-			updateNamespace(child, ns);
+			if(child.getChildren().isEmpty()) {
+				child.setNamespace(ns);
 			}
+			updateNamespace(child);
+		}
 	}
 
 	public static void main(String[] args) {
-
+		
 		try {
 
 			Namespace ns_FlussoInput = Namespace.getNamespace("CNCE_FlussoInput",
 					"http://mut.cnce.it/schemas/denunce/flussoinput");
 			Element elem_CNCE_FlussoInput = new Element("CNCE_FlussoInput", ns_FlussoInput);
 			Document doc = new Document(elem_CNCE_FlussoInput);
-		
 
 			Element elem_DataCreazione = new Element("DataCreazione");
 			elem_CNCE_FlussoInput.addContent(elem_DataCreazione.setText("2019-01-01"));
@@ -1020,8 +1024,8 @@ public class App {
 
 			elem_CNCE_FlussoInput.addContent(generateCNCE_Denuncia());
 
-			//updateNamespace(doc.getRootElement(), ns_FlussoInput);
-			
+			updateNamespace(doc.getRootElement());
+
 			XMLOutputter xmlOutput = new XMLOutputter(Format.getPrettyFormat());
 
 			// display nice nice
