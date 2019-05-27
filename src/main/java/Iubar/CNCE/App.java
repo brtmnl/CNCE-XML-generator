@@ -1,12 +1,11 @@
 package Iubar.CNCE;
 
 import java.io.*;
-import org.jdom.*;
-import org.jdom.output.*;
-
 import java.util.List;
 import java.util.Properties;
 import java.util.logging.*;
+import org.jdom2.*;
+import org.jdom2.output.*;
 
 public class App {
 	private static final Logger LOGGER = Logger.getLogger(App.class.getName());
@@ -1033,9 +1032,9 @@ public class App {
 	}
 
 	public static void main(String[] args) {
-		
+
 		String outPath = readConfig();
-		
+
 		try {
 
 			Namespace ns_FlussoInput = Namespace.getNamespace("CNCE_FlussoInput",
@@ -1061,7 +1060,6 @@ public class App {
 			XMLOutputter xmlOutput = new XMLOutputter(Format.getPrettyFormat());
 
 			// display nice nice
-
 			xmlOutput.output(doc, new FileWriter(outPath + "/file.xml"));
 
 			LOGGER.info(xmlOutput.outputString(doc));

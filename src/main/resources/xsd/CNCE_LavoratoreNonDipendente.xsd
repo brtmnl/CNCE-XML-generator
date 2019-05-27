@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 (x64) (http://www.altova.com) by Mario Zoppellari (Zucchetti SPA) -->
+<xs:schema xmlns="http://mut.cnce.it/schemas/denunce/lavoratorenondipendente" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://mut.cnce.it/schemas/denunce/lavoratorenondipendente" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.0">
+	<xs:element name="CNCE_LavoratoreNonDipendente">
+		<xs:annotation>
+			<xs:documentation>Lavoratori non dipendenti che operano sui cantieri dell'impresa nel mese di riferimento</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ND_TipoLavoratore">
+					<xs:annotation>
+						<xs:documentation>Assume i valori: 1=Titolare 2=Socio 3=Collaboratore 4=Lavoratore Autonomo 5=Titolare Altra impresa 6=Socio Altra impresa 7=Collaboratore Altra Impresa </xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="1"/>
+							<xs:enumeration value="1"/>
+							<xs:enumeration value="2"/>
+							<xs:enumeration value="3"/>
+							<xs:enumeration value="4"/>
+							<xs:enumeration value="5"/>
+							<xs:enumeration value="6"/>
+							<xs:enumeration value="7"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ND_CodiceFiscale">
+					<xs:annotation>
+						<xs:documentation>Codice fiscale del lavoratore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="16"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ND_Cognome">
+					<xs:annotation>
+						<xs:documentation>Cognome del lavoratore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="25"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ND_Nome">
+					<xs:annotation>
+						<xs:documentation>Nome del lavoratore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ND_DataDiNascita">
+					<xs:annotation>
+						<xs:documentation>Data di nascita dle lavoratore</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union memberTypes="xs:date">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ND_CodiceFiscaleAltraImpresa">
+					<xs:annotation>
+						<xs:documentation>Codice Fiscale dell’impresa diversa da quella della denuncia (per Tipo Lavoratore 5,6,7).  Campo richiesto da alcune casse per la verifica di congruità sisma.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="16"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ND_RagioneSocialeAltraImpresa">
+					<xs:annotation>
+						<xs:documentation>Ragione Sociale dell’impresa diversa da quella della denuncia (per Tipo Lavoratore 5,6,7). Campo richiesto da alcune casse per la verifica di congruità sisma.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="50"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="CNCE_OreLavorateND" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CNCE_OreLavorateND">
+		<xs:annotation>
+			<xs:documentation>Dettaglio delle ore lavorate nei singoli cantieri</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ND_NumCantiere">
+					<xs:annotation>
+						<xs:documentation>Numero identificativo del cantiere in cui il lavoratore ha operato nel mese</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="5"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ND_OreLavorate">
+					<xs:annotation>
+						<xs:documentation>Ore lavorate nel mese sul cantiere (massimo 173)</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="3"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

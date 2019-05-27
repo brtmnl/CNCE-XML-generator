@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 (x64) (http://www.altova.com) by Mario Zoppellari (Zucchetti SPA) -->
+<xs:schema xmlns:CNCE_Riepilogo="http://mut.cnce.it/schemas/denunce/riepilogo" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:CNCE_Cantiere="http://mut.cnce.it/schemas/denunce/cantiere" xmlns:CNCE_Lavoratore="http://mut.cnce.it/schemas/denunce/lavoratore" xmlns:CNCE_AltriContributi="http://mut.cnce.it/schemas/denunce/altricontributi" xmlns="http://mut.cnce.it/schemas/denunce/denuncia" xmlns:CNCE_LavoratoreNonDipendente="http://mut.cnce.it/schemas/denunce/lavoratorenondipendente" targetNamespace="http://mut.cnce.it/schemas/denunce/denuncia" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:import namespace="http://mut.cnce.it/schemas/denunce/cantiere" schemaLocation="CNCE_Cantiere.xsd"/>
+	<xs:import namespace="http://mut.cnce.it/schemas/denunce/lavoratore" schemaLocation="CNCE_Lavoratore.xsd"/>
+	<xs:import namespace="http://mut.cnce.it/schemas/denunce/riepilogo" schemaLocation="CNCE_Riepilogo.xsd"/>
+	<xs:import namespace="http://mut.cnce.it/schemas/denunce/lavoratorenondipendente" schemaLocation="CNCE_LavoratoreNonDipendente.xsd"/>
+	<xs:element name="CNCE_Denuncia">
+		<xs:annotation>
+			<xs:documentation>Singola denuncia redatta secondo le specifiche M.U.T. </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CassaEdileDest">
+					<xs:annotation>
+						<xs:documentation>Deve essere indicata la Cassa Edile di destinazione della denuncia, come da tabella CNCE di cui all’allegato 1.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CodiceImpresa">
+					<xs:annotation>
+						<xs:documentation>Codice di iscrizione dell’impresa presso la Cassa Edile di destinazione.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="8"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="AnnoDenuncia">
+					<xs:annotation>
+						<xs:documentation>Anno di competenza della denuncia</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="MeseDenuncia">
+					<xs:annotation>
+						<xs:documentation>Mese di competenza della denuncia</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SequenzaDenuncia">
+					<xs:annotation>
+						<xs:documentation>Il campo sequenza denuncia deve essere impostato a 0 per le denunce ordinarie mensili.  Il valore di  sequenza diversa da zero è riservato ad eventuali denunce integrative o suppletive.  Le eventuali denunce suppletive devono essere preventivamente generate dalla Cassa Edile sul server M.U.T.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="2"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:group ref="SedeOperativa"/>
+				<xs:group ref="SedeLegale"/>
+				<xs:group ref="CoordinateBancarie">
+					<xs:annotation>
+						<xs:documentation>Coordinate Bancarie Impresa secondo la codifica IBAN</xs:documentation>
+					</xs:annotation>
+				</xs:group>
+				<xs:element name="CodiceFiscale">
+					<xs:annotation>
+						<xs:documentation>Codice fiscale dell'impresa</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="16"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="PartitaIVA">
+					<xs:annotation>
+						<xs:documentation>Partita IVA dell'impresa</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="11"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RagioneSociale">
+					<xs:annotation>
+						<xs:documentation>Ragione sociale dell'impresa</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="40"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CCNLApplicato">
+					<xs:annotation>
+						<xs:documentation>Indicare il Contratto Collettivo Nazionale applicato ai dipendenti dell’impresa, secondo la seguente codifica: 01 – Industria; 02 – Artigianato; 03 – Cooperazione; 04 – Piccola Media Industria CONFIMI; 05 - Piccola Media Industria CONFAPI . Il dato deve essere obbligatoriamente indicato ai fini della determinazione del fondo negoziale di riferimento per la previdenza complementare.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="2"/>
+							<xs:enumeration value="01"/>
+							<xs:enumeration value="02"/>
+							<xs:enumeration value="03"/>
+							<xs:enumeration value="04"/>
+							<xs:enumeration value="05"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DE_SituazioneDenuncia" nillable="true">
+					<xs:annotation>
+						<xs:documentation>Indicare in questo campo eventi di sospensione o cessazione dell'attività in riferimento alla Cassa Edile interessata con i seguenti valori: 
+3=sospensione
+4=cessazione</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DE_GiornoSituazione" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Indicare il giorno nel mese in cui si  verifica l'evento indicato nel campo SituazioneDenuncia. Se l'evento riguarda tutto il mese indicare il valore 01</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="2"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DE_TotDipImpresa" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Indicare il numero complessivo di tutti i dipendenti
+dell’impresa assunti a tempo indeterminato (operai,
+impiegati, quadri, dirigenti). Il dato deve essere complessivo e non riferito alla sola Cassa Edile cui
+è indirizzata la denuncia</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="5"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DE_TotOpeIndeterm" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Indicare il numero complessivo di tutti gli operai
+assunti a tempo pieno. Il dato deve essere complessivo
+e non riferito alla sola Cassa Edile cui è indirizzata
+la denuncia</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="5"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DE_TotOpePT" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Indicare il numero complessivo di tutti gli operai assunti a tempo parziale in forza nel mese di competenza della denuncia. Il dato deve essere complessivo e non riferito alla sola Cassa Edile cui è indirizzata la denuncia</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:totalDigits value="5"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:group ref="AltriDatiImpresa"/>
+				<xs:group ref="Compilatore"/>
+				<xs:element name="TotaleCantieri">
+					<xs:annotation>
+						<xs:documentation>Indicare il numero di cantieri presenti nella denuncia</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="3"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="TotaleLavoratori">
+					<xs:annotation>
+						<xs:documentation>Indicare il numero di lavoratori presenti nella denuncia</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="CNCE_Cantiere:CNCE_Cantiere" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="CNCE_Lavoratore:CNCE_Lavoratore" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="CNCE_LavoratoreNonDipendente:CNCE_LavoratoreNonDipendente" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="CNCE_Riepilogo:CNCE_Riepilogo"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="SedeLegale">
+		<xs:annotation>
+			<xs:documentation>Sede Legale dell'impresa</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SL_CAP">
+				<xs:annotation>
+					<xs:documentation>C.A.P. della sede legale dell’impresa </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SL_TipoVia">
+				<xs:annotation>
+					<xs:documentation>Tipologia (Via, Piazza, Vicolo etc.) di indirizzo della sede legale dell’impresa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SL_Indirizzo">
+				<xs:annotation>
+					<xs:documentation>Nome della Via, Piazza, etc. della sede legale dell’impresa. NOTA BENE: nel caso non sia temporaneamente possibile suddividere l’indirizzo nelle 3 parti componenti, è possibile accorpare l’intero indirizzo comprensivo di tipo via e n.civico in questo campo.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SL_NumeroCivico">
+				<xs:annotation>
+					<xs:documentation>Numero civico, Scala, Interno, etc. della sede legale dell’impresa. Se il numero civico non è disponibile indicare "snc"</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SL_Localita">
+				<xs:annotation>
+					<xs:documentation>Località ove è situata la sede legale</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SL_CodiceComune">
+				<xs:annotation>
+					<xs:documentation>Codice catastale del comune ove è situata la sede legale dell’impresa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SL_Comune">
+				<xs:annotation>
+					<xs:documentation>Denominazione del comune ove è situata la sede legale dell’impresa. E’ obbligatorio compilare il campo anche se è stato compilato il campo “SL_CodiceComune”</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SL_Provincia">
+				<xs:annotation>
+					<xs:documentation>Provincia ove è situata la sede legale dell’impresa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SL_Email">
+				<xs:annotation>
+					<xs:documentation>E-mail della sede legale dell’impresa; indicare l’indirizzo e-mail certificato (PEC) se disponibile</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SL_Telefono">
+				<xs:annotation>
+					<xs:documentation>Numero di telefono della sede legale dell’impresa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SL_Fax">
+				<xs:annotation>
+					<xs:documentation>Numero di fax della sede legale dell’impresa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SL_EmailPEC">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="SedeOperativa">
+		<xs:annotation>
+			<xs:documentation>Sede Operativa dell'impresa</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SO_CAP">
+				<xs:annotation>
+					<xs:documentation>C.A.P. della sede operativa dell’impresa </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SO_TipoVia">
+				<xs:annotation>
+					<xs:documentation>Tipologia (Via, Piazza, Vicolo etc.) di indirizzo della sede operativa dell’impresa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SO_Indirizzo">
+				<xs:annotation>
+					<xs:documentation>Nome della Via, Piazza, etc. della sede operativa dell’impresa. NOTA BENE: nel caso non sia temporaneamente possibile suddividere l’indirizzo nelle 3 parti componenti, è possibile accorpare l’intero indirizzo comprensivo di tipo via e n.civico in questo campo.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SO_NumeroCivico">
+				<xs:annotation>
+					<xs:documentation>Numero civico, Scala, Interno, etc. della sede operativa dell’impresa. Se il numero civico non è disponibile indicare "snc"</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SO_Localita">
+				<xs:annotation>
+					<xs:documentation>Località ove è situata la sede Operativa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SO_CodiceComune">
+				<xs:annotation>
+					<xs:documentation>Codice catastale del comune ove è situata la sede operativa dell’impresa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SO_Comune">
+				<xs:annotation>
+					<xs:documentation>Denominazione del comune ove è situata la sede operativa dell’impresa. E’ obbligatorio compilare il campo anche se è stato compilato il campo “SO_CodiceComune”</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SO_Provincia">
+				<xs:annotation>
+					<xs:documentation>Provincia ove è situata la sede operativa dell’impresa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SO_Email">
+				<xs:annotation>
+					<xs:documentation>E-mail della sede operativa dell’impresa; indicare l’indirizzo e-mail certificato (PEC) se disponibile</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SO_Telefono">
+				<xs:annotation>
+					<xs:documentation>Numero di telefono della sede operativa dell’impresa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SO_Fax">
+				<xs:annotation>
+					<xs:documentation>Numero di fax della sede operativa dell’impresa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SO_EmailPEC">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="CoordinateBancarie">
+		<xs:annotation>
+			<xs:documentation>Coordinate Bancarie Impresa</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="IM_CodPaese">
+				<xs:annotation>
+					<xs:documentation>Codice paese delle coordinate bancarie secondo la codifica IBAN (es. IT, SM, etc.)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="IM_CheckDigit">
+				<xs:annotation>
+					<xs:documentation>Check digit di controllo delle coordinate bancarie secondo la codifica IBAN</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="IM_CIN">
+				<xs:annotation>
+					<xs:documentation>CIN del conto corrente dell’impresa secondo la codifica BBAN</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="IM_ABI">
+				<xs:annotation>
+					<xs:documentation>Codice ABI del conto corrente dell’impresa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="IM_CAB">
+				<xs:annotation>
+					<xs:documentation>Codice CAB del conto corrente dell’impresa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="IM_ContoCorrente">
+				<xs:annotation>
+					<xs:documentation>Numero conto corrente dell’impresa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="12"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Compilatore">
+		<xs:annotation>
+			<xs:documentation>Dati del soggetto compilatore della denuncia</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CodiceConsulente">
+				<xs:annotation>
+					<xs:documentation>Nel caso di denuncia compilata dal consulente indicare il codice di iscrizione del consulente presso la Cassa Edile (se disponibile)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CodiceFiscaleConsulente">
+				<xs:annotation>
+					<xs:documentation>Codice fiscale del consulente o intermediario che ha compilato la denuncia</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="16"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ReferenteCompil">
+				<xs:annotation>
+					<xs:documentation>Indicare il riferimento della persona che ha compilato la denuncia</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TelefonoCompil">
+				<xs:annotation>
+					<xs:documentation>Indicare il riferimento telefonico della persona che ha compilato la denuncia</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="AltriDatiImpresa">
+		<xs:annotation>
+			<xs:documentation>Informazioni identificative dell'impresa</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CodiceINAIL">
+				<xs:annotation>
+					<xs:documentation>Posizione assicurativa INAIL dell’impresa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="12"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CodiceINPS">
+				<xs:annotation>
+					<xs:documentation>Posizione INPS dell’impresa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="12"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="NumeroIscrCCIAA">
+				<xs:annotation>
+					<xs:documentation>Numero iscrizione CCIAA dell’impresa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="7"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CodiceOrdinamento">
+				<xs:annotation>
+					<xs:documentation>Codice di riconoscimento dell'iimpresa da valorizzare a cura del software gestionale. Potrà essere utilizzato per ottenere dal sistema M.U.T. stampe cumulative ordinate secondo una codifica diversa da quella standard e guidata dal software gestionale stesso.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+</xs:schema>

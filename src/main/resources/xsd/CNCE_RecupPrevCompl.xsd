@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 sp2 (x64) (http://www.altova.com) by Mario Zoppellari (Zucchetti SPA) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://mut.cnce.it/schemas/denunce/recupPrevCompl" targetNamespace="http://mut.cnce.it/schemas/denunce/recupPrevCompl" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="CNCE_RecupPrevCompl">
+		<xs:annotation>
+			<xs:documentation>Recupero Mensilità pregresse Previdenza Complementare</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PRER_Anno">
+					<xs:annotation>
+						<xs:documentation>Anno di competenza versamento pregresso</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="PRER_Mese">
+					<xs:annotation>
+						<xs:documentation>Mese di competenza versamento pregresso</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="PRER_ContribLavoratore">
+					<xs:annotation>
+						<xs:documentation>Importo contributo obbligatorio a carico del lavoratore relativo al periodo anno / mese indicato</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="PRER_ContribVolontario">
+					<xs:annotation>
+						<xs:documentation>Importo contributo facoltativo a carico del lavoratore relativo al periodo anno / mese indicato</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="PRER_ContribDitta" nillable="true">
+					<xs:annotation>
+						<xs:documentation>Importo contributo a carico della ditta relativo al periodo anno / mese indicato</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="PRER_ContribContrattuale" nillable="true">
+					<xs:annotation>
+						<xs:documentation>Importo contributo Contrattuale a carico della ditta relativo al periodo anno / mese indicato</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:totalDigits value="6"/>
+							<xs:fractionDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="PRER_QuotaTFR">
+					<xs:annotation>
+						<xs:documentation>Importo contributo detratto dal TFR relativo al periodo anno / mese indicato</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="PRER_Rivalutazione">
+					<xs:annotation>
+						<xs:documentation>Importo della rivalutazione effettuata sulla quota TFR per effetto del decreto ex art. 1 comma 765 legge 296/06 del 30 Gennaio 2007,ovvero altri indennizzi richiesti dalla Cassa Edile per il ritardato versamento del contributo</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

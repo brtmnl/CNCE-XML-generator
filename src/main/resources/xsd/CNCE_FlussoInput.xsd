@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 (x64) (http://www.altova.com) by Mario Zoppellari (Zucchetti SPA) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://mut.cnce.it/schemas/denunce/flussoinput" xmlns:CNCE_Denuncia="http://mut.cnce.it/schemas/denunce/denuncia" xmlns:CNCE_Lavoratore="http://mut.cnce.it/schemas/denunce/lavoratore" xmlns:CNCE_Cantiere="http://mut.cnce.it/schemas/denunce/cantiere" xmlns:CNCE_Riepilogo="http://mut.cnce.it/schemas/denunce/riepilogo" xmlns:CNCE_Malattia="http://mut.cnce.it/schemas/denunce/malattia" xmlns:CNCE_AltriContributi="http://mut.cnce.it/schemas/denunce/altricontributi" xmlns:CNCE_FlussoInput="http://mut.cnce.it/schemas/denunce/flussoinput" xmlns:CNCE_LavoratoreNonDipendente="http://mut.cnce.it/schemas/denunce/lavoratorenondipendente" targetNamespace="http://mut.cnce.it/schemas/denunce/flussoinput" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Schema del flusso dei dati per l'acquisizione delle denunce nel M.U.T.</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://mut.cnce.it/schemas/denunce/denuncia" schemaLocation="CNCE_Denuncia.xsd"/>
+	<xs:import namespace="http://mut.cnce.it/schemas/denunce/cantiere" schemaLocation="CNCE_Cantiere.xsd"/>
+	<xs:import namespace="http://mut.cnce.it/schemas/denunce/lavoratore" schemaLocation="CNCE_Lavoratore.xsd"/>
+	<xs:import namespace="http://mut.cnce.it/schemas/denunce/lavoratorenondipendente" schemaLocation="CNCE_LavoratoreNonDipendente.xsd"/>
+	<xs:element name="CNCE_FlussoInput">
+		<xs:annotation>
+			<xs:documentation>Insieme delle Denunce prodotte dal gestionale</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DataCreazione" type="xs:date">
+					<xs:annotation>
+						<xs:documentation>Data di creazione del Flusso</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TotDenunceFornite" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>Numero totale delle denunce contenute nel flusso XML</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="IDProdSoftware">
+					<xs:annotation>
+						<xs:documentation>Identificativo rilasciato dal gestore nazionale del sistema M.U.T. alla software house che ha prodotto il flusso di input.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="20"/>
+							<xs:whiteSpace value="preserve"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="NomeProdSoftware">
+					<xs:annotation>
+						<xs:documentation>Nome del produttore del software gestionale che ha prodotto il flusso di input (da inserire in mancaza del campo “IDProdSoftware”)</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="20"/>
+							<xs:whiteSpace value="preserve"/>
+							<xs:minLength value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="VersioneFlusso">
+					<xs:annotation>
+						<xs:documentation>Inserire il numero di versione del flusso implementato. Per la presente versione inserire 2.3</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="3"/>
+							<xs:whiteSpace value="preserve"/>
+							<xs:minLength value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="CNCE_Denuncia:CNCE_Denuncia" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

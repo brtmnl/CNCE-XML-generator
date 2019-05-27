@@ -1,0 +1,931 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 (x64) (http://www.altova.com) by Mario Zoppellari (Zucchetti SPA) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://mut.cnce.it/schemas/denunce/riepilogo" xmlns:CNCE_AltriContributi="http://mut.cnce.it/schemas/denunce/altricontributi" targetNamespace="http://mut.cnce.it/schemas/denunce/riepilogo" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:import namespace="http://mut.cnce.it/schemas/denunce/altricontributi" schemaLocation="CNCE_AltriContributi.xsd"/>
+	<xs:element name="CNCE_Riepilogo">
+		<xs:annotation>
+			<xs:documentation>Informazioni di riepilogo</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RI_PercContributi">
+					<xs:annotation>
+						<xs:documentation>Indicare la percentuale applicata per il calcolo dei contributi dovuti alla Cassa Edile</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="7"/>
+									<xs:fractionDigits value="5"/>
+								</xs:restriction>
+							</xs:simpleType>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="0"/>
+									<xs:enumeration value=""/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_ImportoContributi">
+					<xs:annotation>
+						<xs:documentation>Importo totale dei contributi dovuti alla Cassa Edile</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:totalDigits value="7"/>
+									<xs:fractionDigits value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_ContributoAPE">
+					<xs:annotation>
+						<xs:documentation>Importo Totale dei Contributi APE Lavoratori già compreso nel Totale Contributi Cassa Edile (campo RI_ImportoContributi). FACOLTATIVO: il campo viene comunque calcolato nel MUT</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="9"/>
+									<xs:fractionDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_IntegrazioneAPE">
+					<xs:annotation>
+						<xs:documentation>Tolale degli eventuali Importi dell’ integrazione al minimo del Contributo APE Lavoratore, già compreso nel Totale Contributo APE Lavoratore (campo RI_ContributoAPE). FACOLTATIVO: il campo viene comunque calcolato nel MUT</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="9"/>
+									<xs:fractionDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_ContributoFondoSanitarioNaz">
+					<xs:annotation>
+						<xs:documentation>Importo Totale dei Contributi Fondo Sanitario Nazionale (Accordo CCNL Industria/Cooperazione del 18/07/2018). Incrementa il totale da versare</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="9"/>
+									<xs:fractionDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_ContributoFondoSanitarioNaz201810">
+					<xs:annotation>
+						<xs:documentation>Importo Totale dei Recuperi Contributi Fondo Sanitario Nazionale Ottobre 2018. Comunicazione CNCE n. 639 del 26/10/2018 e n. 640 del 30/10/2018 . Incrementa il totale da versare.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="9"/>
+									<xs:fractionDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_ContributoFondoSanitarioNaz201811">
+					<xs:annotation>
+						<xs:documentation>Importo Totale dei Recuperi Contributi Fondo Sanitario Nazionale Novembre 2018. Comunicazione CNCE n. 639 del 26/10/2018 e n. 640 del 30/10/2018. Incrementa il totale da versare</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="9"/>
+									<xs:fractionDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_ContributoFondoSanitarioNaz201812">
+					<xs:annotation>
+						<xs:documentation>Importo Totale dei Recuperi Contributi Fondo Sanitario Nazionale Dicembre 2018. Comunicazioni CNCE 639, 640 e 646. Incrementa il totale da versare</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="9"/>
+									<xs:fractionDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_ContributoFondoSanitarioNaz201901">
+					<xs:annotation>
+						<xs:documentation>Importo Totale dei Recuperi Contributi Fondo Sanitario Nazionale Gennaio 2019. Comunicazione CNCE 651. Incrementa il totale da versare</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="9"/>
+									<xs:fractionDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_VersaFondoSanNazImpiegati">
+					<xs:annotation>
+						<xs:documentation>Flag Impresa versa in denuncia Fondo Sanitario Nazionale Impiegati: S=Versa contributo in denuncia (valore default predefinito); N=Non versa contributo in denuncia
+</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_PercContrAssImpr">
+					<xs:annotation>
+						<xs:documentation>Indicare la percentuale applicata per il calcolo dei contributi associativi dovuti per le imprese iscritte all’ANCE della provincia</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="7"/>
+									<xs:fractionDigits value="5"/>
+								</xs:restriction>
+							</xs:simpleType>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_ImportoContrAssImpr">
+					<xs:annotation>
+						<xs:documentation>Contributo associativo per imprese iscritte all'ANCE della provincia</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="7"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_PercContrAssImprFP">
+					<xs:annotation>
+						<xs:documentation>Indicare la percentuale applicata per il calcolo dei contributi associativi dovuti per le imprese iscritte all’ANCE fuori provincia</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="7"/>
+									<xs:fractionDigits value="5"/>
+								</xs:restriction>
+							</xs:simpleType>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_ImportoContrAssImprFP">
+					<xs:annotation>
+						<xs:documentation>Contributo associativo per imprese iscritte all'ANCE fuori provincia</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="7"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_ImportoConguaglio">
+					<xs:annotation>
+						<xs:documentation>Indicare il totale di eventuali importi a Credito per l'impresa nei confronti della Cassa Edile per conguaglio relativo alla presente denuncia (esempio: conguaglio importi anticipati dall'impresa per indennit� di malattia)</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="7"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_ImportoCreditoPrec">
+					<xs:annotation>
+						<xs:documentation>Indicare il totale di eventuali importi a Credito per l’impresa nei confronti della Cassa Edile per conguaglio relativo a denunce precedenti </xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="7"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_ImportoDebitoPrec">
+					<xs:annotation>
+						<xs:documentation>Indicare il totale di eventuali importi a Debito per l’impresa nei confronti della Cassa Edile per conguaglio relativo a denunce precedenti</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="7"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_ImportoAltriDebiti">
+					<xs:annotation>
+						<xs:documentation>Indicare il totale di eventuali importi dovuti dall’impresa nei confronti della Cassa Edile per altre motivazioni  </xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="7"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_FondoPrepensionamento201810">
+					<xs:annotation>
+						<xs:documentation>Importo Recupero Contributo Fondo Prepensionamento Ottobre 2018. Comunicazione CNCE n. 639 del 26/10/2018 e n. 640 del 30/10/2018. Incrementa il totale da versare. </xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="9"/>
+									<xs:fractionDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_FondoPrepensionamento201811">
+					<xs:annotation>
+						<xs:documentation>Importo Recupero Contributo Fondo Prepensionamento Novembre 2018. Comunicazione CNCE n. 639 del 26/10/2018 e n. 640 del 30/10/2018. Incrementa il totale da versare. </xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="9"/>
+									<xs:fractionDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_FondoPrepensionamento201812">
+					<xs:annotation>
+						<xs:documentation>Importo Recupero Contributo Fondo Prepensionamento Dicembre 2018. Comunicazioni CNCE 639, 640 e 646. Incrementa il totale da versare. </xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="9"/>
+									<xs:fractionDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_FondoPrepensionamento201901">
+					<xs:annotation>
+						<xs:documentation>Importo Recupero Contributo Fondo Prepensionamento Gennaio 2019. Comunicazione CNCE 651. Incrementa il totale da versare. </xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="9"/>
+									<xs:fractionDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_FondoOccupazione">
+					<xs:annotation>
+						<xs:documentation>Importo Contributo Fondo Incentivazione Occupazione. Comunicazione CNCE n.652. Escluso dal totale dei contributi Cassa Edile. Incrementa il totale da versare. </xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="9"/>
+									<xs:fractionDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_FondoOccupazione201810">
+					<xs:annotation>
+						<xs:documentation>Importo Recupero Contributo Fondo Incentivazione Occupazione Ottobre 2018. Comunicazione CNCE n. 639 del 26/10/2018 e n. 640 del 30/10/2018. Incrementa il totale da versare</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="9"/>
+									<xs:fractionDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_FondoOccupazione201811">
+					<xs:annotation>
+						<xs:documentation>Importo Recupero Contributo Fondo Incentivazione Occupazione Novembre 2018. Comunicazione CNCE n. 639 del 26/10/2018 e n. 640 del 30/10/2018. Incrementa il totale da versare</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="9"/>
+									<xs:fractionDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_FondoOccupazione201812">
+					<xs:annotation>
+						<xs:documentation>Importo Recupero Contributo Fondo Incentivazione Occupazione Dicembre 2018. Comunicazioni CNCE 639, 640 e 646. Incrementa il totale da versare</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="9"/>
+									<xs:fractionDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_FondoOccupazione201901">
+					<xs:annotation>
+						<xs:documentation>Importo Recupero Contributo Fondo Incentivazione Occupazione Gennaio 2019. Comunicazione CNCE 652. Incrementa il totale da versare</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:totalDigits value="9"/>
+									<xs:fractionDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_TotaleDaVersare">
+					<xs:annotation>
+						<xs:documentation>Importo da versare alla Cassa Edile.  Se l’importo è negativo, lasciare questo valore a zero e compilare il valore [RI_TotaleaCredito]</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:totalDigits value="9"/>
+							<xs:fractionDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RI_TotaleaCredito">
+					<xs:annotation>
+						<xs:documentation>Importo a credito per la corrente denuncia, da compilare qualora il campo [RI_TotaleDaVersare] sia minore di zero </xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="7"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:group ref="Arretrati_Recuperi" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="CNCE_AltriContributi:CNCE_AltriContributi" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="Arretrati_Recuperi">
+		<xs:annotation>
+			<xs:documentation>In questo gruppo di informazioni sono previsti fino a 12 gruppi “facoltativi” di campi Anno, Mese, Tipo Importo e Importo recupero per indicare fino a 12 periodi (mesi) di recupero dei Contributi. </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RI_RecuperoAnno1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al primo periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoMese1" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al primo periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoTipo1" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Tipologia di importo o contributo di recupero (P=Fondo Prepensionamento, O=Fondo Occupazione)</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoImporto1" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero del Contributo relativo al periodo 1 e Tipo 1</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="9"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoAnno2" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al secondo periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoMese2" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al secondo periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoTipo2" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Tipologia di importo o contributo di recupero (P=Fondo Prepensionamento, O=Fondo Occupazione)</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoImporto2" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero del Contributo relativo al periodo 2 e Tipo 2</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="9"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoAnno3" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al terzo periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoMese3" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al terzo periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoTipo3" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Tipologia di importo o contributo di recupero (P=Fondo Prepensionamento, O=Fondo Occupazione)</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoImporto3" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero del Contributo relativo al periodo 3 e Tipo 3</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="9"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoAnno4" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al quarto periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoMese4" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al quarto periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoTipo4" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Tipologia di importo o contributo di recupero (P=Fondo Prepensionamento, O=Fondo Occupazione)</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoImporto4" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero del Contributo relativo al periodo 4 e Tipo 4</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="9"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoAnno5" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al quinto periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoMese5" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al quinto periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoTipo5" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Tipologia di importo o contributo di recupero (P=Fondo Prepensionamento, O=Fondo Occupazione)</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoImporto5" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero del Contributo relativo al periodo 5 e Tipo 5</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="9"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoAnno6" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al sesto periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoMese6" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al sesto periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoTipo6" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Tipologia di importo o contributo di recupero (P=Fondo Prepensionamento, O=Fondo Occupazione)</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoImporto6" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero del Contributo relativo al periodo 6 e Tipo 6</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="9"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoAnno7" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al settimo periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoMese7" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al settimo periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoTipo7" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Tipologia di importo o contributo di recupero (P=Fondo Prepensionamento, O=Fondo Occupazione)</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoImporto7" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero del Contributo relativo al periodo 7 e Tipo 7</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="9"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoAnno8" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al ottavo periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoMese8" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al ottavo periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoTipo8" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Tipologia di importo o contributo di recupero (P=Fondo Prepensionamento, O=Fondo Occupazione)</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoImporto8" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero del Contributo relativo al periodo 8 e Tipo 8</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="9"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoAnno9" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al nono periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoMese9" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al nono periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoTipo9" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Tipologia di importo o contributo di recupero (P=Fondo Prepensionamento, O=Fondo Occupazione)</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoImporto9" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero del Contributo relativo al periodo 9 e Tipo 9</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="9"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoAnno10" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al decimo periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoMese10" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al decimo periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoTipo10" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Tipologia di importo o contributo di recupero (P=Fondo Prepensionamento, O=Fondo Occupazione)</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoImporto10" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero del Contributo relativo al periodo 10 e Tipo 10</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="9"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoAnno11" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al undicesimo periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoMese11" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al undicesimo periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoTipo11" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Tipologia di importo o contributo di recupero (P=Fondo Prepensionamento, O=Fondo Occupazione)</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoImporto11" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero del Contributo relativo al periodo 11 e Tipo 11</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="9"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoAnno12" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anno relativo al dodicesimo periodo di recupero</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="4"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoMese12" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Mese relativo al dodicesimo periodo di recupero</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="2"/>
+						<xs:fractionDigits value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoTipo12" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Tipologia di importo o contributo di recupero (P=Fondo Prepensionamento, O=Fondo Occupazione)</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RI_RecuperoImporto12" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>Importo Recupero del Contributo relativo al periodo 12 e Tipo 12</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="9"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+</xs:schema>

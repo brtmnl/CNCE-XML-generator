@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://mut.cnce.it/schemas/denunce/altricontributi" targetNamespace="http://mut.cnce.it/schemas/denunce/altricontributi" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="CNCE_AltriContributi">
+		<xs:annotation>
+			<xs:documentation>Indicazione di specifiche contribuzioni aggiuntive rispetto a quanto previsto nel nodo CNCE_Riepilogo</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AC_CodiceContributo">
+					<xs:annotation>
+						<xs:documentation>Indicare il codice del contributo aggiuntivo. Il codice da utilizzare deve essere comunicato dalla Cassa Edile destinataria; se non è stabilito un codice, utilizzare il campo “AC_DescrContributo”</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="AC_DescrContributo">
+					<xs:annotation>
+						<xs:documentation>Indicare la descrizione del contributo aggiuntivo se non è disponibile il valore del campo “AC_CodiceContributo”</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="AC_PercContributo">
+					<xs:annotation>
+						<xs:documentation>Indicare la percentuale applicata per il calcolo del contributo</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:totalDigits value="7"/>
+							<xs:fractionDigits value="5"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="AC_ImportoContributo">
+					<xs:annotation>
+						<xs:documentation>Indicare l’importo del contributo aggiuntivo</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="7"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 sp2 (x64) (http://www.altova.com) by Mario Zoppellari (Zucchetti SPA) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://mut.cnce.it/schemas/denunce/malattia" targetNamespace="http://mut.cnce.it/schemas/denunce/malattia" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="CNCE_Malattia">
+		<xs:annotation>
+			<xs:documentation>Dati Malattia o Infortunio</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MAL_DataInizio" type="xs:date">
+					<xs:annotation>
+						<xs:documentation>Indicare la data di effettivo inizio della malattia, infortunio o malattia professionale, anche se avvenuto nei mesi precedenti.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="MAL_GiornoFine">
+					<xs:annotation>
+						<xs:documentation>Indicare il giorno di termine di malattia, infortunio o malattia professionale nel caso in cui questo ricada all'interno del mese di riferimento della denuncia.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:totalDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="MAL_ContinuazMalattia">
+					<xs:annotation>
+						<xs:documentation>Indicare “C” se l’evento di malattia, infortunio o malattia professionale prosegue nel mese successivo; lasciare in bianco se l’evento si conclude interamente nel mese. Questo campo va utilizzato sempre in combinazione con il campo precedente MAL_GiornoFine. Esempio: - malattia che inizia il giorno 20 e termina il giorno 30 del mese, nel campo MAL_GiornoFine inserire il valore "30" e lasciare in bianco il campo MAL_ChiusuraMalattia; - malattia che inizia il giorno 20 e prosegue nel mese successivo, lasciare in bianco il campo MAL_GiornoFine e inserire il valore “C” nel campo MAL_ChiusuraMalattia</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="MAL_Tipo">
+					<xs:annotation>
+						<xs:documentation>Indicare "M" nel caso di malattia, "I" nel caso di infortunio o malattia professionale.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="MAL_Ricaduta">
+					<xs:annotation>
+						<xs:documentation>Indicare "S" nel caso in cui l'evento sia dovuto ad una ricaduta.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="MAL_GiornoInizio" nillable="true">
+					<xs:annotation>
+						<xs:documentation>Nel caso di evento di ricaduta, indicare il giorno effettivo di inizio della malattia nel mese</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:totalDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="MAL_OreCarenza">
+					<xs:annotation>
+						<xs:documentation>Ore di carenza applicabili a questo evento di malattia o infortunio</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="2"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="MAL_OreMalattiaInfort">
+					<xs:annotation>
+						<xs:documentation>Ore di assenza dovute a questo evento di malattia o infortunio, escluse le ore di carenza</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="3"/>
+							<xs:fractionDigits value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="MAL_OreAssenzaIngiust" nillable="true">
+					<xs:annotation>
+						<xs:documentation>Indicare il numero delle ore di assenza  ingiustificata nel mese precedente l'evento</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="3"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="MAL_ConguaglioRimborso" nillable="true">
+					<xs:annotation>
+						<xs:documentation>Indicare l'importo della somma corrisposta al lavoratore, di cui all'impresa compete il rimborso o il conguaglio da parte della Cassa Edile. L'importo va arrotondato all'unità di euro.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="MAL_NumProtocolloCert1">
+					<xs:annotation>
+						<xs:documentation>Numero di protocollo del certificato medico telematico che copre in tutto o in parte l’evento di malattia dichiarato.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="MAL_NumProtocolloCert2">
+					<xs:annotation>
+						<xs:documentation>Numero di protocollo di ulteriore (se presente) certificato medico telematico che copre in tutto o in parte l’evento di malattia dichiarato.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="MAL_NumProtocolloCert3">
+					<xs:annotation>
+						<xs:documentation>Numero di protocollo di ulteriore (se presente) certificato medico telematico che copre in tutto o in parte l’evento di malattia dichiarato.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="MAL_NumProtocolloCert4">
+					<xs:annotation>
+						<xs:documentation>Numero di protocollo di ulteriore (se presente) certificato medico telematico che copre in tutto o in parte l’evento di malattia dichiarato.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="MAL_NumProtocolloCert5">
+					<xs:annotation>
+						<xs:documentation>Numero di protocollo di ulteriore (se presente) certificato medico telematico che copre in tutto o in parte l’evento di malattia dichiarato.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="MAL_RetrGGINPS">
+					<xs:annotation>
+						<xs:documentation>Retribuzione giornaliera (non oraria) INPS intera (al 100%).</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:totalDigits value="6"/>
+							<xs:fractionDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
