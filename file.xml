@@ -219,6 +219,66 @@
         <LV_ImponibileTFR />
         <TFR_ImponibileINPS />
       </Imponibili>
+      <OreLavoratore>
+        <ORE_Malattia />
+        <ORE_Infortunio />
+        <ORE_Carenza />
+        <ORE_Ferie>
+          <ORE_Ferie />
+          <OREFE_FerieAC />
+          <OREFE_FerieResudueAP />
+        </ORE_Ferie>
+        <ORE_CassaIntegrazione>
+          <ORE_CiG />
+          <ORECIG_Maltempo />
+          <ORECIG_Altro />
+          <ORECIG_Ordinaria />
+          <ORECIG_Straordinaria />
+          <ORECIG_Deroga />
+        </ORE_CassaIntegrazione>
+        <ORE_Congedi>
+          <ORECO_TotaleOreCo />
+          <ORECO_Matrim />
+          <ORECO_Matern />
+          <ORECO_ServMil />
+        </ORE_Congedi>
+        <ORE_PermNonRetr />
+        <ORE_RiduzioneOrario />
+        <ORE_AggiuntiveAPE />
+        <ORE_AssenzaGiust>
+          <OREAG_TotaleOreAG />
+          <OREAG_PermSind />
+          <OREAG_AssembSind />
+          <ORE_PermessiRetribuiti>
+            <OREAG_PermRetrib />
+            <OREAG_PermRetribAC />
+            <OREAG_PermRetribAP />
+          </ORE_PermessiRetribuiti>
+          <OREAG_MaternFacolt />
+          <OREAG_CorsiForm />
+          <OREAG_PermStud />
+          <OREAG_ProvvDiscip />
+          <OREAG_FunzElett />
+          <OREAG_CongParent />
+          <OREAG_ProvvAutGiud />
+          <OREAG_FerieCollNonMat />
+          <OREAG_DichAltreCE />
+          <OREAG_Scioperi />
+          <OREAG_AssIngSanz />
+          <OREAG_AspettNonRetr />
+          <OREAG_DonazSangue />
+          <OREAG_L104 />
+          <OREAG_CongStraord />
+          <OREAG_PermLutto />
+          <OREAG_AspettSindac />
+        </ORE_AssenzaGiust>
+        <ORE_sanzionabili>
+          <ORESA_TotaleOreSanz />
+          <ORESA_FerieSanzionabili />
+          <ORESA_PermNonRetrSanz />
+          <ORESA_PermRetrSanz />
+        </ORE_sanzionabili>
+      </OreLavoratore>
       <Accantonamenti>
         <LV_AccantonGNF />
         <LV_AccantonGNFMalInf />
@@ -280,10 +340,27 @@
         <LV_RecuperoFSNMese12 />
         <LV_RecuperoFSNImporto12 />
       </Arretrati_FSN>
+      <DatiPREVIDENZACOMPLEMENTARE>
+        <PRE_AdesioneFondo />
+        <PRE_AdesioneSilente />
+        <PRE_TipoAdesione />
+        <PRE_FlagDataAdesione />
+        <PRE_ContribLavoratore />
+        <PRE_ContribVolontario />
+        <PRE_ContribDitta />
+        <PRE_ContribContrattuale />
+        <PRE_QuotaTFR />
+      </DatiPREVIDENZACOMPLEMENTARE>
       <DatiContributoContrattualeCooperativo>
         <PRE_VersContribContrattCOOP />
         <PRE_ContribContrattCOOP />
       </DatiContributoContrattualeCooperativo>
+      <OpzioniPREVIDENZACOMPLEMENTARE>
+        <PRE_CodiceFondo />
+        <PRE_NumAlboCOVIP />
+        <PRE_SceltaPrevidenza />
+        <PRE_DataSorroscrTFR />
+      </OpzioniPREVIDENZACOMPLEMENTARE>
       <RecuperoPREVCOMPL>
         <PREP_AnnoDa />
         <PREP_MeseDa />
@@ -311,6 +388,36 @@
       <LV_SantoPatrono />
       <LV_NormaPremiali />
       <LV_Note />
+      <CNCE_Malattia>
+        <MAL_DataInizio />
+        <MAL_GiornoFine />
+        <MAL_ContinuazMalattia />
+        <MAL_Tipo />
+        <MAL_Ricaduta />
+        <MAL_GiornoInizio />
+        <MAL_OreCarenza />
+        <MAL_OreMalattiaInfort />
+        <MAL_OreAssenzaIngiust />
+        <MAL_ConguaglioRimborso />
+        <MAL_NumProtocolloCert1 />
+        <MAL_NumProtocolloCert2 />
+        <MAL_NumProtocolloCert3 />
+        <MAL_NumProtocolloCert4 />
+        <MAL_NumProtocolloCert5 />
+        <elem_MAL_RetrGGINPSS />
+      </CNCE_Malattia>
+      <RecuperoPREVCOMPL>
+        <PREP_AnnoDa />
+        <PREP_MeseDa />
+        <PREP_AnnoA />
+        <PREP_MeseA />
+        <PREP_ContribLavoratore />
+        <PREP_ContribVolontario />
+        <PREP_ContribDitta />
+        <PREP_ContribContrattuale />
+        <PREP_QuotaTFR />
+        <PREP_Rivalutazione />
+      </RecuperoPREVCOMPL>
     </CNCE_Lavoratore>
   </CNCE_Denuncia>
 </CNCE_FlussoInput>
