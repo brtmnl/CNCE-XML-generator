@@ -16,14 +16,19 @@ public class FlussoInput {
 		Element elem_CNCE_Denuncia = new Element("CNCE_Denuncia", ns_CNCE_Denuncia);
 
 		Element elem_CassaEdileDest = new Element("CassaEdileDest");
+		elem_CassaEdileDest.setText("valore");
 		elem_CNCE_Denuncia.addContent(elem_CassaEdileDest);
 		Element elem_CodiceImpresa = new Element("CodiceImpresa");
+		elem_CodiceImpresa.setText("valore");
 		elem_CNCE_Denuncia.addContent(elem_CodiceImpresa);
 		Element elem_AnnoDenuncia = new Element("AnnoDenuncia");
+		elem_AnnoDenuncia.setText("valore");
 		elem_CNCE_Denuncia.addContent(elem_AnnoDenuncia);
 		Element elem_MeseDenuncia = new Element("MeseDenuncia");
+		elem_MeseDenuncia.setText("valore");
 		elem_CNCE_Denuncia.addContent(elem_MeseDenuncia);
 		Element elem_SequenzaDenuncia = new Element("SequenzaDenuncia");
+		elem_SequenzaDenuncia.setText("valore");
 		elem_CNCE_Denuncia.addContent(elem_SequenzaDenuncia);
 
 		elem_CNCE_Denuncia.addContent(generateSedeOperativa());
@@ -31,31 +36,41 @@ public class FlussoInput {
 		elem_CNCE_Denuncia.addContent(generateCoordinateBancarie());
 
 		Element elem_CodiceFiscale = new Element("CodiceFiscale");
+		elem_CodiceFiscale.setText("valore");
 		elem_CNCE_Denuncia.addContent(elem_CodiceFiscale);
 		Element elem_PartitaIVA = new Element("PartitaIVA");
+		elem_PartitaIVA.setText("valore");
 		elem_CNCE_Denuncia.addContent(elem_PartitaIVA);
 		Element elem_RagioneSociale = new Element("RagioneSociale");
+		elem_RagioneSociale.setText("valore");
 		elem_CNCE_Denuncia.addContent(elem_RagioneSociale);
 		Element elem_CCNLApplicato = new Element("CCNLApplicato");
+		elem_CCNLApplicato.setText("valore");
 		elem_CNCE_Denuncia.addContent(elem_CCNLApplicato);
 		Element elem_DE_SituazioneDenuncia = new Element("DE_SituazioneDenuncia");
+		elem_DE_SituazioneDenuncia.setText("valore");
 		elem_CNCE_Denuncia.addContent(elem_DE_SituazioneDenuncia);
-
 		Element elem_DE_GiornoSituazione = new Element("DE_GiornoSituazione");
+		elem_DE_GiornoSituazione.setText("valore");
 		elem_CNCE_Denuncia.addContent(elem_DE_GiornoSituazione);
 		Element elem_DE_TotDipImpresa = new Element("DE_TotDipImpresa");
+		elem_DE_TotDipImpresa.setText("valore");
 		elem_CNCE_Denuncia.addContent(elem_DE_TotDipImpresa);
 		Element elem_DE_TotOpeIndeterm = new Element("DE_TotOpeIndeterm");
+		elem_DE_TotOpeIndeterm.setText("valore");
 		elem_CNCE_Denuncia.addContent(elem_DE_TotOpeIndeterm);
 		Element elem_DE_TotOpePT = new Element("DE_TotOpePT");
+		elem_DE_TotOpePT.setText("valore");
 		elem_CNCE_Denuncia.addContent(elem_DE_TotOpePT);
 
 		elem_CNCE_Denuncia.addContent(generateAltriDatiImpresa());
 		elem_CNCE_Denuncia.addContent(generateCompilatore());
 
 		Element elem_TotaleCantieri = new Element("TotaleCantieri");
+		elem_TotaleCantieri.setText("valore");
 		elem_CNCE_Denuncia.addContent(elem_TotaleCantieri);
 		Element elem_TotaleLavoratori = new Element("TotaleLavoratori");
+		elem_TotaleLavoratori.setText("valore");
 		elem_CNCE_Denuncia.addContent(elem_TotaleLavoratori);
 
 		elem_CNCE_Denuncia.addContent(generateCNCE_Cantiere());
@@ -70,28 +85,40 @@ public class FlussoInput {
 		Element elem_SedeOperativa = new Element("SedeOperativa");
 
 		Element elem_SO_CAP = new Element("SO_CAP");
+		elem_SO_CAP.setText("valore");
 		elem_SedeOperativa.addContent(elem_SO_CAP);
 		Element elem_SO_TipoVia = new Element("SO_TipoVia");
+		elem_SO_TipoVia.setText("valore");
 		elem_SedeOperativa.addContent(elem_SO_TipoVia);
 		Element elem_SO_Indirizzo = new Element("SO_Indirizzo");
+		elem_SO_Indirizzo.setText("valore");
 		elem_SedeOperativa.addContent(elem_SO_Indirizzo);
 		Element elem_SO_NumeroCivico = new Element("SO_NumeroCivico");
+		elem_SO_NumeroCivico.setText("valore");
 		elem_SedeOperativa.addContent(elem_SO_NumeroCivico);
 		Element elem_SO_Località = new Element("SO_Località");
+		elem_SO_Località.setText("valore");
 		elem_SedeOperativa.addContent(elem_SO_Località);
 		Element elem_SO_CodiceComune = new Element("SO_CodiceComune");
+		elem_SO_CodiceComune.setText("valore");
 		elem_SedeOperativa.addContent(elem_SO_CodiceComune);
 		Element elem_SO_Comune = new Element("SO_Comune");
+		elem_SO_Comune.setText("valore");
 		elem_SedeOperativa.addContent(elem_SO_Comune);
 		Element elem_SO_Provincia = new Element("SO_Provincia");
+		elem_SO_Provincia.setText("valore");
 		elem_SedeOperativa.addContent(elem_SO_Provincia);
 		Element elem_SO_Email = new Element("SO_Email");
+		elem_SO_Email.setText("valore");
 		elem_SedeOperativa.addContent(elem_SO_Email);
 		Element elem_SO_Telefono = new Element("SO_Telefono");
+		elem_SO_Telefono.setText("valore");
 		elem_SedeOperativa.addContent(elem_SO_Telefono);
 		Element elem_SO_Fax = new Element("SO_Fax");
+		elem_SO_Fax.setText("valore");
 		elem_SedeOperativa.addContent(elem_SO_Fax);
 		Element elem_SO_EmailPEC = new Element("SO_EmailPEC");
+		elem_SO_EmailPEC.setText("valore");
 		elem_SedeOperativa.addContent(elem_SO_EmailPEC);
 
 		return elem_SedeOperativa;
@@ -101,28 +128,40 @@ public class FlussoInput {
 		Element elem_SedeLegale = new Element("SedeLegale");
 
 		Element elem_SL_CAP = new Element("SL_CAP");
+		elem_SL_CAP.setText("valore");
 		elem_SedeLegale.addContent(elem_SL_CAP);
 		Element elem_SL_TipoVia = new Element("SL_TipoVia");
+		elem_SL_TipoVia.setText("valore");
 		elem_SedeLegale.addContent(elem_SL_TipoVia);
 		Element elem_SL_Indirizzo = new Element("SL_Indirizzo");
+		elem_SL_Indirizzo.setText("valore");
 		elem_SedeLegale.addContent(elem_SL_Indirizzo);
 		Element elem_SL_NumeroCivico = new Element("SL_NumeroCivico");
+		elem_SL_NumeroCivico.setText("valore");
 		elem_SedeLegale.addContent(elem_SL_NumeroCivico);
 		Element elem_SL_Località = new Element("SL_Località");
+		elem_SL_Località.setText("valore");
 		elem_SedeLegale.addContent(elem_SL_Località);
 		Element elem_SL_CodiceComune = new Element("SL_CodiceComune");
+		elem_SL_CodiceComune.setText("valore");
 		elem_SedeLegale.addContent(elem_SL_CodiceComune);
 		Element elem_SL_Comune = new Element("SL_Comune");
+		elem_SL_Comune.setText("valore");
 		elem_SedeLegale.addContent(elem_SL_Comune);
 		Element elem_SL_Provincia = new Element("SL_Provincia");
+		elem_SL_Provincia.setText("valore");
 		elem_SedeLegale.addContent(elem_SL_Provincia);
 		Element elem_SL_Email = new Element("SL_Email");
+		elem_SL_Email.setText("valore");
 		elem_SedeLegale.addContent(elem_SL_Email);
 		Element elem_SL_Telefono = new Element("SL_Telefono");
+		elem_SL_Telefono.setText("valore");
 		elem_SedeLegale.addContent(elem_SL_Telefono);
 		Element elem_SL_Fax = new Element("SL_Fax");
+		elem_SL_Fax.setText("valore");
 		elem_SedeLegale.addContent(elem_SL_Fax);
 		Element elem_SL_EmailPEC = new Element("SL_EmailPEC");
+		elem_SL_EmailPEC.setText("valore");
 		elem_SedeLegale.addContent(elem_SL_EmailPEC);
 
 		return elem_SedeLegale;
@@ -132,16 +171,22 @@ public class FlussoInput {
 		Element elem_CoordinateBancarie = new Element("CoordinateBancarie");
 
 		Element elem_IM_CodPaese = new Element("IM_CodPaese");
+		elem_IM_CodPaese.setText("valore");
 		elem_CoordinateBancarie.addContent(elem_IM_CodPaese);
 		Element elem_IM_CheckDigit = new Element("IM_CheckDigit");
+		elem_IM_CheckDigit.setText("valore");
 		elem_CoordinateBancarie.addContent(elem_IM_CheckDigit);
 		Element elem_IM_CIN = new Element("IM_CIN");
+		elem_IM_CIN.setText("valore");
 		elem_CoordinateBancarie.addContent(elem_IM_CIN);
 		Element elem_IM_ABI = new Element("IM_ABI");
+		elem_IM_ABI.setText("valore");
 		elem_CoordinateBancarie.addContent(elem_IM_ABI);
 		Element elem_IM_CAB = new Element("IM_CAB");
+		elem_IM_CAB.setText("valore");
 		elem_CoordinateBancarie.addContent(elem_IM_CAB);
 		Element elem_IM_ContoCorrente = new Element("IM_ContoCorrente");
+		elem_IM_ContoCorrente.setText("valore");
 		elem_CoordinateBancarie.addContent(elem_IM_ContoCorrente);
 
 		return elem_CoordinateBancarie;
@@ -151,12 +196,16 @@ public class FlussoInput {
 		Element elem_Compilatore = new Element("Compilatore");
 
 		Element elem_CodiceConsulente = new Element("CodiceConsulente");
+		elem_CodiceConsulente.setText("valore");
 		elem_Compilatore.addContent(elem_CodiceConsulente);
 		Element elem_CodiceFiscaleConsulent = new Element("CodiceFiscaleConsulent");
+		elem_CodiceFiscaleConsulent.setText("valore");
 		elem_Compilatore.addContent(elem_CodiceFiscaleConsulent);
 		Element elem_ReferenteCompil = new Element("ReferenteCompil");
+		elem_ReferenteCompil.setText("valore");
 		elem_Compilatore.addContent(elem_ReferenteCompil);
 		Element elem_TelefonoCompil = new Element("TelefonoCompil");
+		elem_TelefonoCompil.setText("valore");
 		elem_Compilatore.addContent(elem_TelefonoCompil);
 
 		return elem_Compilatore;
@@ -166,12 +215,16 @@ public class FlussoInput {
 		Element elem_AltriDatiImpresa = new Element("AltriDatiImpresa");
 
 		Element elem_CodiceINAIL = new Element("CodiceINAIL");
+		elem_CodiceINAIL.setText("valore");
 		elem_AltriDatiImpresa.addContent(elem_CodiceINAIL);
 		Element elem_CodiceINPS = new Element("CodiceINPS");
+		elem_CodiceINPS.setText("valore");
 		elem_AltriDatiImpresa.addContent(elem_CodiceINPS);
 		Element elem_NumeroIscrCCIAA = new Element("NumeroIscrCCIAA");
+		elem_NumeroIscrCCIAA.setText("valore");
 		elem_AltriDatiImpresa.addContent(elem_NumeroIscrCCIAA);
 		Element elem_CodiceOrdinamento = new Element("CodiceOrdinamento");
+		elem_CodiceOrdinamento.setText("valore");
 		elem_AltriDatiImpresa.addContent(elem_CodiceOrdinamento);
 
 		return elem_AltriDatiImpresa;
@@ -181,20 +234,28 @@ public class FlussoInput {
 		Element elem_CNCE_Cantiere = new Element("CNCE_Cantiere");
 
 		Element elem_CA_CAP = new Element("CA_CAP");
+		elem_CA_CAP.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_CAP);
 		Element elem_CA_TipoVia = new Element("CA_TipoVia");
+		elem_CA_TipoVia.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_TipoVia);
 		Element elem_CA_Indirizzo = new Element("CA_Indirizzo");
+		elem_CA_Indirizzo.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_Indirizzo);
 		Element elem_CA_NumeroCivico = new Element("CA_NumeroCivico");
+		elem_CA_NumeroCivico.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_NumeroCivico);
 		Element elem_CA_Località = new Element("CA_Località");
+		elem_CA_Località.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_Località);
 		Element elem_CA_CodiceComune = new Element("CA_CodiceComune");
+		elem_CA_CodiceComune.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_CodiceComune);
 		Element elem_CA_Comune = new Element("CA_Comune");
+		elem_CA_Comune.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_Comune);
 		Element elem_CA_Provincia = new Element("CA_Provincia");
+		elem_CA_Provincia.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_Provincia);
 
 		return elem_CNCE_Cantiere;
@@ -206,75 +267,109 @@ public class FlussoInput {
 		Element elem_CNCE_Cantiere = new Element("CNCE_Cantiere", ns_CNCE_Cantiere);
 
 		Element elem_CA_NumeroProg = new Element("A_NumeroProg");
+		elem_CA_NumeroProg.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_NumeroProg);
 		Element elem_CA_CodCantierCE = new Element("CA_CodCantierCE");
+		elem_CA_CodCantierCE.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_CodCantierCE);
 		Element elem_CA_CodiceIdentificativoMUT = new Element("CA_CodiceIdentificativoMUT");
+		elem_CA_CodiceIdentificativoMUT.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_CodiceIdentificativoMUT);
 		Element elem_CA_Denominazione1 = new Element("CA_Denominazione1");
+		elem_CA_Denominazione1.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_Denominazione1);
 		Element elem_CA_Denominazione2 = new Element("CA_Denominazione2");
+		elem_CA_Denominazione2.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_Denominazione2);
 		Element elem_CA_ProtocolloNormPostSisma = new Element("CA_ProtocolloNormPostSisma");
+		elem_CA_ProtocolloNormPostSisma.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_ProtocolloNormPostSisma);
 		Element elem_CA_FlagCantierePostSisma = new Element("CA_FlagCantierePostSisma");
+		elem_CA_FlagCantierePostSisma.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_FlagCantierePostSisma);
 		Element elem_CA_ProtocolloSisma2016 = new Element("CA_ProtocolloSisma2016");
+		elem_CA_ProtocolloSisma2016.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_ProtocolloSisma2016);
 		Element elem_CA_FlagCantiereSisma2016 = new Element("CA_FlagCantiereSisma2016");
+		elem_CA_FlagCantiereSisma2016.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_FlagCantiereSisma2016);
 		Element elem_CA_CantiereGenerico = new Element("CA_CantiereGenerico");
+		elem_CA_CantiereGenerico.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_CantiereGenerico);
 
 		elem_CNCE_Cantiere.addContent(generateIndirizzoCantiere());
 
 		Element elem_CA_AnnoInizio = new Element("CA_AnnoInizio");
+		elem_CA_AnnoInizio.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_AnnoInizio);
 		Element elem_CA_MeseInizio = new Element("CA_MeseInizio");
+		elem_CA_MeseInizio.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_MeseInizio);
 		Element elem_CA_TipoCommittente = new Element("CA_TipoCommittente");
+		elem_CA_TipoCommittente.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_TipoCommittente);
 		Element elem_CA_TipoLavoro = new Element("CA_TipoLavoro");
+		elem_CA_TipoLavoro.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_TipoLavoro);
 		Element elem_CA_CodFiscCommittente = new Element("CA_CodFiscCommittente");
+		elem_CA_CodFiscCommittente.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_CodFiscCommittente);
 		Element elem_CA_DenominazioneCommittente = new Element("CA_DenominazioneCommittente");
+		elem_CA_DenominazioneCommittente.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_DenominazioneCommittente);
 		Element elem_CA_TipoViaComm = new Element("CA_TipoViaComm");
+		elem_CA_TipoViaComm.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_TipoViaComm);
 		Element elem_CA_IndirizzoComm = new Element("CA_IndirizzoComm");
+		elem_CA_IndirizzoComm.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_IndirizzoComm);
 		Element elem_CA_NumeroCivicoComm = new Element("CA_NumeroCivicoComm");
+		elem_CA_NumeroCivicoComm.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_NumeroCivicoComm);
 		Element elem_CA_CAPCommittente = new Element("CA_CAPCommittente");
+		elem_CA_CAPCommittente.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_CAPCommittente);
 		Element elem_CA_CodiceComuneComm = new Element("CA_CodiceComuneComm");
+		elem_CA_CodiceComuneComm.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_CodiceComuneComm);
 		Element elem_CA_ComuneComm = new Element("CA_ComuneComm");
+		elem_CA_ComuneComm.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_ComuneComm);
 		Element elem_CA_ProvinciaComm = new Element("CA_ProvinciaComm");
+		elem_CA_ProvinciaComm.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_ProvinciaComm);
-		Element elem_CA_CodFiscaleAppaltator = new Element("CA_CodFiscaleAppaltator");
-		elem_CNCE_Cantiere.addContent(elem_CA_CodFiscaleAppaltator);
-		Element elem_CA_DenominazioneAppaltator = new Element("CA_DenominazioneAppaltator");
-		elem_CNCE_Cantiere.addContent(elem_CA_DenominazioneAppaltator);
-		Element elem_CA_Attivita07 = new Element("CA_Attivita07");
-		elem_CNCE_Cantiere.addContent(elem_CA_Attivita07);
+		Element elem_CA_CodFiscaleAppaltatore = new Element("CA_CodFiscaleAppaltatore");
+		elem_CA_CodFiscaleAppaltatore.setText("valore");
+		elem_CNCE_Cantiere.addContent(elem_CA_CodFiscaleAppaltatore);
+		Element elem_CA_DenominazioneAppaltatore = new Element("CA_DenominazioneAppaltatore");
+		elem_CA_DenominazioneAppaltatore.setText("valore");
+		elem_CNCE_Cantiere.addContent(elem_CA_DenominazioneAppaltatore);
+		Element elem_CA_Attività07 = new Element("CA_Attività07");
+		elem_CA_Attività07.setText("valore");
+		elem_CNCE_Cantiere.addContent(elem_CA_Attività07);
 		Element elem_CA_ImponibileINPS = new Element("CA_ImponibileINPS");
+		elem_CA_ImponibileINPS.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_ImponibileINPS);
 		Element elem_CA_ImponibileContr = new Element("CA_ImponibileContr");
+		elem_CA_ImponibileContr.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_ImponibileContr);
 		Element elem_CA_Situazione = new Element("CA_Situazione");
+		elem_CA_Situazione.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_Situazione);
 		Element elem_CA_GiornoSituazione = new Element("CA_GiornoSituazione");
+		elem_CA_GiornoSituazione.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_GiornoSituazione);
 		Element elem_CA_LavoratoriTrasfertisti = new Element("CA_LavoratoriTrasfertisti");
+		elem_CA_LavoratoriTrasfertisti.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_LavoratoriTrasfertisti);
 		Element elem_CA_Subappalti = new Element("CA_Subappalti");
+		elem_CA_Subappalti.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_Subappalti);
 		Element elem_CA_LavoratoriInterinali = new Element("CA_LavoratoriInterinali");
+		elem_CA_LavoratoriInterinali.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_LavoratoriInterinali);
 		Element elem_CA_Note = new Element("CA_Note");
+		elem_CA_Note.setText("valore");
 		elem_CNCE_Cantiere.addContent(elem_CA_Note);
 
 		elem_CNCE_Cantiere.addContent(generateDatiAppalto());
@@ -289,32 +384,46 @@ public class FlussoInput {
 		Element elem_CNCE_Subappalti = new Element("CNCE_Subappalti");
 
 		Element elem_SU_CodiceFiscale = new Element("SU_CodiceFiscale");
+		elem_SU_CodiceFiscale.setText("valore");
 		elem_CNCE_Subappalti.addContent(elem_SU_CodiceFiscale);
 		Element elem_SU_Denominazione = new Element("SU_Denominazione");
+		elem_SU_Denominazione.setText("valore");
 		elem_CNCE_Subappalti.addContent(elem_SU_Denominazione);
 		Element elem_SU_TipoVia = new Element("SU_TipoVia");
+		elem_SU_TipoVia.setText("valore");
 		elem_CNCE_Subappalti.addContent(elem_SU_TipoVia);
 		Element elem_SU_Indirizzo = new Element("SU_Indirizzo");
+		elem_SU_Indirizzo.setText("valore");
 		elem_CNCE_Subappalti.addContent(elem_SU_Indirizzo);
 		Element elem_SU_NumeroCivico = new Element("SU_NumeroCivico");
+		elem_SU_NumeroCivico.setText("valore");
 		elem_CNCE_Subappalti.addContent(elem_SU_NumeroCivico);
 		Element elem_SU_Localita = new Element("SU_Localita");
+		elem_SU_Localita.setText("valore");
 		elem_CNCE_Subappalti.addContent(elem_SU_Localita);
 		Element elem_SU_CAP = new Element("SU_CAP");
+		elem_SU_CAP.setText("valore");
 		elem_CNCE_Subappalti.addContent(elem_SU_CAP);
 		Element elem_SU_CodiceComune = new Element("SU_CodiceComune");
+		elem_SU_CodiceComune.setText("valore");
 		elem_CNCE_Subappalti.addContent(elem_SU_CodiceComune);
 		Element elem_SU_Comune = new Element("SU_Comune");
+		elem_SU_Comune.setText("valore");
 		elem_CNCE_Subappalti.addContent(elem_SU_Comune);
 		Element elem_SU_Provincia = new Element("SU_Provincia");
+		elem_SU_Provincia.setText("valore");
 		elem_CNCE_Subappalti.addContent(elem_SU_Provincia);
 		Element elem_SU_DescrizioneLavori = new Element("SU_DescrizioneLavori");
+		elem_SU_DescrizioneLavori.setText("valore");
 		elem_CNCE_Subappalti.addContent(elem_SU_DescrizioneLavori);
 		Element elem_SU_ImportoLavoriSubappalto = new Element("SU_ImportoLavoriSubappalto");
+		elem_SU_ImportoLavoriSubappalto.setText("valore");
 		elem_CNCE_Subappalti.addContent(elem_SU_ImportoLavoriSubappalto);
 		Element elem_SU_DataPresuntaInizioLavori = new Element("SU_DataPresuntaInizioLavori");
+		elem_SU_DataPresuntaInizioLavori.setText("valore");
 		elem_CNCE_Subappalti.addContent(elem_SU_DataPresuntaInizioLavori);
 		Element elem_SU_DataPresuntaIFineLavori = new Element("SU_DataPresuntaIFineLavori");
+		elem_SU_DataPresuntaIFineLavori.setText("valore");
 		elem_CNCE_Subappalti.addContent(elem_SU_DataPresuntaIFineLavori);
 
 		return elem_CNCE_Subappalti;
@@ -324,12 +433,16 @@ public class FlussoInput {
 		Element elem_DatiAppalto = new Element("DatiAppalto");
 
 		Element elem_AP_CIP = new Element("AP_CIP");
+		elem_AP_CIP.setText("valore");
 		elem_DatiAppalto.addContent(elem_AP_CIP);
 		Element elem_AP_ProtocolloAppalto = new Element("AP_ProtocolloAppalto");
+		elem_AP_ProtocolloAppalto.setText("valore");
 		elem_DatiAppalto.addContent(elem_AP_ProtocolloAppalto);
 		Element elem_AP_DataAppalto = new Element("AP_DataAppalto");
+		elem_AP_DataAppalto.setText("valore");
 		elem_DatiAppalto.addContent(elem_AP_DataAppalto);
 		Element elem_AP_CodiceCIG = new Element("AP_CodiceCIG");
+		elem_AP_CodiceCIG.setText("valore");
 		elem_DatiAppalto.addContent(elem_AP_CodiceCIG);
 
 		return elem_DatiAppalto;
@@ -339,8 +452,10 @@ public class FlussoInput {
 		Element elem_NotificaPreliminare = new Element("NotificaPreliminare");
 
 		Element elem_NP_CodNotifica = new Element("NP_CodNotifica");
+		elem_NP_CodNotifica.setText("valore");
 		elem_NotificaPreliminare.addContent(elem_NP_CodNotifica);
 		Element elem_NP_DataNotifica = new Element("NP_DataNotifica");
+		elem_NP_DataNotifica.setText("valore");
 		elem_NotificaPreliminare.addContent(elem_NP_DataNotifica);
 
 		return elem_NotificaPreliminare;
@@ -350,10 +465,13 @@ public class FlussoInput {
 		Element elem_DatiOpera = new Element("DatiOpera");
 
 		Element elem_OP_ValoreComplessivo = new Element("OP_ValoreComplessivo");
+		elem_OP_ValoreComplessivo.setText("valore");
 		elem_DatiOpera.addContent(elem_OP_ValoreComplessivo);
 		Element elem_OP_ImportoLavoriEdili = new Element("OP_ImportoLavoriEdili");
+		elem_OP_ImportoLavoriEdili.setText("valore");
 		elem_DatiOpera.addContent(elem_OP_ImportoLavoriEdili);
 		Element elem_OP_DataPresuntaFineLavori = new Element("OP_DataPresuntaFineLavori");
+		elem_OP_DataPresuntaFineLavori.setText("valore");
 		elem_DatiOpera.addContent(elem_OP_DataPresuntaFineLavori);
 
 		return elem_DatiOpera;
@@ -1056,6 +1174,8 @@ public class FlussoInput {
 	public static Element generateCNCE_OreLavoratoreND() {
 		Element elem_CNCE_OreLavoratoreND = new Element("CNCE_OreLavoratoreND");
 
+		//Non trovato sul PDF
+		
 		return elem_CNCE_OreLavoratoreND;
 	}
 
@@ -1273,15 +1393,20 @@ public class FlussoInput {
 			Document doc = new Document(elem_CNCE_FlussoInput);
 
 			Element elem_DataCreazione = new Element("DataCreazione");
-			elem_CNCE_FlussoInput.addContent(elem_DataCreazione.setText("2019-01-01"));
+			elem_DataCreazione.setText("valore");
+			elem_CNCE_FlussoInput.addContent(elem_DataCreazione);
 			Element elem_TotDenunceFornite = new Element("TotDenunceFornite");
-			elem_CNCE_FlussoInput.addContent(elem_TotDenunceFornite.setText("5"));
+			elem_TotDenunceFornite.setText("valore");
+			elem_CNCE_FlussoInput.addContent(elem_TotDenunceFornite);
 			Element elem_IDProdSoftware = new Element("IDProdSoftware");
-			elem_CNCE_FlussoInput.addContent(elem_IDProdSoftware.setText("QWERT12345"));
+			elem_IDProdSoftware.setText("valore");
+			elem_CNCE_FlussoInput.addContent(elem_IDProdSoftware);
 			Element elem_NomeProdSoftware = new Element("NomeProdSoftware");
-			elem_CNCE_FlussoInput.addContent(elem_NomeProdSoftware.setText("Iubar"));
+			elem_NomeProdSoftware.setText("valore");
+			elem_CNCE_FlussoInput.addContent(elem_NomeProdSoftware);
 			Element elem_VersioneFlusso = new Element("VersioneFlusso");
-			elem_CNCE_FlussoInput.addContent(elem_VersioneFlusso.setText("2.3"));
+			elem_VersioneFlusso.setText("valore");
+			elem_CNCE_FlussoInput.addContent(elem_VersioneFlusso);
 
 			elem_CNCE_FlussoInput.addContent(generateCNCE_Denuncia());
 

@@ -1,7 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CNCE_FlussoOutput:CNCE_FlussoOutput xmlns:CNCE_FlussoOutput="http://mut.cnce.it/schemas/denunce/flussooutput">
-  <CNCE_FlussoOutput:DataCreazione />
-  <CNCE_FlussoOutput:VersioneFlusso />
-  <CNCE_FlussoOutput:TipoFlusso />
-  <CNCE_DatiCantiere:CNCE_DatiCantiere xmlns:CNCE_DatiCantiere="http://mut.cnce.it/schemas/denunce/daticantiere" />
+  <CNCE_FlussoOutput:DataCreazione>valore</CNCE_FlussoOutput:DataCreazione>
+  <CNCE_FlussoOutput:VersioneFlusso>valore</CNCE_FlussoOutput:VersioneFlusso>
+  <CNCE_FlussoOutput:TipoFlusso>valore</CNCE_FlussoOutput:TipoFlusso>
+  <CNCE_DatiCantiere:CNCE_DatiCantiere xmlns:CNCE_DatiCantiere="http://mut.cnce.it/schemas/denunce/daticantiere">
+    <CNCE_DatiCantiere:CA_CodiceCantierCE>valore</CNCE_DatiCantiere:CA_CodiceCantierCE>
+    <CNCE_DatiCantiere:CA_CodiceIdentificativoMUT>valore</CNCE_DatiCantiere:CA_CodiceIdentificativoMUT>
+    <CNCE_DatiCantiere:CA_Denominazione1>valore</CNCE_DatiCantiere:CA_Denominazione1>
+    <CNCE_DatiCantiere:CA_Denominazione2>valore</CNCE_DatiCantiere:CA_Denominazione2>
+    <CNCE_DatiCantiere:CNCE_Cantiere>
+      <CNCE_DatiCantiere:CA_CAP>valore</CNCE_DatiCantiere:CA_CAP>
+      <CNCE_DatiCantiere:CA_TipoVia>valore</CNCE_DatiCantiere:CA_TipoVia>
+      <CNCE_DatiCantiere:CA_Indirizzo>valore</CNCE_DatiCantiere:CA_Indirizzo>
+      <CNCE_DatiCantiere:CA_NumeroCivico>valore</CNCE_DatiCantiere:CA_NumeroCivico>
+      <CNCE_DatiCantiere:CA_Località>valore</CNCE_DatiCantiere:CA_Località>
+      <CNCE_DatiCantiere:CA_CodiceComune>valore</CNCE_DatiCantiere:CA_CodiceComune>
+      <CNCE_DatiCantiere:CA_Comune>valore</CNCE_DatiCantiere:CA_Comune>
+      <CNCE_DatiCantiere:CA_Provincia>valore</CNCE_DatiCantiere:CA_Provincia>
+    </CNCE_DatiCantiere:CNCE_Cantiere>
+    <CNCE_DatiCantiere:CA_AnnoInizio>valore</CNCE_DatiCantiere:CA_AnnoInizio>
+    <CNCE_DatiCantiere:CA_MeseInizio>valore</CNCE_DatiCantiere:CA_MeseInizio>
+    <CNCE_DatiCantiere:CA_TipoCommittente>valore</CNCE_DatiCantiere:CA_TipoCommittente>
+    <CNCE_DatiCantiere:CA_TipoLavoro>valore</CNCE_DatiCantiere:CA_TipoLavoro>
+    <CNCE_DatiCantiere:CA_CodFiscCommittente>valore</CNCE_DatiCantiere:CA_CodFiscCommittente>
+    <CNCE_DatiCantiere:CA_DenominazioneCommittente>valore</CNCE_DatiCantiere:CA_DenominazioneCommittente>
+    <CNCE_DatiCantiere:CA_TipoViaComm>valore</CNCE_DatiCantiere:CA_TipoViaComm>
+    <CNCE_DatiCantiere:CA_IndirizzoComm>valore</CNCE_DatiCantiere:CA_IndirizzoComm>
+    <CNCE_DatiCantiere:CA_NumeroCivicoComm>valore</CNCE_DatiCantiere:CA_NumeroCivicoComm>
+    <CNCE_DatiCantiere:CA_CAPCommittente>valore</CNCE_DatiCantiere:CA_CAPCommittente>
+    <CNCE_DatiCantiere:CA_CodiceComuneComm>valore</CNCE_DatiCantiere:CA_CodiceComuneComm>
+    <CNCE_DatiCantiere:CA_ComuneComm>valore</CNCE_DatiCantiere:CA_ComuneComm>
+    <CNCE_DatiCantiere:CA_ProvinciaComm>valore</CNCE_DatiCantiere:CA_ProvinciaComm>
+    <CNCE_DatiCantiere:CA_CodFiscaleAppaltatore>valore</CNCE_DatiCantiere:CA_CodFiscaleAppaltatore>
+    <CNCE_DatiCantiere:CA_DenominazioneAppaltatore>valore</CNCE_DatiCantiere:CA_DenominazioneAppaltatore>
+    <CNCE_DatiCantiere:DatiAppalto>
+      <CNCE_DatiCantiere:AP_CIP>valore</CNCE_DatiCantiere:AP_CIP>
+      <CNCE_DatiCantiere:AP_ProtocolloAppalto>valore</CNCE_DatiCantiere:AP_ProtocolloAppalto>
+      <CNCE_DatiCantiere:AP_DataAppalto>valore</CNCE_DatiCantiere:AP_DataAppalto>
+      <CNCE_DatiCantiere:AP_CodiceCIG>valore</CNCE_DatiCantiere:AP_CodiceCIG>
+    </CNCE_DatiCantiere:DatiAppalto>
+    <CNCE_DatiCantiere:NotificaPreliminare>
+      <CNCE_DatiCantiere:NP_CodNotifica>valore</CNCE_DatiCantiere:NP_CodNotifica>
+      <CNCE_DatiCantiere:NP_DataNotifica>valore</CNCE_DatiCantiere:NP_DataNotifica>
+    </CNCE_DatiCantiere:NotificaPreliminare>
+    <CNCE_DatiCantiere:DatiOpera>
+      <CNCE_DatiCantiere:OP_ValoreComplessivo>valore</CNCE_DatiCantiere:OP_ValoreComplessivo>
+      <CNCE_DatiCantiere:OP_ImportoLavoriEdili>valore</CNCE_DatiCantiere:OP_ImportoLavoriEdili>
+      <CNCE_DatiCantiere:OP_DataPresuntaFineLavori>valore</CNCE_DatiCantiere:OP_DataPresuntaFineLavori>
+    </CNCE_DatiCantiere:DatiOpera>
+  </CNCE_DatiCantiere:CNCE_DatiCantiere>
 </CNCE_FlussoOutput:CNCE_FlussoOutput>
