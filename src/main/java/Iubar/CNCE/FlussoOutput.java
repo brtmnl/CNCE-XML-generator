@@ -1,6 +1,7 @@
 package Iubar.CNCE;
 
 import java.io.*;
+import java.util.Properties;
 import java.util.logging.*;
 import org.jdom2.*;
 import org.jdom2.output.*;
@@ -12,9 +13,7 @@ public class FlussoOutput {
 		Namespace ns_CNCE_DatiCantiere = Namespace.getNamespace("CNCE_DatiCantiere",
 				"http://mut.cnce.it/schemas/denunce/daticantiere");
 		Element elem_CNCE_DatiCantiere = new Element("CNCE_DatiCantiere", ns_CNCE_DatiCantiere);
-		
-		
-		
+
 		return elem_CNCE_DatiCantiere;
 	}
 
@@ -30,6 +29,8 @@ public class FlussoOutput {
 
 	public static void main(String[] args) {
 
+		String outPath = readConfig();
+		
 		try {
 
 			Namespace ns_FlussoOutput = Namespace.getNamespace("CNCE_FlussoOutput",
@@ -52,8 +53,7 @@ public class FlussoOutput {
 
 			// display nice nice
 
-			xmlOutput.output(doc, new FileWriter(
-					"C:\\Users\\iubar\\iubar\\workspace\\CNCE-XML-generator\\src\\main\\resources\\xml\\FlussoOutput.xml"));
+			xmlOutput.output(doc, new FileWriter(outPath + "/FlussoInput.xml"));
 
 			LOGGER.info(xmlOutput.outputString(doc));
 			LOGGER.info("File Saved!");
@@ -61,6 +61,25 @@ public class FlussoOutput {
 		} catch (IOException io) {
 			System.out.println(io.getMessage());
 		}
+	}
+
+	public static String readConfig() {
+		String outPath = null;
+		try (InputStream input = new FileInputStream("config.properties")) {
+
+			Properties prop = new Properties();
+
+			// load a properties file
+			prop.load(input);
+
+			// get the property value and print it out
+			outPath = prop.getProperty("out.path");
+			System.out.println(outPath);
+
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+		return outPath;
 	}
 
 }

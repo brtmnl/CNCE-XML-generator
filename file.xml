@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CNCE_FlussoInput:CNCE_FlussoInput xmlns:CNCE_FlussoInput="http://mut.cnce.it/schemas/denunce/flussoinput">
+  <CNCE_FlussoInput:DataCreazione>2019-01-01</CNCE_FlussoInput:DataCreazione>
+  <CNCE_FlussoInput:TotDenunceFornite>5</CNCE_FlussoInput:TotDenunceFornite>
+  <CNCE_FlussoInput:IDProdSoftware>QWERT12345</CNCE_FlussoInput:IDProdSoftware>
+  <CNCE_FlussoInput:NomeProdSoftware>Iubar</CNCE_FlussoInput:NomeProdSoftware>
+  <CNCE_FlussoInput:VersioneFlusso>2.3</CNCE_FlussoInput:VersioneFlusso>
+  <CNCE_Denuncia:CNCE_Denuncia xmlns:CNCE_Denuncia="http://mut.cnce.it/schemas/denunce/denuncia">
+    <CNCE_Denuncia:CassaEdileDest />
+    <CNCE_Denuncia:CodiceImpresa />
+    <CNCE_Denuncia:AnnoDenuncia />
+    <CNCE_Denuncia:MeseDenuncia />
+    <CNCE_Denuncia:SequenzaDenuncia />
+    <CNCE_Denuncia:SedeOperativa>
+      <CNCE_Denuncia:SO_CAP />
+      <CNCE_Denuncia:SO_TipoVia />
+      <CNCE_Denuncia:SO_Indirizzo />
+      <CNCE_Denuncia:SO_NumeroCivico />
+      <CNCE_Denuncia:SO_Località />
+      <CNCE_Denuncia:SO_CodiceComune />
+      <CNCE_Denuncia:SO_Comune />
+      <CNCE_Denuncia:SO_Provincia />
+      <CNCE_Denuncia:SO_Email />
+      <CNCE_Denuncia:SO_Telefono />
+      <CNCE_Denuncia:SO_Fax />
+      <CNCE_Denuncia:SO_EmailPEC />
+    </CNCE_Denuncia:SedeOperativa>
+    <CNCE_Denuncia:SedeLegale>
+      <CNCE_Denuncia:SL_CAP />
+      <CNCE_Denuncia:SL_TipoVia />
+      <CNCE_Denuncia:SL_Indirizzo />
+      <CNCE_Denuncia:SL_NumeroCivico />
+      <CNCE_Denuncia:SL_Località />
+      <CNCE_Denuncia:SL_CodiceComune />
+      <CNCE_Denuncia:SL_Comune />
+      <CNCE_Denuncia:SL_Provincia />
+      <CNCE_Denuncia:SL_Email />
+      <CNCE_Denuncia:SL_Telefono />
+      <CNCE_Denuncia:SL_Fax />
+      <CNCE_Denuncia:SL_EmailPEC />
+    </CNCE_Denuncia:SedeLegale>
+    <CNCE_Denuncia:CoordinateBancarie>
+      <CNCE_Denuncia:IM_CodPaese />
+      <CNCE_Denuncia:IM_CheckDigit />
+      <CNCE_Denuncia:IM_CIN />
+      <CNCE_Denuncia:IM_ABI />
+      <CNCE_Denuncia:IM_CAB />
+      <CNCE_Denuncia:IM_ContoCorrente />
+    </CNCE_Denuncia:CoordinateBancarie>
+    <CNCE_Denuncia:CodiceFiscale />
+    <CNCE_Denuncia:PartitaIVA />
+    <CNCE_Denuncia:RagioneSociale />
+    <CNCE_Denuncia:CCNLApplicato />
+    <CNCE_Denuncia:DE_SituazioneDenuncia />
+    <CNCE_Denuncia:DE_GiornoSituazione />
+    <CNCE_Denuncia:DE_TotDipImpresa />
+    <CNCE_Denuncia:DE_TotOpeIndeterm />
+    <CNCE_Denuncia:DE_TotOpePT />
+    <CNCE_Denuncia:AltriDatiImpresa>
+      <CNCE_Denuncia:CodiceINAIL />
+      <CNCE_Denuncia:CodiceINPS />
+      <CNCE_Denuncia:NumeroIscrCCIAA />
+      <CNCE_Denuncia:CodiceOrdinamento />
+    </CNCE_Denuncia:AltriDatiImpresa>
+    <CNCE_Denuncia:Compilatore>
+      <CNCE_Denuncia:CodiceConsulente />
+      <CNCE_Denuncia:CodiceFiscaleConsulent />
+      <CNCE_Denuncia:ReferenteCompil />
+      <CNCE_Denuncia:TelefonoCompil />
+    </CNCE_Denuncia:Compilatore>
+    <CNCE_Denuncia:TotaleCantieri />
+    <CNCE_Denuncia:TotaleLavoratori />
+    <CNCE_Cantiere:CNCE_Cantiere xmlns:CNCE_Cantiere="http://mut.cnce.it/schemas/denunce/cantiere">
+      <CNCE_Cantiere:A_NumeroProg />
+      <CNCE_Cantiere:CA_CodCantierCE />
+      <CNCE_Cantiere:CA_CodiceIdentificativoMUT />
+      <CNCE_Cantiere:CA_Denominazione1 />
+      <CNCE_Cantiere:CA_Denominazione2 />
+      <CNCE_Cantiere:CA_ProtocolloNormPostSisma />
+      <CNCE_Cantiere:CA_FlagCantierePostSisma />
+      <CNCE_Cantiere:CA_ProtocolloSisma2016 />
+      <CNCE_Cantiere:CA_FlagCantiereSisma2016 />
+      <CNCE_Cantiere:CA_CantiereGenerico />
+      <CNCE_Cantiere:CNCE_Cantiere>
+        <CNCE_Cantiere:CA_CAP />
+        <CNCE_Cantiere:CA_TipoVia />
+        <CNCE_Cantiere:CA_Indirizzo />
+        <CNCE_Cantiere:CA_NumeroCivico />
+        <CNCE_Cantiere:CA_Località />
+        <CNCE_Cantiere:CA_CodiceComune />
+        <CNCE_Cantiere:CA_Comune />
+        <CNCE_Cantiere:CA_Provincia />
+      </CNCE_Cantiere:CNCE_Cantiere>
+      <CNCE_Cantiere:CA_AnnoInizio />
+      <CNCE_Cantiere:CA_MeseInizio />
+      <CNCE_Cantiere:CA_TipoCommittente />
+      <CNCE_Cantiere:CA_TipoLavoro />
+      <CNCE_Cantiere:CA_CodFiscCommittente />
+      <CNCE_Cantiere:CA_DenominazioneCommittente />
+      <CNCE_Cantiere:CA_TipoViaComm />
+      <CNCE_Cantiere:CA_IndirizzoComm />
+      <CNCE_Cantiere:CA_NumeroCivicoComm />
+      <CNCE_Cantiere:CA_CAPCommittente />
+      <CNCE_Cantiere:CA_CodiceComuneComm />
+      <CNCE_Cantiere:CA_ComuneComm />
+      <CNCE_Cantiere:CA_ProvinciaComm />
+      <CNCE_Cantiere:CA_CodFiscaleAppaltator />
+      <CNCE_Cantiere:CA_DenominazioneAppaltator />
+      <CNCE_Cantiere:CA_Attivita07 />
+      <CNCE_Cantiere:CA_ImponibileINPS />
+      <CNCE_Cantiere:CA_ImponibileContr />
+      <CNCE_Cantiere:CA_Situazione />
+      <CNCE_Cantiere:CA_GiornoSituazione />
+      <CNCE_Cantiere:CA_LavoratoriTrasfertisti />
+      <CNCE_Cantiere:CA_Subappalti />
+      <CNCE_Cantiere:CA_LavoratoriInterinali />
+      <CNCE_Cantiere:CA_Note />
+      <CNCE_Cantiere:DatiAppalto>
+        <CNCE_Cantiere:AP_CIP />
+        <CNCE_Cantiere:AP_ProtocolloAppalto />
+        <CNCE_Cantiere:AP_DataAppalto />
+        <CNCE_Cantiere:AP_CodiceCIG />
+      </CNCE_Cantiere:DatiAppalto>
+      <CNCE_Cantiere:NotificaPreliminare>
+        <CNCE_Cantiere:NP_CodNotifica />
+        <CNCE_Cantiere:NP_DataNotifica />
+      </CNCE_Cantiere:NotificaPreliminare>
+      <CNCE_Cantiere:DatiOpera>
+        <CNCE_Cantiere:OP_ValoreComplessivo />
+        <CNCE_Cantiere:OP_ImportoLavoriEdili />
+        <CNCE_Cantiere:OP_DataPresuntaFineLavori />
+      </CNCE_Cantiere:DatiOpera>
+      <CNCE_Cantiere:CNCE_Subappalti>
+        <CNCE_Cantiere:SU_CodiceFiscale />
+        <CNCE_Cantiere:SU_Denominazione />
+        <CNCE_Cantiere:SU_TipoVia />
+        <CNCE_Cantiere:SU_Indirizzo />
+        <CNCE_Cantiere:SU_NumeroCivico />
+        <CNCE_Cantiere:SU_Localita />
+        <CNCE_Cantiere:SU_CAP />
+        <CNCE_Cantiere:SU_CodiceComune />
+        <CNCE_Cantiere:SU_Comune />
+        <CNCE_Cantiere:SU_Provincia />
+        <CNCE_Cantiere:SU_DescrizioneLavori />
+        <CNCE_Cantiere:SU_ImportoLavoriSubappalto />
+        <CNCE_Cantiere:SU_DataPresuntaInizioLavori />
+        <CNCE_Cantiere:SU_DataPresuntaIFineLavori />
+      </CNCE_Cantiere:CNCE_Subappalti>
+    </CNCE_Cantiere:CNCE_Cantiere>
+    <CNCE_Lavoratore:CNCE_Lavoratore xmlns:CNCE_Lavoratore="http://mut.cnce.it/schemas/denunce/lavoratore">
+      <CNCE_Lavoratore:LV_CodIscrizioneCE />
+      <CNCE_Lavoratore:LV_Cognome />
+      <CNCE_Lavoratore:LV_Nome />
+      <CNCE_Lavoratore:LV_CodiceFiscale />
+      <CNCE_Lavoratore:LV_RigaBis />
+      <CNCE_Lavoratore:DatiAnagrafici>
+        <CNCE_Lavoratore:LV_DatadiNascita />
+        <CNCE_Lavoratore:LV_CodComunediNascita />
+        <CNCE_Lavoratore:LV_ComunediNascita />
+        <CNCE_Lavoratore:LV_ProvinciadiNascita />
+        <CNCE_Lavoratore:LV_Sesso />
+        <CNCE_Lavoratore:LV_Nazionalita />
+      </CNCE_Lavoratore:DatiAnagrafici>
+      <CNCE_Lavoratore:IndirizzoLavoratore>
+        <CNCE_Lavoratore:LV_TipoViaResidenza />
+        <CNCE_Lavoratore:LV_IndirizzoResidenza />
+        <CNCE_Lavoratore:LV_NumCivicoResidenza />
+        <CNCE_Lavoratore:LV_CAPResidenza />
+        <CNCE_Lavoratore:LV_LocalitaResidenza />
+        <CNCE_Lavoratore:LV_CodComuneResidenza />
+        <CNCE_Lavoratore:LV_ComuneResidenza />
+        <CNCE_Lavoratore:LV_ProvinciaResidenza />
+        <CNCE_Lavoratore:LV_Email />
+        <CNCE_Lavoratore:LV_Cellulare />
+      </CNCE_Lavoratore:IndirizzoLavoratore>
+      <CNCE_Lavoratore:DatiBancariLavoratore>
+        <CNCE_Lavoratore:LV_CodPaese />
+        <CNCE_Lavoratore:LV_CheckDigit />
+        <CNCE_Lavoratore:LV_CIN />
+        <CNCE_Lavoratore:LV_ABI />
+        <CNCE_Lavoratore:LV_CAB />
+        <CNCE_Lavoratore:LV_ContoCorrente />
+      </CNCE_Lavoratore:DatiBancariLavoratore>
+      <CNCE_Lavoratore:LV_LavFuoriProvincia />
+      <CNCE_Lavoratore:LV_AltraCasa />
+      <CNCE_Lavoratore:RapportoDiLavoro>
+        <CNCE_Lavoratore:LV_DataAssunzione />
+        <CNCE_Lavoratore:LV_TipoAssunzione />
+        <CNCE_Lavoratore:LV_TipoOccupazione />
+        <CNCE_Lavoratore:LV_EsenzLimitiCCNL />
+        <CNCE_Lavoratore:LV_SpecificaRapporto />
+        <CNCE_Lavoratore:LV_GiornoCessazione />
+        <CNCE_Lavoratore:LV_TipoCessazione />
+        <CNCE_Lavoratore:LV_CodiceQualifica />
+        <CNCE_Lavoratore:LV_CodiceMansione />
+        <CNCE_Lavoratore:LV_OreSettimanali />
+        <CNCE_Lavoratore:LV_PercPartTime />
+      </CNCE_Lavoratore:RapportoDiLavoro>
+      <CNCE_Lavoratore:ElementiPaga>
+        <CNCE_Lavoratore:LV_PagaOraria />
+        <CNCE_Lavoratore:LV_SuperminimoOrario />
+        <CNCE_Lavoratore:LV_MaggCaposquadra />
+        <CNCE_Lavoratore:LV_Cottimo />
+        <CNCE_Lavoratore:LV_SuperminimoMensile />
+      </CNCE_Lavoratore:ElementiPaga>
+      <CNCE_LavoroCantiere:CNCE_LavoroCantiere xmlns:CNCE_LavoroCantiere="http://mut.cnce.it/schemas/denunce/LavoroCantiere">
+        <CNCE_LavoroCantiere:LC_NumCantiere />
+        <CNCE_LavoroCantiere:LC_OREOrdinarie />
+        <CNCE_LavoroCantiere:LC_OREFestiva />
+        <CNCE_LavoroCantiere:LC_ImponibileGNF />
+        <CNCE_LavoroCantiere:TFR_ImponibileContributivo />
+        <CNCE_LavoroCantiere:LC_AccantonGNF />
+        <CNCE_LavoroCantiere:LC_AccantonFerie />
+      </CNCE_LavoroCantiere:CNCE_LavoroCantiere>
+      <CNCE_Lavoratore:Imponibili>
+        <CNCE_Lavoratore:LV_ImponibileGNF />
+        <CNCE_Lavoratore:LV_ImponibileContributivo />
+        <CNCE_Lavoratore:LV_ImponibileContrSanz />
+        <CNCE_Lavoratore:LV_ImponibileTFR />
+        <CNCE_Lavoratore:TFR_ImponibileINPS />
+      </CNCE_Lavoratore:Imponibili>
+      <CNCE_Lavoratore:OreLavoratore>
+        <CNCE_Lavoratore:ORE_Malattia />
+        <CNCE_Lavoratore:ORE_Infortunio />
+        <CNCE_Lavoratore:ORE_Carenza />
+        <CNCE_Lavoratore:ORE_Ferie>
+          <CNCE_Lavoratore:ORE_Ferie />
+          <CNCE_Lavoratore:OREFE_FerieAC />
+          <CNCE_Lavoratore:OREFE_FerieResudueAP />
+        </CNCE_Lavoratore:ORE_Ferie>
+        <CNCE_Lavoratore:ORE_CassaIntegrazione>
+          <CNCE_Lavoratore:ORE_CiG />
+          <CNCE_Lavoratore:ORECIG_Maltempo />
+          <CNCE_Lavoratore:ORECIG_Altro />
+          <CNCE_Lavoratore:ORECIG_Ordinaria />
+          <CNCE_Lavoratore:ORECIG_Straordinaria />
+          <CNCE_Lavoratore:ORECIG_Deroga />
+        </CNCE_Lavoratore:ORE_CassaIntegrazione>
+        <CNCE_Lavoratore:ORE_Congedi>
+          <CNCE_Lavoratore:ORECO_TotaleOreCo />
+          <CNCE_Lavoratore:ORECO_Matrim />
+          <CNCE_Lavoratore:ORECO_Matern />
+          <CNCE_Lavoratore:ORECO_ServMil />
+        </CNCE_Lavoratore:ORE_Congedi>
+        <CNCE_Lavoratore:ORE_PermNonRetr />
+        <CNCE_Lavoratore:ORE_RiduzioneOrario />
+        <CNCE_Lavoratore:ORE_AggiuntiveAPE />
+        <CNCE_Lavoratore:ORE_AssenzaGiust>
+          <CNCE_Lavoratore:OREAG_TotaleOreAG />
+          <CNCE_Lavoratore:OREAG_PermSind />
+          <CNCE_Lavoratore:OREAG_AssembSind />
+          <CNCE_Lavoratore:ORE_PermessiRetribuiti>
+            <CNCE_Lavoratore:OREAG_PermRetrib />
+            <CNCE_Lavoratore:OREAG_PermRetribAC />
+            <CNCE_Lavoratore:OREAG_PermRetribAP />
+          </CNCE_Lavoratore:ORE_PermessiRetribuiti>
+          <CNCE_Lavoratore:OREAG_MaternFacolt />
+          <CNCE_Lavoratore:OREAG_CorsiForm />
+          <CNCE_Lavoratore:OREAG_PermStud />
+          <CNCE_Lavoratore:OREAG_ProvvDiscip />
+          <CNCE_Lavoratore:OREAG_FunzElett />
+          <CNCE_Lavoratore:OREAG_CongParent />
+          <CNCE_Lavoratore:OREAG_ProvvAutGiud />
+          <CNCE_Lavoratore:OREAG_FerieCollNonMat />
+          <CNCE_Lavoratore:OREAG_DichAltreCE />
+          <CNCE_Lavoratore:OREAG_Scioperi />
+          <CNCE_Lavoratore:OREAG_AssIngSanz />
+          <CNCE_Lavoratore:OREAG_AspettNonRetr />
+          <CNCE_Lavoratore:OREAG_DonazSangue />
+          <CNCE_Lavoratore:OREAG_L104 />
+          <CNCE_Lavoratore:OREAG_CongStraord />
+          <CNCE_Lavoratore:OREAG_PermLutto />
+          <CNCE_Lavoratore:OREAG_AspettSindac />
+        </CNCE_Lavoratore:ORE_AssenzaGiust>
+        <CNCE_Lavoratore:ORE_sanzionabili>
+          <CNCE_Lavoratore:ORESA_TotaleOreSanz />
+          <CNCE_Lavoratore:ORESA_FerieSanzionabili />
+          <CNCE_Lavoratore:ORESA_PermNonRetrSanz />
+          <CNCE_Lavoratore:ORESA_PermRetrSanz />
+        </CNCE_Lavoratore:ORE_sanzionabili>
+      </CNCE_Lavoratore:OreLavoratore>
+      <CNCE_Lavoratore:Accantonamenti>
+        <CNCE_Lavoratore:LV_AccantonGNF />
+        <CNCE_Lavoratore:LV_AccantonGNFMalInf />
+        <CNCE_Lavoratore:LV_AccantonRiposiAnnui />
+        <CNCE_Lavoratore:LV_AccantonFerie />
+        <CNCE_Lavoratore:LV_AnticipoAccantonamento />
+        <CNCE_Lavoratore:LV_AltroAccantonamento />
+        <CNCE_Lavoratore:LV_GGOreAltroAccantonamento />
+        <CNCE_Lavoratore:LV_FlagGGOreAltroAccantonamento />
+        <CNCE_Lavoratore:LV_ContributoAPE />
+        <CNCE_Lavoratore:LV_IntegrazioneAPE />
+        <CNCE_Lavoratore:LV_PagaFondoSanitarioNaz />
+        <CNCE_Lavoratore:LV_ImponibileFondoSanitarioNazOperaio />
+        <CNCE_Lavoratore:LV_ImponibileFondoSanitarioNazImpiegato />
+        <CNCE_Lavoratore:LV_OreLavorateAltreCasse />
+        <CNCE_Lavoratore:LV_CassaIntegrazioneFondoSanitario />
+        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz />
+        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz201810 />
+        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz201811 />
+        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz201812 />
+        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz201901 />
+        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNazAC />
+      </CNCE_Lavoratore:Accantonamenti>
+      <CNCE_Lavoratore:Arretrati_FSN>
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno1 />
+        <CNCE_Lavoratore:LV_RecuperoFSNMese1 />
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto1 />
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno2 />
+        <CNCE_Lavoratore:LV_RecuperoFSNMese2 />
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto2 />
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno3 />
+        <CNCE_Lavoratore:LV_RecuperoFSNMese3 />
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto3 />
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno4 />
+        <CNCE_Lavoratore:LV_RecuperoFSNMese4 />
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto4 />
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno5 />
+        <CNCE_Lavoratore:LV_RecuperoFSNMese5 />
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto5 />
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno6 />
+        <CNCE_Lavoratore:LV_RecuperoFSNMese6 />
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto6 />
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno7 />
+        <CNCE_Lavoratore:LV_RecuperoFSNMese7 />
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto7 />
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno8 />
+        <CNCE_Lavoratore:LV_RecuperoFSNMese8 />
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto8 />
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno9 />
+        <CNCE_Lavoratore:LV_RecuperoFSNMese9 />
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto9 />
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno10 />
+        <CNCE_Lavoratore:LV_RecuperoFSNMese10 />
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto10 />
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno11 />
+        <CNCE_Lavoratore:LV_RecuperoFSNMese11 />
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto11 />
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno12 />
+        <CNCE_Lavoratore:LV_RecuperoFSNMese12 />
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto12 />
+      </CNCE_Lavoratore:Arretrati_FSN>
+      <CNCE_Lavoratore:DatiPREVIDENZACOMPLEMENTARE>
+        <CNCE_Lavoratore:PRE_AdesioneFondo />
+        <CNCE_Lavoratore:PRE_AdesioneSilente />
+        <CNCE_Lavoratore:PRE_TipoAdesione />
+        <CNCE_Lavoratore:PRE_FlagDataAdesione />
+        <CNCE_Lavoratore:PRE_ContribLavoratore />
+        <CNCE_Lavoratore:PRE_ContribVolontario />
+        <CNCE_Lavoratore:PRE_ContribDitta />
+        <CNCE_Lavoratore:PRE_ContribContrattuale />
+        <CNCE_Lavoratore:PRE_QuotaTFR />
+      </CNCE_Lavoratore:DatiPREVIDENZACOMPLEMENTARE>
+      <CNCE_Lavoratore:DatiContributoContrattualeCooperativo>
+        <CNCE_Lavoratore:PRE_VersContribContrattCOOP />
+        <CNCE_Lavoratore:PRE_ContribContrattCOOP />
+      </CNCE_Lavoratore:DatiContributoContrattualeCooperativo>
+      <CNCE_Lavoratore:OpzioniPREVIDENZACOMPLEMENTARE>
+        <CNCE_Lavoratore:PRE_CodiceFondo />
+        <CNCE_Lavoratore:PRE_NumAlboCOVIP />
+        <CNCE_Lavoratore:PRE_SceltaPrevidenza />
+        <CNCE_Lavoratore:PRE_DataSorroscrTFR />
+      </CNCE_Lavoratore:OpzioniPREVIDENZACOMPLEMENTARE>
+      <CNCE_Lavoratore:RecuperoPREVCOMPL>
+        <CNCE_Lavoratore:PREP_AnnoDa />
+        <CNCE_Lavoratore:PREP_MeseDa />
+        <CNCE_Lavoratore:PREP_AnnoA />
+        <CNCE_Lavoratore:PREP_MeseA />
+        <CNCE_Lavoratore:PREP_ContribLavoratore />
+        <CNCE_Lavoratore:PREP_ContribVolontario />
+        <CNCE_Lavoratore:PREP_ContribDitta />
+        <CNCE_Lavoratore:PREP_ContribContrattuale />
+        <CNCE_Lavoratore:PREP_QuotaTFR />
+        <CNCE_Lavoratore:PREP_Rivalutazione />
+      </CNCE_Lavoratore:RecuperoPREVCOMPL>
+      <CNCE_Lavoratore:DatiIstitutoTFR>
+        <CNCE_Lavoratore:TFR_TFRDaVersare />
+        <CNCE_Lavoratore:TFR_OreFigurative />
+        <CNCE_Lavoratore:TFR_GiorniLavorabili />
+        <CNCE_Lavoratore:TFR_ImportoFAP />
+        <CNCE_Lavoratore:TFR_ImportoAumDim />
+        <CNCE_Lavoratore:TFR_SegnoImportoAD />
+        <CNCE_Lavoratore:TFR_OreUtili />
+        <CNCE_Lavoratore:TFR_PagaOraria />
+      </CNCE_Lavoratore:DatiIstitutoTFR>
+      <CNCE_Lavoratore:LV_ImportoRimborsoCIG />
+      <CNCE_Lavoratore:LV_OreTrimPreced />
+      <CNCE_Lavoratore:LV_SantoPatrono />
+      <CNCE_Lavoratore:LV_NormaPremiali />
+      <CNCE_Lavoratore:LV_Note />
+      <CNCE_Malattia:CNCE_Malattia xmlns:CNCE_Malattia="http://mut.cnce.it/schemas/denunce/malattia">
+        <CNCE_Malattia:MAL_DataInizio />
+        <CNCE_Malattia:MAL_GiornoFine />
+        <CNCE_Malattia:MAL_ContinuazMalattia />
+        <CNCE_Malattia:MAL_Tipo />
+        <CNCE_Malattia:MAL_Ricaduta />
+        <CNCE_Malattia:MAL_GiornoInizio />
+        <CNCE_Malattia:MAL_OreCarenza />
+        <CNCE_Malattia:MAL_OreMalattiaInfort />
+        <CNCE_Malattia:MAL_OreAssenzaIngiust />
+        <CNCE_Malattia:MAL_ConguaglioRimborso />
+        <CNCE_Malattia:MAL_NumProtocolloCert1 />
+        <CNCE_Malattia:MAL_NumProtocolloCert2 />
+        <CNCE_Malattia:MAL_NumProtocolloCert3 />
+        <CNCE_Malattia:MAL_NumProtocolloCert4 />
+        <CNCE_Malattia:MAL_NumProtocolloCert5 />
+        <CNCE_Malattia:elem_MAL_RetrGGINPSS />
+      </CNCE_Malattia:CNCE_Malattia>
+      <CNCE_RecupPrevCompl:CNCE_RecupPrevCompl xmlns:CNCE_RecupPrevCompl="http://mut.cnce.it/schemas/denunce/recupPrevCompl">
+        <CNCE_RecupPrevCompl:PRER_Anno />
+        <CNCE_RecupPrevCompl:PRER_Mese />
+        <CNCE_RecupPrevCompl:PRER_ContribLavoratore />
+        <CNCE_RecupPrevCompl:PRER_ContribVolontario />
+        <CNCE_RecupPrevCompl:PRER_ContribDitta />
+        <CNCE_RecupPrevCompl:PRER_ContribContrattuale />
+        <CNCE_RecupPrevCompl:PRER_QuotaTFR />
+        <CNCE_RecupPrevCompl:PRER_Rivalutazione />
+      </CNCE_RecupPrevCompl:CNCE_RecupPrevCompl>
+    </CNCE_Lavoratore:CNCE_Lavoratore>
+  </CNCE_Denuncia:CNCE_Denuncia>
+</CNCE_FlussoInput:CNCE_FlussoInput>
