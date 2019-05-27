@@ -15,7 +15,7 @@ public class FlussoOutput {
 				"http://mut.cnce.it/schemas/denunce/daticantiere");
 		Element elem_CNCE_DatiCantiere = new Element("CNCE_DatiCantiere", ns_CNCE_DatiCantiere);
 
-		//IdentificazioneInpresa
+		elem_CNCE_DatiCantiere.addContent(generateIdentificazioneImpresa());
 		
 		Element elem_CA_CodCantierCE = new Element("CA_CodiceCantierCE");
 		elem_CA_CodCantierCE.setText("valore");
@@ -84,10 +84,25 @@ public class FlussoOutput {
 		elem_CNCE_DatiCantiere.addContent(FlussoInput.generateNotificaPreliminare());
 		elem_CNCE_DatiCantiere.addContent(FlussoInput.generateDatiOpera());
 		
-		
 		return elem_CNCE_DatiCantiere;
 	}
 
+	public static Element generateIdentificazioneImpresa() {
+		Element elem_IdentificazioneImpresa = new Element("IdentificazioneImpresa");
+		
+		Element elem_IM_CodiceCE = new Element("IM_CodiceCE");
+		elem_IM_CodiceCE.setText("valore");
+		elem_IdentificazioneImpresa.addContent(elem_IM_CodiceCE);
+		Element elem_IM_CodFiscaleImpresa = new Element("IM_CodFiscaleImpresa");
+		elem_IM_CodFiscaleImpresa.setText("valore");
+		elem_IdentificazioneImpresa.addContent(elem_IM_CodFiscaleImpresa);
+		Element elem_IM_CodiceIscrCE = new Element("IM_CodiceIscrCE");
+		elem_IM_CodiceIscrCE.setText("valore");
+		elem_IdentificazioneImpresa.addContent(elem_IM_CodiceIscrCE);
+		
+		return elem_IdentificazioneImpresa;
+	}
+	
 	static void updateNamespace(Element e) {
 		Namespace ns = e.getNamespace();
 		List<Element> childrens = e.getChildren();

@@ -4,6 +4,11 @@
   <CNCE_FlussoOutput:VersioneFlusso>valore</CNCE_FlussoOutput:VersioneFlusso>
   <CNCE_FlussoOutput:TipoFlusso>valore</CNCE_FlussoOutput:TipoFlusso>
   <CNCE_DatiCantiere:CNCE_DatiCantiere xmlns:CNCE_DatiCantiere="http://mut.cnce.it/schemas/denunce/daticantiere">
+    <CNCE_DatiCantiere:IdentificazioneImpresa>
+      <CNCE_DatiCantiere:IM_CodiceCE>valore</CNCE_DatiCantiere:IM_CodiceCE>
+      <CNCE_DatiCantiere:IM_CodFiscaleImpresa>valore</CNCE_DatiCantiere:IM_CodFiscaleImpresa>
+      <CNCE_DatiCantiere:IM_CodiceIscrCE>valore</CNCE_DatiCantiere:IM_CodiceIscrCE>
+    </CNCE_DatiCantiere:IdentificazioneImpresa>
     <CNCE_DatiCantiere:CA_CodiceCantierCE>valore</CNCE_DatiCantiere:CA_CodiceCantierCE>
     <CNCE_DatiCantiere:CA_CodiceIdentificativoMUT>valore</CNCE_DatiCantiere:CA_CodiceIdentificativoMUT>
     <CNCE_DatiCantiere:CA_Denominazione1>valore</CNCE_DatiCantiere:CA_Denominazione1>
