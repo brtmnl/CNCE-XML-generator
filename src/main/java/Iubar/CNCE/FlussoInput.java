@@ -7,8 +7,8 @@ import java.util.logging.*;
 import org.jdom2.*;
 import org.jdom2.output.*;
 
-public class FlussoImput {
-	private static final Logger LOGGER = Logger.getLogger(FlussoImput.class.getName());
+public class FlussoInput {
+	private static final Logger LOGGER = Logger.getLogger(FlussoInput.class.getName());
 
 	public static Element generateCNCE_Denuncia() {
 		Namespace ns_CNCE_Denuncia = Namespace.getNamespace("CNCE_Denuncia",

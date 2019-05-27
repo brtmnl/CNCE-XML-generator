@@ -14,6 +14,9 @@ public class FlussoOutput {
 				"http://mut.cnce.it/schemas/denunce/daticantiere");
 		Element elem_CNCE_DatiCantiere = new Element("CNCE_DatiCantiere", ns_CNCE_DatiCantiere);
 
+		elem_CNCE_DatiCantiere.addContent(FlussoInput.generateIndirizzoCantiere());
+		elem_CNCE_DatiCantiere.addContent(FlussoInput.generateDatiOpera());
+		
 		return elem_CNCE_DatiCantiere;
 	}
 
