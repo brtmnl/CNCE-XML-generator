@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CNCE_FlussoOutput:CNCE_FlussoOutput xmlns:CNCE_FlussoOutput="http://mut.cnce.it/schemas/denunce/flussooutput">
+  <CNCE_FlussoOutput:DataCreazione />
+  <CNCE_FlussoOutput:VersioneFlusso />
+  <CNCE_FlussoOutput:TipoFlusso />
+  <CNCE_DatiCantiere:CNCE_DatiCantiere xmlns:CNCE_DatiCantiere="http://mut.cnce.it/schemas/denunce/daticantiere" />
+</CNCE_FlussoOutput:CNCE_FlussoOutput>

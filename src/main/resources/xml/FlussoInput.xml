@@ -417,5 +417,52 @@
         <CNCE_RecupPrevCompl:PRER_Rivalutazione />
       </CNCE_RecupPrevCompl:CNCE_RecupPrevCompl>
     </CNCE_Lavoratore:CNCE_Lavoratore>
+    <CNCE_LavoratoreNonDipendente:CNCE_LavoratoreNonDipendente xmlns:CNCE_LavoratoreNonDipendente="http://mut.cnce.it/schemas/denunce/lavoratorenondipendente">
+      <CNCE_LavoratoreNonDipendente:ND_TipoLavoratore />
+      <CNCE_LavoratoreNonDipendente:ND_CodiceFiscale />
+      <CNCE_LavoratoreNonDipendente:ND_Cognome />
+      <CNCE_LavoratoreNonDipendente:ND_Nome />
+      <CNCE_LavoratoreNonDipendente:ND_DataDiNascita />
+      <CNCE_LavoratoreNonDipendente:ND_CodiceFiscaleAltraImpresa />
+      <CNCE_LavoratoreNonDipendente:ND_RagioneSocialeAltraImpresa />
+      <CNCE_LavoratoreNonDipendente:CNCE_OreLavoratoreND />
+    </CNCE_LavoratoreNonDipendente:CNCE_LavoratoreNonDipendente>
+    <CNCE_Riepilogo:CNCE_Riepilogo xmlns:CNCE_Riepilogo="http://mut.cnce.it/schemas/denunce/riepilogo">
+      <CNCE_Riepilogo:RI_PercContributi />
+      <CNCE_Riepilogo:RI_ImportoContributi />
+      <CNCE_Riepilogo:RI_ContributoAPE />
+      <CNCE_Riepilogo:RI_IntegrazioneAPE />
+      <CNCE_Riepilogo:RI_TContributoSanitarioSanitarioNaz />
+      <CNCE_Riepilogo:RI_ContributoSanitarioSanitarioNaz201810 />
+      <CNCE_Riepilogo:RI_ContributoSanitarioSanitarioNaz201811 />
+      <CNCE_Riepilogo:RI_ContributoSanitarioSanitarioNaz201812 />
+      <CNCE_Riepilogo:RI_ContributoSanitarioSanitarioNaz201901 />
+      <CNCE_Riepilogo:RI_VersaFondoSanNazImpiegati />
+      <CNCE_Riepilogo:RI_PercContrAssImpr />
+      <CNCE_Riepilogo:RI_TImportoContrAssImpr />
+      <CNCE_Riepilogo:RI_PercContrAssImprFP />
+      <CNCE_Riepilogo:RI_ImportoContrAssImprFP />
+      <CNCE_Riepilogo:RI_ImportoConguaglio />
+      <CNCE_Riepilogo:RI_ImportoCreditoPrec />
+      <CNCE_Riepilogo:RI_ImportoDebitoPrec />
+      <CNCE_Riepilogo:RI_ImportoAltriDebiti />
+      <CNCE_Riepilogo:RI_FondoPrepensionamento201810 />
+      <CNCE_Riepilogo:RI_FondoPrepensionamento201811 />
+      <CNCE_Riepilogo:RI_FondoPrepensionamento201812 />
+      <CNCE_Riepilogo:RI_FondoPrepensionamento201901 />
+      <CNCE_Riepilogo:RI_FondoOccupazione />
+      <CNCE_Riepilogo:RI_FondoOccupazione201810 />
+      <CNCE_Riepilogo:RI_FondoOccupazione201811 />
+      <CNCE_Riepilogo:RI_FondoOccupazione201812 />
+      <CNCE_Riepilogo:RI_FondoOccupazione201901 />
+      <CNCE_Riepilogo:RI_TotaleDaVersare />
+      <CNCE_Riepilogo:RI_TotaleaCredito />
+      <CNCE_AltriContributi:CNCE_AltriContributi xmlns:CNCE_AltriContributi="http://mut.cnce.it/schemas/denunce/altricontributi">
+        <CNCE_AltriContributi:AC_CodiceContributo />
+        <CNCE_AltriContributi:AC_DescrContributo />
+        <CNCE_AltriContributi:AC_PercContributo />
+        <CNCE_AltriContributi:AC_ImportoContributo />
+      </CNCE_AltriContributi:CNCE_AltriContributi>
+    </CNCE_Riepilogo:CNCE_Riepilogo>
   </CNCE_Denuncia:CNCE_Denuncia>
 </CNCE_FlussoInput:CNCE_FlussoInput>

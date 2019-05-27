@@ -5,8 +5,8 @@ import java.util.logging.*;
 import org.jdom2.*;
 import org.jdom2.output.*;
 
-public class App {
-	private static final Logger LOGGER = Logger.getLogger(App.class.getName());
+public class FlussoImput {
+	private static final Logger LOGGER = Logger.getLogger(FlussoImput.class.getName());
 
 	public static Element generateCNCE_Denuncia() {
 		Namespace ns_CNCE_Denuncia = Namespace.getNamespace("CNCE_Denuncia",
@@ -58,6 +58,8 @@ public class App {
 
 		elem_CNCE_Denuncia.addContent(generateCNCE_Cantiere());
 		elem_CNCE_Denuncia.addContent(generateCNCE_Lavoratore());
+		elem_CNCE_Denuncia.addContent(generateCNCE_LavoratoreNonDipendente());
+		elem_CNCE_Denuncia.addContent(generateCNCE_Riepilogo());
 
 		return elem_CNCE_Denuncia;
 	}
@@ -197,7 +199,8 @@ public class App {
 	}
 
 	public static Element generateCNCE_Cantiere() {
-		Namespace ns_CNCE_Cantiere = Namespace.getNamespace("CNCE_Cantiere", "http://mut.cnce.it/schemas/denunce/cantiere");
+		Namespace ns_CNCE_Cantiere = Namespace.getNamespace("CNCE_Cantiere",
+				"http://mut.cnce.it/schemas/denunce/cantiere");
 		Element elem_CNCE_Cantiere = new Element("CNCE_Cantiere", ns_CNCE_Cantiere);
 
 		Element elem_CA_NumeroProg = new Element("A_NumeroProg");
@@ -355,7 +358,8 @@ public class App {
 	}
 
 	public static Element generateCNCE_Lavoratore() {
-		Namespace ns_CNCE_Lavoratore = Namespace.getNamespace("CNCE_Lavoratore", "http://mut.cnce.it/schemas/denunce/lavoratore");
+		Namespace ns_CNCE_Lavoratore = Namespace.getNamespace("CNCE_Lavoratore",
+				"http://mut.cnce.it/schemas/denunce/lavoratore");
 		Element elem_CNCE_Lavoratore = new Element("CNCE_Lavoratore", ns_CNCE_Lavoratore);
 
 		Element elem_LV_CodIscrizioneCE = new Element("LV_CodIscrizioneCE");
@@ -550,7 +554,8 @@ public class App {
 	}
 
 	public static Element generateCNCE_Malattia() {
-		Namespace ns_CNCE_Malattia = Namespace.getNamespace("CNCE_Malattia", "http://mut.cnce.it/schemas/denunce/malattia");
+		Namespace ns_CNCE_Malattia = Namespace.getNamespace("CNCE_Malattia",
+				"http://mut.cnce.it/schemas/denunce/malattia");
 		Element elem_CNCE_Malattia = new Element("CNCE_Malattia", ns_CNCE_Malattia);
 
 		Element elem_MAL_DataInizio = new Element("MAL_DataInizio");
@@ -702,7 +707,8 @@ public class App {
 	}
 
 	public static Element generateCNCE_LavoroCantiere() {
-		Namespace ns_CNCE_LavoroCantiere = Namespace.getNamespace("CNCE_LavoroCantiere", "http://mut.cnce.it/schemas/denunce/LavoroCantiere");
+		Namespace ns_CNCE_LavoroCantiere = Namespace.getNamespace("CNCE_LavoroCantiere",
+				"http://mut.cnce.it/schemas/denunce/LavoroCantiere");
 		Element elem_CNCE_LavoroCantiere = new Element("CNCE_LavoroCantiere", ns_CNCE_LavoroCantiere);
 
 		Element elem_LC_NumCantiere = new Element("LC_NumCantiere");
@@ -995,9 +1001,10 @@ public class App {
 	}
 
 	public static Element generateCNCE_RecupPrevCompl() {
-		Namespace ns_CNCE_RecupPrevCompl = Namespace.getNamespace("CNCE_RecupPrevCompl", "http://mut.cnce.it/schemas/denunce/recupPrevCompl");
+		Namespace ns_CNCE_RecupPrevCompl = Namespace.getNamespace("CNCE_RecupPrevCompl",
+				"http://mut.cnce.it/schemas/denunce/recupPrevCompl");
 		Element elem_CNCE_RecupPrevCompl = new Element("CNCE_RecupPrevCompl", ns_CNCE_RecupPrevCompl);
-	
+
 		Element elem_PRER_Anno = new Element("PRER_Anno");
 		elem_CNCE_RecupPrevCompl.addContent(elem_PRER_Anno);
 		Element elem_PRER_Mese = new Element("PRER_Mese");
@@ -1014,14 +1021,132 @@ public class App {
 		elem_CNCE_RecupPrevCompl.addContent(elem_PRER_QuotaTFR);
 		Element elem_PRER_Rivalutazione = new Element("PRER_Rivalutazione");
 		elem_CNCE_RecupPrevCompl.addContent(elem_PRER_Rivalutazione);
-		
+
 		return elem_CNCE_RecupPrevCompl;
 	}
-	
+
+	public static Element generateCNCE_LavoratoreNonDipendente() {
+		Namespace ns_CNCE_LavoratoreNonDipendente = Namespace.getNamespace("CNCE_LavoratoreNonDipendente",
+				"http://mut.cnce.it/schemas/denunce/lavoratorenondipendente");
+		Element elem_CNCE_LavoratoreNonDipendente = new Element("CNCE_LavoratoreNonDipendente",
+				ns_CNCE_LavoratoreNonDipendente);
+
+		Element elem_ND_TipoLavoratore = new Element("ND_TipoLavoratore");
+		elem_CNCE_LavoratoreNonDipendente.addContent(elem_ND_TipoLavoratore);
+		Element elem_ND_CodiceFiscale = new Element("ND_CodiceFiscale");
+		elem_CNCE_LavoratoreNonDipendente.addContent(elem_ND_CodiceFiscale);
+		Element elem_ND_Cognome = new Element("ND_Cognome");
+		elem_CNCE_LavoratoreNonDipendente.addContent(elem_ND_Cognome);
+		Element elem_ND_Nome = new Element("ND_Nome");
+		elem_CNCE_LavoratoreNonDipendente.addContent(elem_ND_Nome);
+		Element elem_ND_DataDiNascita = new Element("ND_DataDiNascita");
+		elem_CNCE_LavoratoreNonDipendente.addContent(elem_ND_DataDiNascita);
+		Element elem_ND_CodiceFiscaleAltraImpresa = new Element("ND_CodiceFiscaleAltraImpresa");
+		elem_CNCE_LavoratoreNonDipendente.addContent(elem_ND_CodiceFiscaleAltraImpresa);
+		Element elem_ND_RagioneSocialeAltraImpresa = new Element("ND_RagioneSocialeAltraImpresa");
+		elem_CNCE_LavoratoreNonDipendente.addContent(elem_ND_RagioneSocialeAltraImpresa);
+
+		elem_CNCE_LavoratoreNonDipendente.addContent(generateCNCE_OreLavoratoreND());
+
+		return elem_CNCE_LavoratoreNonDipendente;
+	}
+
+	public static Element generateCNCE_OreLavoratoreND() {
+		Element elem_CNCE_OreLavoratoreND = new Element("CNCE_OreLavoratoreND");
+
+		return elem_CNCE_OreLavoratoreND;
+	}
+
+	public static Element generateCNCE_Riepilogo() {
+		Namespace ns_CNCE_Riepilogo = Namespace.getNamespace("CNCE_Riepilogo",
+				"http://mut.cnce.it/schemas/denunce/riepilogo");
+		Element elem_CNCE_Riepilogo = new Element("CNCE_Riepilogo", ns_CNCE_Riepilogo);
+
+		Element elem_RI_PercContributi = new Element("RI_PercContributi");
+		elem_CNCE_Riepilogo.addContent(elem_RI_PercContributi);
+		Element elem_RI_ImportoContributi = new Element("RI_ImportoContributi");
+		elem_CNCE_Riepilogo.addContent(elem_RI_ImportoContributi);
+		Element elem_RI_ContributoAPE = new Element("RI_ContributoAPE");
+		elem_CNCE_Riepilogo.addContent(elem_RI_ContributoAPE);
+		Element elem_RI_IntegrazioneAPE = new Element("RI_IntegrazioneAPE");
+		elem_CNCE_Riepilogo.addContent(elem_RI_IntegrazioneAPE);
+		Element elem_RI_ContributoSanitarioSanitarioNaz = new Element("RI_TContributoSanitarioSanitarioNaz");
+		elem_CNCE_Riepilogo.addContent(elem_RI_ContributoSanitarioSanitarioNaz);
+		Element elem_RI_ContributoSanitarioSanitarioNaz201810 = new Element("RI_ContributoSanitarioSanitarioNaz201810");
+		elem_CNCE_Riepilogo.addContent(elem_RI_ContributoSanitarioSanitarioNaz201810);
+		Element elem_RI_ContributoSanitarioSanitarioNaz201811 = new Element("RI_ContributoSanitarioSanitarioNaz201811");
+		elem_CNCE_Riepilogo.addContent(elem_RI_ContributoSanitarioSanitarioNaz201811);
+		Element elem_RI_ContributoSanitarioSanitarioNaz201812 = new Element("RI_ContributoSanitarioSanitarioNaz201812");
+		elem_CNCE_Riepilogo.addContent(elem_RI_ContributoSanitarioSanitarioNaz201812);
+		Element elem_RI_ContributoSanitarioSanitarioNaz201901 = new Element("RI_ContributoSanitarioSanitarioNaz201901");
+		elem_CNCE_Riepilogo.addContent(elem_RI_ContributoSanitarioSanitarioNaz201901);
+		Element elem_RI_VersaFondoSanNazImpiegati = new Element("RI_VersaFondoSanNazImpiegati");
+		elem_CNCE_Riepilogo.addContent(elem_RI_VersaFondoSanNazImpiegati);
+		Element elem_RI_PercContrAssImpr = new Element("RI_PercContrAssImpr");
+		elem_CNCE_Riepilogo.addContent(elem_RI_PercContrAssImpr);
+		Element elem_RI_ImportoContrAssImpr = new Element("RI_TImportoContrAssImpr");
+		elem_CNCE_Riepilogo.addContent(elem_RI_ImportoContrAssImpr);
+		Element elem_RI_PercContrAssImprFP = new Element("RI_PercContrAssImprFP");
+		elem_CNCE_Riepilogo.addContent(elem_RI_PercContrAssImprFP);
+		Element elem_RI_ImportoContrAssImprFP = new Element("RI_ImportoContrAssImprFP");
+		elem_CNCE_Riepilogo.addContent(elem_RI_ImportoContrAssImprFP);
+		Element elem_RI_ImportoConguaglio = new Element("RI_ImportoConguaglio");
+		elem_CNCE_Riepilogo.addContent(elem_RI_ImportoConguaglio);
+		Element elem_RI_ImportoCreditoPrec = new Element("RI_ImportoCreditoPrec");
+		elem_CNCE_Riepilogo.addContent(elem_RI_ImportoCreditoPrec);
+		Element elem_RI_ImportoDebitoPrec = new Element("RI_ImportoDebitoPrec");
+		elem_CNCE_Riepilogo.addContent(elem_RI_ImportoDebitoPrec);
+		Element elem_RI_ImportoAltriDebiti = new Element("RI_ImportoAltriDebiti");
+		elem_CNCE_Riepilogo.addContent(elem_RI_ImportoAltriDebiti);
+		Element elem_RI_FondoPrepensionamento201810 = new Element("RI_FondoPrepensionamento201810");
+		elem_CNCE_Riepilogo.addContent(elem_RI_FondoPrepensionamento201810);
+		Element elem_RI_FondoPrepensionamento201811 = new Element("RI_FondoPrepensionamento201811");
+		elem_CNCE_Riepilogo.addContent(elem_RI_FondoPrepensionamento201811);
+		Element elem_RI_FondoPrepensionamento201812 = new Element("RI_FondoPrepensionamento201812");
+		elem_CNCE_Riepilogo.addContent(elem_RI_FondoPrepensionamento201812);
+		Element elem_RI_FondoPrepensionamento201901 = new Element("RI_FondoPrepensionamento201901");
+		elem_CNCE_Riepilogo.addContent(elem_RI_FondoPrepensionamento201901);
+		Element elem_RI_FondoOccupazione = new Element("RI_FondoOccupazione");
+		elem_CNCE_Riepilogo.addContent(elem_RI_FondoOccupazione);
+		Element elem_RI_FondoOccupazione201810 = new Element("RI_FondoOccupazione201810");
+		elem_CNCE_Riepilogo.addContent(elem_RI_FondoOccupazione201810);
+		Element elem_RI_FondoOccupazione201811 = new Element("RI_FondoOccupazione201811");
+		elem_CNCE_Riepilogo.addContent(elem_RI_FondoOccupazione201811);
+		Element elem_RI_FondoOccupazione201812 = new Element("RI_FondoOccupazione201812");
+		elem_CNCE_Riepilogo.addContent(elem_RI_FondoOccupazione201812);
+		Element elem_RI_FondoOccupazione201901 = new Element("RI_FondoOccupazione201901");
+		elem_CNCE_Riepilogo.addContent(elem_RI_FondoOccupazione201901);
+		Element elem_RI_TotaleDaVersare = new Element("RI_TotaleDaVersare");
+		elem_CNCE_Riepilogo.addContent(elem_RI_TotaleDaVersare);
+		Element elem_RI_TotaleaCredito = new Element("RI_TotaleaCredito");
+		elem_CNCE_Riepilogo.addContent(elem_RI_TotaleaCredito);
+
+		elem_CNCE_Riepilogo.addContent(generateCNCE_AltriContributi());
+
+		return elem_CNCE_Riepilogo;
+	}
+
+	public static Element generateCNCE_AltriContributi() {
+		Namespace ns_CNCE_AltriContributi = Namespace.getNamespace("CNCE_AltriContributi",
+				"http://mut.cnce.it/schemas/denunce/altricontributi");
+		Element elem_CNCE_AltriContributi = new Element("CNCE_AltriContributi", ns_CNCE_AltriContributi);
+
+		Element elem_AC_CodiceContributo = new Element("AC_CodiceContributo");
+		elem_CNCE_AltriContributi.addContent(elem_AC_CodiceContributo);
+		Element elem_AC_DescrContributo = new Element("AC_DescrContributo");
+		elem_CNCE_AltriContributi.addContent(elem_AC_DescrContributo);
+		Element elem_AC_PercContributo = new Element("AC_PercContributo");
+		elem_CNCE_AltriContributi.addContent(elem_AC_PercContributo);
+		Element elem_AC_ImportoContributo = new Element("AC_ImportoContributo");
+		elem_CNCE_AltriContributi.addContent(elem_AC_ImportoContributo);
+
+		return elem_CNCE_AltriContributi;
+	}
+
 	static void updateNamespace(Element e) {
 		Namespace ns = e.getNamespace();
 		for (Element child : e.getChildren()) {
-			if(child.getNamespace().getPrefix().equals("")) {
+			if (child.getNamespace().getPrefix().equals("")) {
 				child.setNamespace(ns);
 			}
 			updateNamespace(child);
@@ -1029,7 +1154,7 @@ public class App {
 	}
 
 	public static void main(String[] args) {
-		
+
 		try {
 
 			Namespace ns_FlussoInput = Namespace.getNamespace("CNCE_FlussoInput",
@@ -1057,7 +1182,7 @@ public class App {
 			// display nice nice
 
 			xmlOutput.output(doc, new FileWriter(
-					"C:\\Users\\iubar\\iubar\\workspace\\CNCE-XML-generator\\src\\main\\resources\\xml\\file.xml"));
+					"C:\\Users\\iubar\\iubar\\workspace\\CNCE-XML-generator\\src\\main\\resources\\xml\\FlussoInput.xml"));
 
 			LOGGER.info(xmlOutput.outputString(doc));
 			LOGGER.info("File Saved!");
