@@ -16,6 +16,7 @@ public class FlussoOutput {
 
 		elem_CNCE_DatiCantiere.addContent(FlussoInput.generateIndirizzoCantiere());
 		elem_CNCE_DatiCantiere.addContent(FlussoInput.generateDatiOpera());
+		//test
 		
 		return elem_CNCE_DatiCantiere;
 	}
