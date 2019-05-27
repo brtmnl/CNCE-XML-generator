@@ -1020,6 +1020,111 @@ public class App {
 		return elem_CNCE_RecupPrevCompl;
 	}
 	
+	public static Element generateArretrati_Recuperi() {
+		Element elem_Arretrati_Recuperi = new Element("Arretrati_Recuperi");
+		
+		Element elem_RI_RecuperoAnno1 = new Element("RI_RecuperoAnno1");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoAnno1);
+		Element elem_RI_RecuperoMese1 = new Element("RI_RecuperoMese1");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoMese1);
+		Element elem_RI_RecuperoTipo1 = new Element("RI_RecuperoTipo1");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoTipo1);
+		Element elem_RI_RecuperoImporto1 = new Element("RI_RecuperoImporto1");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoImporto1);
+		Element elem_RI_RecuperoAnno2 = new Element("RI_RecuperoAnno2");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoAnno2);
+		Element elem_RI_RecuperoMese2 = new Element("RI_RecuperoMese2");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoMese2);
+		Element elem_RI_RecuperoTipo2 = new Element("RI_RecuperoTipo2");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoTipo2);
+		Element elem_RI_RecuperoImporto2 = new Element("RI_RecuperoImporto2");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoImporto2);
+		Element elem_RI_RecuperoAnno3 = new Element("RI_RecuperoAnno3");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoAnno3);
+		Element elem_RI_RecuperoMese3 = new Element("RI_RecuperoMese3");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoMese3);
+		Element elem_RI_RecuperoTipo3 = new Element("RI_RecuperoTipo3");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoTipo3);
+		Element elem_RI_RecuperoImporto3 = new Element("RI_RecuperoImporto3");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoImporto3);
+		Element elem_RI_RecuperoAnno4 = new Element("RI_RecuperoAnno4");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoAnno4);
+		Element elem_RI_RecuperoMese4 = new Element("RI_RecuperoMese4");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoMese4);
+		Element elem_RI_RecuperoTipo4 = new Element("RI_RecuperoTipo4");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoTipo4);
+		Element elem_RI_RecuperoImporto4 = new Element("RI_RecuperoImporto4");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoImporto4);
+		Element elem_RI_RecuperoAnno5 = new Element("RI_RecuperoAnno5");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoAnno5);
+		Element elem_RI_RecuperoMese5 = new Element("RI_RecuperoMese5");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoMese5);
+		Element elem_RI_RecuperoTipo5 = new Element("RI_RecuperoTipo5");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoTipo5);
+		Element elem_RI_RecuperoImporto5 = new Element("RI_RecuperoImporto5");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoImporto5);
+		Element elem_RI_RecuperoAnno6 = new Element("RI_RecuperoAnno6");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoAnno6);
+		Element elem_RI_RecuperoMese6 = new Element("RI_RecuperoMese6");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoMese6);
+		Element elem_RI_RecuperoTipo6 = new Element("RI_RecuperoTipo6");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoTipo6);
+		Element elem_RI_RecuperoImporto6 = new Element("RI_RecuperoImporto6");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoImporto6);
+		Element elem_RI_RecuperoAnno7 = new Element("RI_RecuperoAnno7");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoAnno7);
+		Element elem_RI_RecuperoMese7 = new Element("RI_RecuperoMese7");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoMese7);
+		Element elem_RI_RecuperoTipo7 = new Element("RI_RecuperoTipo7");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoTipo7);
+		Element elem_RI_RecuperoImporto7 = new Element("RI_RecuperoImporto7");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoImporto7);
+		Element elem_RI_RecuperoAnno8 = new Element("RI_RecuperoAnno8");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoAnno8);
+		Element elem_RI_RecuperoMese8 = new Element("RI_RecuperoMese8");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoMese8);
+		Element elem_RI_RecuperoTipo8 = new Element("RI_RecuperoTipo8");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoTipo8);
+		Element elem_RI_RecuperoImporto8 = new Element("RI_RecuperoImporto8");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoImporto8);
+		Element elem_RI_RecuperoAnno9 = new Element("RI_RecuperoAnno9");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoAnno9);
+		Element elem_RI_RecuperoMese9 = new Element("RI_RecuperoMese9");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoMese9);
+		Element elem_RI_RecuperoTipo9 = new Element("RI_RecuperoTipo9");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoTipo9);
+		Element elem_RI_RecuperoImporto9 = new Element("RI_RecuperoImporto9");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoImporto9);
+		Element elem_RI_RecuperoAnno10 = new Element("RI_RecuperoAnno10");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoAnno10);
+		Element elem_RI_RecuperoMese10 = new Element("RI_RecuperoMese10");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoMese10);
+		Element elem_RI_RecuperoTipo10 = new Element("RI_RecuperoTipo10");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoTipo10);
+		Element elem_RI_RecuperoImporto10 = new Element("RI_RecuperoImporto10");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoImporto10);
+		Element elem_RI_RecuperoAnno11 = new Element("RI_RecuperoAnno11");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoAnno11);
+		Element elem_RI_RecuperoMese11 = new Element("RI_RecuperoMese11");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoMese11);
+		Element elem_RI_RecuperoTipo11 = new Element("RI_RecuperoTipo11");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoTipo11);
+		Element elem_RI_RecuperoImporto11 = new Element("RI_RecuperoImporto11");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoImporto11);
+		Element elem_RI_RecuperoAnno12 = new Element("RI_RecuperoAnno12");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoAnno12);
+		Element elem_RI_RecuperoMese12 = new Element("RI_RecuperoMese12");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoMese12);
+		Element elem_RI_RecuperoTipo12 = new Element("RI_RecuperoTipo12");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoTipo12);
+		Element elem_RI_RecuperoImporto12 = new Element("RI_RecuperoImporto12");
+		elem_Arretrati_Recuperi.addContent(elem_RI_RecuperoImporto12);
+	
+		
+		
+		return elem_Arretrati_Recuperi;
+	}
+	
 	static void updateNamespace(Element e) {
 		Namespace ns = e.getNamespace();
 		List<Element> childrens = e.getChildren();
