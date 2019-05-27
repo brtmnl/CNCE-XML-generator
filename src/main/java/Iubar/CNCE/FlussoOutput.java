@@ -83,6 +83,7 @@ public class FlussoOutput {
 		elem_CNCE_DatiCantiere.addContent(FlussoInput.generateDatiAppalto());
 		elem_CNCE_DatiCantiere.addContent(FlussoInput.generateNotificaPreliminare());
 		elem_CNCE_DatiCantiere.addContent(FlussoInput.generateDatiOpera());
+		//test
 		
 		return elem_CNCE_DatiCantiere;
 	}
