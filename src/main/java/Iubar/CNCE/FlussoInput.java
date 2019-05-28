@@ -483,14 +483,19 @@ public class FlussoInput {
 		Element elem_CNCE_Lavoratore = new Element("CNCE_Lavoratore", ns_CNCE_Lavoratore);
 
 		Element elem_LV_CodIscrizioneCE = new Element("LV_CodIscrizioneCE");
+		elem_LV_CodIscrizioneCE.setText("valore");
 		elem_CNCE_Lavoratore.addContent(elem_LV_CodIscrizioneCE);
 		Element elem_LV_Cognome = new Element("LV_Cognome");
+		elem_LV_Cognome.setText("valore");
 		elem_CNCE_Lavoratore.addContent(elem_LV_Cognome);
 		Element elem_LV_Nome = new Element("LV_Nome");
+		elem_LV_Nome.setText("valore");
 		elem_CNCE_Lavoratore.addContent(elem_LV_Nome);
 		Element elem_LV_CodiceFiscale = new Element("LV_CodiceFiscale");
+		elem_LV_CodiceFiscale.setText("valore");
 		elem_CNCE_Lavoratore.addContent(elem_LV_CodiceFiscale);
 		Element elem_LV_RigaBis = new Element("LV_RigaBis");
+		elem_LV_RigaBis.setText("valore");
 		elem_CNCE_Lavoratore.addContent(elem_LV_RigaBis);
 
 		elem_CNCE_Lavoratore.addContent(generateDatiAnagrafici());
@@ -498,8 +503,10 @@ public class FlussoInput {
 		elem_CNCE_Lavoratore.addContent(generateDatiBancariLavoratore());
 
 		Element elem_LV_LavFuoriProvincia = new Element("LV_LavFuoriProvincia");
+		elem_LV_LavFuoriProvincia.setText("valore");
 		elem_CNCE_Lavoratore.addContent(elem_LV_LavFuoriProvincia);
 		Element elem_LV_AltraCasa = new Element("LV_AltraCasa");
+		elem_LV_AltraCasa.setText("valore");
 		elem_CNCE_Lavoratore.addContent(elem_LV_AltraCasa);
 
 		elem_CNCE_Lavoratore.addContent(generateRapportoDiLavoro());
@@ -516,14 +523,19 @@ public class FlussoInput {
 		elem_CNCE_Lavoratore.addContent(generateDatiIstitutoTFR());
 
 		Element elem_LV_ImportoRimborsoCIG = new Element("LV_ImportoRimborsoCIG");
+		elem_LV_ImportoRimborsoCIG.setText("valore");
 		elem_CNCE_Lavoratore.addContent(elem_LV_ImportoRimborsoCIG);
 		Element elem_LV_OreTrimPreced = new Element("LV_OreTrimPreced");
+		elem_LV_OreTrimPreced.setText("valore");
 		elem_CNCE_Lavoratore.addContent(elem_LV_OreTrimPreced);
 		Element elem_LV_SantoPatrono = new Element("LV_SantoPatrono");
+		elem_LV_SantoPatrono.setText("valore");
 		elem_CNCE_Lavoratore.addContent(elem_LV_SantoPatrono);
 		Element elem_LV_NormaPremiali = new Element("LV_NormaPremiali");
+		elem_LV_NormaPremiali.setText("valore");
 		elem_CNCE_Lavoratore.addContent(elem_LV_NormaPremiali);
 		Element elem_LV_Note = new Element("LV_Note");
+		elem_LV_Note.setText("valore");
 		elem_CNCE_Lavoratore.addContent(elem_LV_Note);
 
 		elem_CNCE_Lavoratore.addContent(generateCNCE_Malattia());
@@ -1437,7 +1449,7 @@ public class FlussoInput {
             prop.load(input);
 
             // get the property value and print it out
-            outPath = prop.getProperty("out.path");
+            outPath = prop.getProperty("out.path1");
             System.out.println(outPath);
    
 

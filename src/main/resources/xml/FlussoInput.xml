@@ -148,11 +148,11 @@
       </CNCE_Cantiere:CNCE_Subappalti>
     </CNCE_Cantiere:CNCE_Cantiere>
     <CNCE_Lavoratore:CNCE_Lavoratore xmlns:CNCE_Lavoratore="http://mut.cnce.it/schemas/denunce/lavoratore">
-      <CNCE_Lavoratore:LV_CodIscrizioneCE />
-      <CNCE_Lavoratore:LV_Cognome />
-      <CNCE_Lavoratore:LV_Nome />
-      <CNCE_Lavoratore:LV_CodiceFiscale />
-      <CNCE_Lavoratore:LV_RigaBis />
+      <CNCE_Lavoratore:LV_CodIscrizioneCE>valore</CNCE_Lavoratore:LV_CodIscrizioneCE>
+      <CNCE_Lavoratore:LV_Cognome>valore</CNCE_Lavoratore:LV_Cognome>
+      <CNCE_Lavoratore:LV_Nome>valore</CNCE_Lavoratore:LV_Nome>
+      <CNCE_Lavoratore:LV_CodiceFiscale>valore</CNCE_Lavoratore:LV_CodiceFiscale>
+      <CNCE_Lavoratore:LV_RigaBis>valore</CNCE_Lavoratore:LV_RigaBis>
       <CNCE_Lavoratore:DatiAnagrafici>
         <CNCE_Lavoratore:LV_DatadiNascita />
         <CNCE_Lavoratore:LV_CodComunediNascita />
@@ -181,8 +181,8 @@
         <CNCE_Lavoratore:LV_CAB />
         <CNCE_Lavoratore:LV_ContoCorrente />
       </CNCE_Lavoratore:DatiBancariLavoratore>
-      <CNCE_Lavoratore:LV_LavFuoriProvincia />
-      <CNCE_Lavoratore:LV_AltraCasa />
+      <CNCE_Lavoratore:LV_LavFuoriProvincia>valore</CNCE_Lavoratore:LV_LavFuoriProvincia>
+      <CNCE_Lavoratore:LV_AltraCasa>valore</CNCE_Lavoratore:LV_AltraCasa>
       <CNCE_Lavoratore:RapportoDiLavoro>
         <CNCE_Lavoratore:LV_DataAssunzione />
         <CNCE_Lavoratore:LV_TipoAssunzione />
@@ -383,11 +383,11 @@
         <CNCE_Lavoratore:TFR_OreUtili />
         <CNCE_Lavoratore:TFR_PagaOraria />
       </CNCE_Lavoratore:DatiIstitutoTFR>
-      <CNCE_Lavoratore:LV_ImportoRimborsoCIG />
-      <CNCE_Lavoratore:LV_OreTrimPreced />
-      <CNCE_Lavoratore:LV_SantoPatrono />
-      <CNCE_Lavoratore:LV_NormaPremiali />
-      <CNCE_Lavoratore:LV_Note />
+      <CNCE_Lavoratore:LV_ImportoRimborsoCIG>valore</CNCE_Lavoratore:LV_ImportoRimborsoCIG>
+      <CNCE_Lavoratore:LV_OreTrimPreced>valore</CNCE_Lavoratore:LV_OreTrimPreced>
+      <CNCE_Lavoratore:LV_SantoPatrono>valore</CNCE_Lavoratore:LV_SantoPatrono>
+      <CNCE_Lavoratore:LV_NormaPremiali>valore</CNCE_Lavoratore:LV_NormaPremiali>
+      <CNCE_Lavoratore:LV_Note>valore</CNCE_Lavoratore:LV_Note>
       <CNCE_Malattia:CNCE_Malattia xmlns:CNCE_Malattia="http://mut.cnce.it/schemas/denunce/malattia">
         <CNCE_Malattia:MAL_DataInizio />
         <CNCE_Malattia:MAL_GiornoFine />
