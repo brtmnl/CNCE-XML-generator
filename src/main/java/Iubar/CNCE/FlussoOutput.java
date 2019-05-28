@@ -103,6 +103,88 @@ public class FlussoOutput {
 		return elem_IdentificazioneImpresa;
 	}
 	
+	public static Element generateIndirizzoCantiere() {
+		Element elem_IndirizzoCantiere = new Element("IndirizzoCantiere");		
+		
+		Element elem_CA_CAP = new Element("CA_CAP");
+		elem_CA_CAP.setText("valore");
+		elem_IndirizzoCantiere.addContent("elem_CA_CAP");
+		Element elem_CA_TipoVia = new Element("CA_TipoVia");
+		elem_CA_TipoVia.setText("valore");
+		elem_IndirizzoCantiere.addContent("elem_CA_TipoVia");
+		Element elem_CA_Indirizzo = new Element("CA_Indirizzo");
+		elem_CA_Indirizzo.setText("valore");
+		elem_IndirizzoCantiere.addContent("elem_CA_Indirizzo");
+		Element elem_CA_NumeroCivico = new Element("CA_NumeroCivico");
+		elem_CA_NumeroCivico.setText("valore");
+		elem_IndirizzoCantiere.addContent("elem_CA_NumeroCivico");
+		Element elem_CA_Localita = new Element("CA_Localita");
+		elem_CA_Localita.setText("valore");
+		elem_IndirizzoCantiere.addContent("elem_CA_Localita");
+		Element elem_CA_CodiceComune = new Element("CA_CodiceComune");
+		elem_CA_CodiceComune.setText("valore");
+		elem_IndirizzoCantiere.addContent("elem_CA_CodiceComune");
+		Element elem_CA_Comune = new Element("CA_Comune");
+		elem_CA_Comune.setText("valore");
+		elem_IndirizzoCantiere.addContent("elem_CA_Comune");
+		Element elem_CA_Provincia = new Element("CA_Provincia");
+		elem_CA_Provincia.setText("valore");
+		elem_IndirizzoCantiere.addContent("elem_CA_Provincia");
+		
+		return elem_IndirizzoCantiere;		
+	}
+	
+	public static Element generateDatiAppalto() {
+		Element elem_DatiAppalto = new Element("DatiAppalto");
+		
+		Element elem_AP_CIP = new Element("AP_CIP");
+		elem_AP_CIP.setText("valore");
+		elem_DatiAppalto.addContent("elem_CA_CAP");
+		Element elem_AP_ProtocolloAppalto = new Element("AP_ProtocolloAppalto");
+		elem_AP_ProtocolloAppalto.setText("valore");
+		elem_DatiAppalto.addContent("elem_AP_ProtocolloAppalto");
+		Element elem_AP_DataAppalto = new Element("AP_DataAppalto");
+		elem_AP_DataAppalto.setText("valore");
+		elem_DatiAppalto.addContent("elem_AP_DataAppalto");
+		Element elem_AP_CodiceCIG = new Element("AP_CodiceCIG");
+		elem_AP_CodiceCIG.setText("valore");
+		elem_DatiAppalto.addContent("elem_AP_CodiceCIG");
+		
+		return elem_DatiAppalto;			
+			
+		}
+	
+	public static Element generateNotificaPreliminare() {
+		Element elem_NotificaPreliminare = new Element("NotificaPreliminare");
+		
+		Element elem_NP_CodiceNotifica = new Element("NP_CodiceNotifica");
+		elem_NP_CodiceNotifica.setText("valore");
+		elem_NotificaPreliminare.addContent("elem_NP_CodiceNotifica");
+		Element elem_NP_DataNotifica = new Element("NP_DataNotifica");
+		elem_NP_DataNotifica.setText("valore");
+		elem_NotificaPreliminare.addContent("elem_NP_DataNotifica");
+		
+		return elem_NotificaPreliminare;
+		
+	    }
+	
+	public static Element generateDatiOpera() {
+		Element elem_DatiOpera = new Element("DatiOpera");
+	
+		Element elem_OP_ValoreComplessivo = new Element("OP_ValoreComplessivo");
+		elem_OP_ValoreComplessivo.setText("valore");
+		elem_DatiOpera.addContent("elem_OP_ValoreComplessivo");
+		Element elem_OP_ImportoLavoriEdili = new Element("OP_ImportoLavoriEdili");
+		elem_OP_ImportoLavoriEdili.setText("valore");
+		elem_DatiOpera.addContent("elem_OP_ImportoLavoriEdili");
+		Element elem_OP_DataPresuntaFineLavori = new Element("OP_DataPresuntaFineLavori");
+		elem_OP_DataPresuntaFineLavori.setText("valore");
+		elem_DatiOpera.addContent("elem_OP_DataPresuntaFineLavori");
+		
+		return elem_DatiOpera;
+	    
+		}
+	
 	static void updateNamespace(Element e) {
 		Namespace ns = e.getNamespace();
 		List<Element> childrens = e.getChildren();
