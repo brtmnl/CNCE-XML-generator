@@ -148,320 +148,320 @@
       </CNCE_Cantiere:CNCE_Subappalti>
     </CNCE_Cantiere:CNCE_Cantiere>
     <CNCE_Lavoratore:CNCE_Lavoratore xmlns:CNCE_Lavoratore="http://mut.cnce.it/schemas/denunce/lavoratore">
-      <CNCE_Lavoratore:LV_CodIscrizioneCE />
-      <CNCE_Lavoratore:LV_Cognome />
-      <CNCE_Lavoratore:LV_Nome />
-      <CNCE_Lavoratore:LV_CodiceFiscale />
-      <CNCE_Lavoratore:LV_RigaBis />
+      <CNCE_Lavoratore:LV_CodIscrizioneCE>valore</CNCE_Lavoratore:LV_CodIscrizioneCE>
+      <CNCE_Lavoratore:LV_Cognome>valore</CNCE_Lavoratore:LV_Cognome>
+      <CNCE_Lavoratore:LV_Nome>valore</CNCE_Lavoratore:LV_Nome>
+      <CNCE_Lavoratore:LV_CodiceFiscale>valore</CNCE_Lavoratore:LV_CodiceFiscale>
+      <CNCE_Lavoratore:LV_RigaBis>valore</CNCE_Lavoratore:LV_RigaBis>
       <CNCE_Lavoratore:DatiAnagrafici>
-        <CNCE_Lavoratore:LV_DatadiNascita />
-        <CNCE_Lavoratore:LV_CodComunediNascita />
-        <CNCE_Lavoratore:LV_ComunediNascita />
-        <CNCE_Lavoratore:LV_ProvinciadiNascita />
-        <CNCE_Lavoratore:LV_Sesso />
-        <CNCE_Lavoratore:LV_Nazionalita />
+        <CNCE_Lavoratore:LV_DatadiNascita>valore</CNCE_Lavoratore:LV_DatadiNascita>
+        <CNCE_Lavoratore:LV_CodComunediNascita>valore</CNCE_Lavoratore:LV_CodComunediNascita>
+        <CNCE_Lavoratore:LV_ComunediNascita>valore</CNCE_Lavoratore:LV_ComunediNascita>
+        <CNCE_Lavoratore:LV_ProvinciadiNascita>valore</CNCE_Lavoratore:LV_ProvinciadiNascita>
+        <CNCE_Lavoratore:LV_Sesso>valore</CNCE_Lavoratore:LV_Sesso>
+        <CNCE_Lavoratore:LV_Nazionalita>valore</CNCE_Lavoratore:LV_Nazionalita>
       </CNCE_Lavoratore:DatiAnagrafici>
       <CNCE_Lavoratore:IndirizzoLavoratore>
-        <CNCE_Lavoratore:LV_TipoViaResidenza />
-        <CNCE_Lavoratore:LV_IndirizzoResidenza />
-        <CNCE_Lavoratore:LV_NumCivicoResidenza />
-        <CNCE_Lavoratore:LV_CAPResidenza />
-        <CNCE_Lavoratore:LV_LocalitaResidenza />
-        <CNCE_Lavoratore:LV_CodComuneResidenza />
-        <CNCE_Lavoratore:LV_ComuneResidenza />
-        <CNCE_Lavoratore:LV_ProvinciaResidenza />
+        <CNCE_Lavoratore:LV_TipoViaResidenza>valore</CNCE_Lavoratore:LV_TipoViaResidenza>
+        <CNCE_Lavoratore:LV_IndirizzoResidenza>valore</CNCE_Lavoratore:LV_IndirizzoResidenza>
+        <CNCE_Lavoratore:LV_NumCivicoResidenza>valore</CNCE_Lavoratore:LV_NumCivicoResidenza>
+        <CNCE_Lavoratore:LV_CAPResidenza>valore</CNCE_Lavoratore:LV_CAPResidenza>
+        <CNCE_Lavoratore:LV_LocalitaResidenza>valore</CNCE_Lavoratore:LV_LocalitaResidenza>
+        <CNCE_Lavoratore:LV_CodComuneResidenza>valore</CNCE_Lavoratore:LV_CodComuneResidenza>
+        <CNCE_Lavoratore:LV_ComuneResidenza>valore</CNCE_Lavoratore:LV_ComuneResidenza>
+        <CNCE_Lavoratore:LV_ProvinciaResidenza>valore</CNCE_Lavoratore:LV_ProvinciaResidenza>
         <CNCE_Lavoratore:LV_Email />
-        <CNCE_Lavoratore:LV_Cellulare />
+        <CNCE_Lavoratore:LV_Cellulare>valore</CNCE_Lavoratore:LV_Cellulare>
       </CNCE_Lavoratore:IndirizzoLavoratore>
       <CNCE_Lavoratore:DatiBancariLavoratore>
-        <CNCE_Lavoratore:LV_CodPaese />
-        <CNCE_Lavoratore:LV_CheckDigit />
-        <CNCE_Lavoratore:LV_CIN />
-        <CNCE_Lavoratore:LV_ABI />
-        <CNCE_Lavoratore:LV_CAB />
-        <CNCE_Lavoratore:LV_ContoCorrente />
+        <CNCE_Lavoratore:LV_CodPaese>valore</CNCE_Lavoratore:LV_CodPaese>
+        <CNCE_Lavoratore:LV_CheckDigit>valore</CNCE_Lavoratore:LV_CheckDigit>
+        <CNCE_Lavoratore:LV_CIN>valore</CNCE_Lavoratore:LV_CIN>
+        <CNCE_Lavoratore:LV_ABI>valore</CNCE_Lavoratore:LV_ABI>
+        <CNCE_Lavoratore:LV_CAB>valore</CNCE_Lavoratore:LV_CAB>
+        <CNCE_Lavoratore:LV_ContoCorrente>valore</CNCE_Lavoratore:LV_ContoCorrente>
       </CNCE_Lavoratore:DatiBancariLavoratore>
-      <CNCE_Lavoratore:LV_LavFuoriProvincia />
-      <CNCE_Lavoratore:LV_AltraCasa />
+      <CNCE_Lavoratore:LV_LavFuoriProvincia>valore</CNCE_Lavoratore:LV_LavFuoriProvincia>
+      <CNCE_Lavoratore:LV_AltraCasa>valore</CNCE_Lavoratore:LV_AltraCasa>
       <CNCE_Lavoratore:RapportoDiLavoro>
-        <CNCE_Lavoratore:LV_DataAssunzione />
-        <CNCE_Lavoratore:LV_TipoAssunzione />
-        <CNCE_Lavoratore:LV_TipoOccupazione />
-        <CNCE_Lavoratore:LV_EsenzLimitiCCNL />
-        <CNCE_Lavoratore:LV_SpecificaRapporto />
-        <CNCE_Lavoratore:LV_GiornoCessazione />
-        <CNCE_Lavoratore:LV_TipoCessazione />
-        <CNCE_Lavoratore:LV_CodiceQualifica />
-        <CNCE_Lavoratore:LV_CodiceMansione />
-        <CNCE_Lavoratore:LV_OreSettimanali />
-        <CNCE_Lavoratore:LV_PercPartTime />
+        <CNCE_Lavoratore:LV_DataAssunzione>valore</CNCE_Lavoratore:LV_DataAssunzione>
+        <CNCE_Lavoratore:LV_TipoAssunzione>valore</CNCE_Lavoratore:LV_TipoAssunzione>
+        <CNCE_Lavoratore:LV_TipoOccupazione>valore</CNCE_Lavoratore:LV_TipoOccupazione>
+        <CNCE_Lavoratore:LV_EsenzLimitiCCNL>valore</CNCE_Lavoratore:LV_EsenzLimitiCCNL>
+        <CNCE_Lavoratore:LV_SpecificaRapporto>valore</CNCE_Lavoratore:LV_SpecificaRapporto>
+        <CNCE_Lavoratore:LV_GiornoCessazione>valore</CNCE_Lavoratore:LV_GiornoCessazione>
+        <CNCE_Lavoratore:LV_TipoCessazione>valore</CNCE_Lavoratore:LV_TipoCessazione>
+        <CNCE_Lavoratore:LV_CodiceQualifica>valore</CNCE_Lavoratore:LV_CodiceQualifica>
+        <CNCE_Lavoratore:LV_CodiceMansione>valore</CNCE_Lavoratore:LV_CodiceMansione>
+        <CNCE_Lavoratore:LV_OreSettimanali>valore</CNCE_Lavoratore:LV_OreSettimanali>
+        <CNCE_Lavoratore:LV_PercPartTime>valore</CNCE_Lavoratore:LV_PercPartTime>
       </CNCE_Lavoratore:RapportoDiLavoro>
       <CNCE_Lavoratore:ElementiPaga>
-        <CNCE_Lavoratore:LV_PagaOraria />
-        <CNCE_Lavoratore:LV_SuperminimoOrario />
-        <CNCE_Lavoratore:LV_MaggCaposquadra />
-        <CNCE_Lavoratore:LV_Cottimo />
-        <CNCE_Lavoratore:LV_SuperminimoMensile />
+        <CNCE_Lavoratore:LV_PagaOraria>valore</CNCE_Lavoratore:LV_PagaOraria>
+        <CNCE_Lavoratore:LV_SuperminimoOrario>valore</CNCE_Lavoratore:LV_SuperminimoOrario>
+        <CNCE_Lavoratore:LV_MaggCaposquadra>valore</CNCE_Lavoratore:LV_MaggCaposquadra>
+        <CNCE_Lavoratore:LV_Cottimo>valore</CNCE_Lavoratore:LV_Cottimo>
+        <CNCE_Lavoratore:LV_SuperminimoMensile>valore</CNCE_Lavoratore:LV_SuperminimoMensile>
       </CNCE_Lavoratore:ElementiPaga>
       <CNCE_LavoroCantiere:CNCE_LavoroCantiere xmlns:CNCE_LavoroCantiere="http://mut.cnce.it/schemas/denunce/LavoroCantiere">
-        <CNCE_LavoroCantiere:LC_NumCantiere />
-        <CNCE_LavoroCantiere:LC_OREOrdinarie />
-        <CNCE_LavoroCantiere:LC_OREFestiva />
-        <CNCE_LavoroCantiere:LC_ImponibileGNF />
-        <CNCE_LavoroCantiere:TFR_ImponibileContributivo />
-        <CNCE_LavoroCantiere:LC_AccantonGNF />
-        <CNCE_LavoroCantiere:LC_AccantonFerie />
+        <CNCE_LavoroCantiere:LC_NumCantiere>valore</CNCE_LavoroCantiere:LC_NumCantiere>
+        <CNCE_LavoroCantiere:LC_OREOrdinarie>valore</CNCE_LavoroCantiere:LC_OREOrdinarie>
+        <CNCE_LavoroCantiere:LC_OREFestiva>valore</CNCE_LavoroCantiere:LC_OREFestiva>
+        <CNCE_LavoroCantiere:LC_ImponibileGNF>valore</CNCE_LavoroCantiere:LC_ImponibileGNF>
+        <CNCE_LavoroCantiere:TFR_ImponibileContributivo>valore</CNCE_LavoroCantiere:TFR_ImponibileContributivo>
+        <CNCE_LavoroCantiere:LC_AccantonGNF>valore</CNCE_LavoroCantiere:LC_AccantonGNF>
+        <CNCE_LavoroCantiere:LC_AccantonFerie>valore</CNCE_LavoroCantiere:LC_AccantonFerie>
       </CNCE_LavoroCantiere:CNCE_LavoroCantiere>
       <CNCE_Lavoratore:Imponibili>
-        <CNCE_Lavoratore:LV_ImponibileGNF />
-        <CNCE_Lavoratore:LV_ImponibileContributivo />
-        <CNCE_Lavoratore:LV_ImponibileContrSanz />
-        <CNCE_Lavoratore:LV_ImponibileTFR />
-        <CNCE_Lavoratore:TFR_ImponibileINPS />
+        <CNCE_Lavoratore:LV_ImponibileGNF>valore</CNCE_Lavoratore:LV_ImponibileGNF>
+        <CNCE_Lavoratore:LV_ImponibileContributivo>valore</CNCE_Lavoratore:LV_ImponibileContributivo>
+        <CNCE_Lavoratore:LV_ImponibileContrSanz>valore</CNCE_Lavoratore:LV_ImponibileContrSanz>
+        <CNCE_Lavoratore:LV_ImponibileTFR>valore</CNCE_Lavoratore:LV_ImponibileTFR>
+        <CNCE_Lavoratore:TFR_ImponibileINPS>valore</CNCE_Lavoratore:TFR_ImponibileINPS>
       </CNCE_Lavoratore:Imponibili>
       <CNCE_Lavoratore:OreLavoratore>
-        <CNCE_Lavoratore:ORE_Malattia />
-        <CNCE_Lavoratore:ORE_Infortunio />
-        <CNCE_Lavoratore:ORE_Carenza />
+        <CNCE_Lavoratore:ORE_Malattia>valore</CNCE_Lavoratore:ORE_Malattia>
+        <CNCE_Lavoratore:ORE_Infortunio>valore</CNCE_Lavoratore:ORE_Infortunio>
+        <CNCE_Lavoratore:ORE_Carenza>valore</CNCE_Lavoratore:ORE_Carenza>
         <CNCE_Lavoratore:ORE_Ferie>
-          <CNCE_Lavoratore:ORE_Ferie />
-          <CNCE_Lavoratore:OREFE_FerieAC />
-          <CNCE_Lavoratore:OREFE_FerieResudueAP />
+          <CNCE_Lavoratore:ORE_Ferie2>valore</CNCE_Lavoratore:ORE_Ferie2>
+          <CNCE_Lavoratore:OREFE_FerieAC>valore</CNCE_Lavoratore:OREFE_FerieAC>
+          <CNCE_Lavoratore:OREFE_FerieResudueAP>valore</CNCE_Lavoratore:OREFE_FerieResudueAP>
         </CNCE_Lavoratore:ORE_Ferie>
         <CNCE_Lavoratore:ORE_CassaIntegrazione>
-          <CNCE_Lavoratore:ORE_CiG />
-          <CNCE_Lavoratore:ORECIG_Maltempo />
-          <CNCE_Lavoratore:ORECIG_Altro />
-          <CNCE_Lavoratore:ORECIG_Ordinaria />
-          <CNCE_Lavoratore:ORECIG_Straordinaria />
-          <CNCE_Lavoratore:ORECIG_Deroga />
+          <CNCE_Lavoratore:ORE_CiG>valore</CNCE_Lavoratore:ORE_CiG>
+          <CNCE_Lavoratore:ORECIG_Maltempo>valore</CNCE_Lavoratore:ORECIG_Maltempo>
+          <CNCE_Lavoratore:ORECIG_Altro>valore</CNCE_Lavoratore:ORECIG_Altro>
+          <CNCE_Lavoratore:ORECIG_Ordinaria>valore</CNCE_Lavoratore:ORECIG_Ordinaria>
+          <CNCE_Lavoratore:ORECIG_Straordinaria>valore</CNCE_Lavoratore:ORECIG_Straordinaria>
+          <CNCE_Lavoratore:ORECIG_Deroga>valore</CNCE_Lavoratore:ORECIG_Deroga>
         </CNCE_Lavoratore:ORE_CassaIntegrazione>
         <CNCE_Lavoratore:ORE_Congedi>
-          <CNCE_Lavoratore:ORECO_TotaleOreCo />
-          <CNCE_Lavoratore:ORECO_Matrim />
-          <CNCE_Lavoratore:ORECO_Matern />
-          <CNCE_Lavoratore:ORECO_ServMil />
+          <CNCE_Lavoratore:ORECO_TotaleOreCo>valore</CNCE_Lavoratore:ORECO_TotaleOreCo>
+          <CNCE_Lavoratore:ORECO_Matrim>valore</CNCE_Lavoratore:ORECO_Matrim>
+          <CNCE_Lavoratore:ORECO_Matern>valore</CNCE_Lavoratore:ORECO_Matern>
+          <CNCE_Lavoratore:ORECO_ServMil>valore</CNCE_Lavoratore:ORECO_ServMil>
         </CNCE_Lavoratore:ORE_Congedi>
-        <CNCE_Lavoratore:ORE_PermNonRetr />
-        <CNCE_Lavoratore:ORE_RiduzioneOrario />
-        <CNCE_Lavoratore:ORE_AggiuntiveAPE />
+        <CNCE_Lavoratore:ORE_PermNonRetr>valore</CNCE_Lavoratore:ORE_PermNonRetr>
+        <CNCE_Lavoratore:ORE_RiduzioneOrario>valore</CNCE_Lavoratore:ORE_RiduzioneOrario>
+        <CNCE_Lavoratore:ORE_AggiuntiveAPE>valore</CNCE_Lavoratore:ORE_AggiuntiveAPE>
         <CNCE_Lavoratore:ORE_AssenzaGiust>
-          <CNCE_Lavoratore:OREAG_TotaleOreAG />
-          <CNCE_Lavoratore:OREAG_PermSind />
-          <CNCE_Lavoratore:OREAG_AssembSind />
+          <CNCE_Lavoratore:OREAG_TotaleOreAG>valore</CNCE_Lavoratore:OREAG_TotaleOreAG>
+          <CNCE_Lavoratore:OREAG_PermSind>valore</CNCE_Lavoratore:OREAG_PermSind>
+          <CNCE_Lavoratore:OREAG_AssembSind>valore</CNCE_Lavoratore:OREAG_AssembSind>
           <CNCE_Lavoratore:ORE_PermessiRetribuiti>
-            <CNCE_Lavoratore:OREAG_PermRetrib />
-            <CNCE_Lavoratore:OREAG_PermRetribAC />
-            <CNCE_Lavoratore:OREAG_PermRetribAP />
+            <CNCE_Lavoratore:OREAG_PermRetrib>valore</CNCE_Lavoratore:OREAG_PermRetrib>
+            <CNCE_Lavoratore:OREAG_PermRetribAC>valore</CNCE_Lavoratore:OREAG_PermRetribAC>
+            <CNCE_Lavoratore:OREAG_PermRetribAP>valore</CNCE_Lavoratore:OREAG_PermRetribAP>
           </CNCE_Lavoratore:ORE_PermessiRetribuiti>
-          <CNCE_Lavoratore:OREAG_MaternFacolt />
-          <CNCE_Lavoratore:OREAG_CorsiForm />
-          <CNCE_Lavoratore:OREAG_PermStud />
-          <CNCE_Lavoratore:OREAG_ProvvDiscip />
-          <CNCE_Lavoratore:OREAG_FunzElett />
-          <CNCE_Lavoratore:OREAG_CongParent />
-          <CNCE_Lavoratore:OREAG_ProvvAutGiud />
-          <CNCE_Lavoratore:OREAG_FerieCollNonMat />
-          <CNCE_Lavoratore:OREAG_DichAltreCE />
-          <CNCE_Lavoratore:OREAG_Scioperi />
-          <CNCE_Lavoratore:OREAG_AssIngSanz />
-          <CNCE_Lavoratore:OREAG_AspettNonRetr />
-          <CNCE_Lavoratore:OREAG_DonazSangue />
-          <CNCE_Lavoratore:OREAG_L104 />
-          <CNCE_Lavoratore:OREAG_CongStraord />
-          <CNCE_Lavoratore:OREAG_PermLutto />
-          <CNCE_Lavoratore:OREAG_AspettSindac />
+          <CNCE_Lavoratore:OREAG_MaternFacolt>valore</CNCE_Lavoratore:OREAG_MaternFacolt>
+          <CNCE_Lavoratore:OREAG_CorsiForm>valore</CNCE_Lavoratore:OREAG_CorsiForm>
+          <CNCE_Lavoratore:OREAG_PermStud>valore</CNCE_Lavoratore:OREAG_PermStud>
+          <CNCE_Lavoratore:OREAG_ProvvDiscip>valore</CNCE_Lavoratore:OREAG_ProvvDiscip>
+          <CNCE_Lavoratore:OREAG_FunzElett>valore</CNCE_Lavoratore:OREAG_FunzElett>
+          <CNCE_Lavoratore:OREAG_CongParent>valore</CNCE_Lavoratore:OREAG_CongParent>
+          <CNCE_Lavoratore:OREAG_ProvvAutGiud>valore</CNCE_Lavoratore:OREAG_ProvvAutGiud>
+          <CNCE_Lavoratore:OREAG_FerieCollNonMat>valore</CNCE_Lavoratore:OREAG_FerieCollNonMat>
+          <CNCE_Lavoratore:OREAG_DichAltreCE>valore</CNCE_Lavoratore:OREAG_DichAltreCE>
+          <CNCE_Lavoratore:OREAG_Scioperi>valore</CNCE_Lavoratore:OREAG_Scioperi>
+          <CNCE_Lavoratore:OREAG_AssIngSanz>valore</CNCE_Lavoratore:OREAG_AssIngSanz>
+          <CNCE_Lavoratore:OREAG_AspettNonRetr>valore</CNCE_Lavoratore:OREAG_AspettNonRetr>
+          <CNCE_Lavoratore:OREAG_DonazSangue>valore</CNCE_Lavoratore:OREAG_DonazSangue>
+          <CNCE_Lavoratore:OREAG_L104>valore</CNCE_Lavoratore:OREAG_L104>
+          <CNCE_Lavoratore:OREAG_CongStraord>valore</CNCE_Lavoratore:OREAG_CongStraord>
+          <CNCE_Lavoratore:OREAG_PermLutto>valore</CNCE_Lavoratore:OREAG_PermLutto>
+          <CNCE_Lavoratore:OREAG_AspettSindac>valore</CNCE_Lavoratore:OREAG_AspettSindac>
         </CNCE_Lavoratore:ORE_AssenzaGiust>
         <CNCE_Lavoratore:ORE_sanzionabili>
-          <CNCE_Lavoratore:ORESA_TotaleOreSanz />
-          <CNCE_Lavoratore:ORESA_FerieSanzionabili />
-          <CNCE_Lavoratore:ORESA_PermNonRetrSanz />
-          <CNCE_Lavoratore:ORESA_PermRetrSanz />
+          <CNCE_Lavoratore:ORESA_TotaleOreSanz>valore</CNCE_Lavoratore:ORESA_TotaleOreSanz>
+          <CNCE_Lavoratore:ORESA_FerieSanzionabili>valore</CNCE_Lavoratore:ORESA_FerieSanzionabili>
+          <CNCE_Lavoratore:ORESA_PermNonRetrSanz>valore</CNCE_Lavoratore:ORESA_PermNonRetrSanz>
+          <CNCE_Lavoratore:ORESA_PermRetrSanz>valore</CNCE_Lavoratore:ORESA_PermRetrSanz>
         </CNCE_Lavoratore:ORE_sanzionabili>
       </CNCE_Lavoratore:OreLavoratore>
       <CNCE_Lavoratore:Accantonamenti>
-        <CNCE_Lavoratore:LV_AccantonGNF />
-        <CNCE_Lavoratore:LV_AccantonGNFMalInf />
-        <CNCE_Lavoratore:LV_AccantonRiposiAnnui />
-        <CNCE_Lavoratore:LV_AccantonFerie />
-        <CNCE_Lavoratore:LV_AnticipoAccantonamento />
-        <CNCE_Lavoratore:LV_AltroAccantonamento />
-        <CNCE_Lavoratore:LV_GGOreAltroAccantonamento />
-        <CNCE_Lavoratore:LV_FlagGGOreAltroAccantonamento />
-        <CNCE_Lavoratore:LV_ContributoAPE />
-        <CNCE_Lavoratore:LV_IntegrazioneAPE />
-        <CNCE_Lavoratore:LV_PagaFondoSanitarioNaz />
-        <CNCE_Lavoratore:LV_ImponibileFondoSanitarioNazOperaio />
-        <CNCE_Lavoratore:LV_ImponibileFondoSanitarioNazImpiegato />
-        <CNCE_Lavoratore:LV_OreLavorateAltreCasse />
-        <CNCE_Lavoratore:LV_CassaIntegrazioneFondoSanitario />
-        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz />
-        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz201810 />
-        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz201811 />
-        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz201812 />
-        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz201901 />
-        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNazAC />
+        <CNCE_Lavoratore:LV_AccantonGNF>valore</CNCE_Lavoratore:LV_AccantonGNF>
+        <CNCE_Lavoratore:LV_AccantonGNFMalInf>valore</CNCE_Lavoratore:LV_AccantonGNFMalInf>
+        <CNCE_Lavoratore:LV_AccantonRiposiAnnui>valore</CNCE_Lavoratore:LV_AccantonRiposiAnnui>
+        <CNCE_Lavoratore:LV_AccantonFerie>valore</CNCE_Lavoratore:LV_AccantonFerie>
+        <CNCE_Lavoratore:LV_AnticipoAccantonamento>valore</CNCE_Lavoratore:LV_AnticipoAccantonamento>
+        <CNCE_Lavoratore:LV_AltroAccantonamento>valore</CNCE_Lavoratore:LV_AltroAccantonamento>
+        <CNCE_Lavoratore:LV_GGOreAltroAccantonamento>valore</CNCE_Lavoratore:LV_GGOreAltroAccantonamento>
+        <CNCE_Lavoratore:LV_FlagGGOreAltroAccantonamento>valore</CNCE_Lavoratore:LV_FlagGGOreAltroAccantonamento>
+        <CNCE_Lavoratore:LV_ContributoAPE>valore</CNCE_Lavoratore:LV_ContributoAPE>
+        <CNCE_Lavoratore:LV_IntegrazioneAPE>valore</CNCE_Lavoratore:LV_IntegrazioneAPE>
+        <CNCE_Lavoratore:LV_PagaFondoSanitarioNaz>valore</CNCE_Lavoratore:LV_PagaFondoSanitarioNaz>
+        <CNCE_Lavoratore:LV_ImponibileFondoSanitarioNazOperaio>valore</CNCE_Lavoratore:LV_ImponibileFondoSanitarioNazOperaio>
+        <CNCE_Lavoratore:LV_ImponibileFondoSanitarioNazImpiegato>valore</CNCE_Lavoratore:LV_ImponibileFondoSanitarioNazImpiegato>
+        <CNCE_Lavoratore:LV_OreLavorateAltreCasse>valore</CNCE_Lavoratore:LV_OreLavorateAltreCasse>
+        <CNCE_Lavoratore:LV_CassaIntegrazioneFondoSanitario>valore</CNCE_Lavoratore:LV_CassaIntegrazioneFondoSanitario>
+        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz>valore</CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz>
+        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz201810>valore</CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz201810>
+        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz201811>valore</CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz201811>
+        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz201812>valore</CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz201812>
+        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz201901>valore</CNCE_Lavoratore:LV_ContributoFondoSanitarioNaz201901>
+        <CNCE_Lavoratore:LV_ContributoFondoSanitarioNazAC>valore</CNCE_Lavoratore:LV_ContributoFondoSanitarioNazAC>
       </CNCE_Lavoratore:Accantonamenti>
       <CNCE_Lavoratore:Arretrati_FSN>
-        <CNCE_Lavoratore:LV_RecuperoFSNAnno1 />
-        <CNCE_Lavoratore:LV_RecuperoFSNMese1 />
-        <CNCE_Lavoratore:LV_RecuperoFSNImporto1 />
-        <CNCE_Lavoratore:LV_RecuperoFSNAnno2 />
-        <CNCE_Lavoratore:LV_RecuperoFSNMese2 />
-        <CNCE_Lavoratore:LV_RecuperoFSNImporto2 />
-        <CNCE_Lavoratore:LV_RecuperoFSNAnno3 />
-        <CNCE_Lavoratore:LV_RecuperoFSNMese3 />
-        <CNCE_Lavoratore:LV_RecuperoFSNImporto3 />
-        <CNCE_Lavoratore:LV_RecuperoFSNAnno4 />
-        <CNCE_Lavoratore:LV_RecuperoFSNMese4 />
-        <CNCE_Lavoratore:LV_RecuperoFSNImporto4 />
-        <CNCE_Lavoratore:LV_RecuperoFSNAnno5 />
-        <CNCE_Lavoratore:LV_RecuperoFSNMese5 />
-        <CNCE_Lavoratore:LV_RecuperoFSNImporto5 />
-        <CNCE_Lavoratore:LV_RecuperoFSNAnno6 />
-        <CNCE_Lavoratore:LV_RecuperoFSNMese6 />
-        <CNCE_Lavoratore:LV_RecuperoFSNImporto6 />
-        <CNCE_Lavoratore:LV_RecuperoFSNAnno7 />
-        <CNCE_Lavoratore:LV_RecuperoFSNMese7 />
-        <CNCE_Lavoratore:LV_RecuperoFSNImporto7 />
-        <CNCE_Lavoratore:LV_RecuperoFSNAnno8 />
-        <CNCE_Lavoratore:LV_RecuperoFSNMese8 />
-        <CNCE_Lavoratore:LV_RecuperoFSNImporto8 />
-        <CNCE_Lavoratore:LV_RecuperoFSNAnno9 />
-        <CNCE_Lavoratore:LV_RecuperoFSNMese9 />
-        <CNCE_Lavoratore:LV_RecuperoFSNImporto9 />
-        <CNCE_Lavoratore:LV_RecuperoFSNAnno10 />
-        <CNCE_Lavoratore:LV_RecuperoFSNMese10 />
-        <CNCE_Lavoratore:LV_RecuperoFSNImporto10 />
-        <CNCE_Lavoratore:LV_RecuperoFSNAnno11 />
-        <CNCE_Lavoratore:LV_RecuperoFSNMese11 />
-        <CNCE_Lavoratore:LV_RecuperoFSNImporto11 />
-        <CNCE_Lavoratore:LV_RecuperoFSNAnno12 />
-        <CNCE_Lavoratore:LV_RecuperoFSNMese12 />
-        <CNCE_Lavoratore:LV_RecuperoFSNImporto12 />
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno1>valore</CNCE_Lavoratore:LV_RecuperoFSNAnno1>
+        <CNCE_Lavoratore:LV_RecuperoFSNMese1>valore</CNCE_Lavoratore:LV_RecuperoFSNMese1>
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto1>valore</CNCE_Lavoratore:LV_RecuperoFSNImporto1>
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno2>valore</CNCE_Lavoratore:LV_RecuperoFSNAnno2>
+        <CNCE_Lavoratore:LV_RecuperoFSNMese2>valore</CNCE_Lavoratore:LV_RecuperoFSNMese2>
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto2>valore</CNCE_Lavoratore:LV_RecuperoFSNImporto2>
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno3>valore</CNCE_Lavoratore:LV_RecuperoFSNAnno3>
+        <CNCE_Lavoratore:LV_RecuperoFSNMese3>valore</CNCE_Lavoratore:LV_RecuperoFSNMese3>
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto3>valore</CNCE_Lavoratore:LV_RecuperoFSNImporto3>
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno4>valore</CNCE_Lavoratore:LV_RecuperoFSNAnno4>
+        <CNCE_Lavoratore:LV_RecuperoFSNMese4>valore</CNCE_Lavoratore:LV_RecuperoFSNMese4>
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto4>valore</CNCE_Lavoratore:LV_RecuperoFSNImporto4>
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno5>valore</CNCE_Lavoratore:LV_RecuperoFSNAnno5>
+        <CNCE_Lavoratore:LV_RecuperoFSNMese5>valore</CNCE_Lavoratore:LV_RecuperoFSNMese5>
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto5>valore</CNCE_Lavoratore:LV_RecuperoFSNImporto5>
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno6>valore</CNCE_Lavoratore:LV_RecuperoFSNAnno6>
+        <CNCE_Lavoratore:LV_RecuperoFSNMese6>valore</CNCE_Lavoratore:LV_RecuperoFSNMese6>
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto6>valore</CNCE_Lavoratore:LV_RecuperoFSNImporto6>
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno7>valore</CNCE_Lavoratore:LV_RecuperoFSNAnno7>
+        <CNCE_Lavoratore:LV_RecuperoFSNMese7>valore</CNCE_Lavoratore:LV_RecuperoFSNMese7>
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto7>valore</CNCE_Lavoratore:LV_RecuperoFSNImporto7>
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno8>valore</CNCE_Lavoratore:LV_RecuperoFSNAnno8>
+        <CNCE_Lavoratore:LV_RecuperoFSNMese8>valore</CNCE_Lavoratore:LV_RecuperoFSNMese8>
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto8>valore</CNCE_Lavoratore:LV_RecuperoFSNImporto8>
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno9>valore</CNCE_Lavoratore:LV_RecuperoFSNAnno9>
+        <CNCE_Lavoratore:LV_RecuperoFSNMese9>valore</CNCE_Lavoratore:LV_RecuperoFSNMese9>
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto9>valore</CNCE_Lavoratore:LV_RecuperoFSNImporto9>
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno10>valore</CNCE_Lavoratore:LV_RecuperoFSNAnno10>
+        <CNCE_Lavoratore:LV_RecuperoFSNMese10>valore</CNCE_Lavoratore:LV_RecuperoFSNMese10>
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto10>valore</CNCE_Lavoratore:LV_RecuperoFSNImporto10>
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno11>valore</CNCE_Lavoratore:LV_RecuperoFSNAnno11>
+        <CNCE_Lavoratore:LV_RecuperoFSNMese11>valore</CNCE_Lavoratore:LV_RecuperoFSNMese11>
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto11>valore</CNCE_Lavoratore:LV_RecuperoFSNImporto11>
+        <CNCE_Lavoratore:LV_RecuperoFSNAnno12>valore</CNCE_Lavoratore:LV_RecuperoFSNAnno12>
+        <CNCE_Lavoratore:LV_RecuperoFSNMese12>valore</CNCE_Lavoratore:LV_RecuperoFSNMese12>
+        <CNCE_Lavoratore:LV_RecuperoFSNImporto12>valore</CNCE_Lavoratore:LV_RecuperoFSNImporto12>
       </CNCE_Lavoratore:Arretrati_FSN>
       <CNCE_Lavoratore:DatiPREVIDENZACOMPLEMENTARE>
-        <CNCE_Lavoratore:PRE_AdesioneFondo />
-        <CNCE_Lavoratore:PRE_AdesioneSilente />
-        <CNCE_Lavoratore:PRE_TipoAdesione />
-        <CNCE_Lavoratore:PRE_FlagDataAdesione />
-        <CNCE_Lavoratore:PRE_ContribLavoratore />
-        <CNCE_Lavoratore:PRE_ContribVolontario />
-        <CNCE_Lavoratore:PRE_ContribDitta />
-        <CNCE_Lavoratore:PRE_ContribContrattuale />
-        <CNCE_Lavoratore:PRE_QuotaTFR />
+        <CNCE_Lavoratore:PRE_AdesioneFondo>valore</CNCE_Lavoratore:PRE_AdesioneFondo>
+        <CNCE_Lavoratore:PRE_AdesioneSilente>valore</CNCE_Lavoratore:PRE_AdesioneSilente>
+        <CNCE_Lavoratore:PRE_TipoAdesione>valore</CNCE_Lavoratore:PRE_TipoAdesione>
+        <CNCE_Lavoratore:PRE_FlagDataAdesione>valore</CNCE_Lavoratore:PRE_FlagDataAdesione>
+        <CNCE_Lavoratore:PRE_ContribLavoratore>valore</CNCE_Lavoratore:PRE_ContribLavoratore>
+        <CNCE_Lavoratore:PRE_ContribVolontario>valore</CNCE_Lavoratore:PRE_ContribVolontario>
+        <CNCE_Lavoratore:PRE_ContribDitta>valore</CNCE_Lavoratore:PRE_ContribDitta>
+        <CNCE_Lavoratore:PRE_ContribContrattuale>valore</CNCE_Lavoratore:PRE_ContribContrattuale>
+        <CNCE_Lavoratore:PRE_QuotaTFR>valore</CNCE_Lavoratore:PRE_QuotaTFR>
       </CNCE_Lavoratore:DatiPREVIDENZACOMPLEMENTARE>
       <CNCE_Lavoratore:DatiContributoContrattualeCooperativo>
-        <CNCE_Lavoratore:PRE_VersContribContrattCOOP />
-        <CNCE_Lavoratore:PRE_ContribContrattCOOP />
+        <CNCE_Lavoratore:PRE_VersContribContrattCOOP>valore</CNCE_Lavoratore:PRE_VersContribContrattCOOP>
+        <CNCE_Lavoratore:PRE_ContribContrattCOOP>valore</CNCE_Lavoratore:PRE_ContribContrattCOOP>
       </CNCE_Lavoratore:DatiContributoContrattualeCooperativo>
       <CNCE_Lavoratore:OpzioniPREVIDENZACOMPLEMENTARE>
-        <CNCE_Lavoratore:PRE_CodiceFondo />
-        <CNCE_Lavoratore:PRE_NumAlboCOVIP />
-        <CNCE_Lavoratore:PRE_SceltaPrevidenza />
-        <CNCE_Lavoratore:PRE_DataSorroscrTFR />
+        <CNCE_Lavoratore:PRE_CodiceFondo>valore</CNCE_Lavoratore:PRE_CodiceFondo>
+        <CNCE_Lavoratore:PRE_NumAlboCOVIP>valore</CNCE_Lavoratore:PRE_NumAlboCOVIP>
+        <CNCE_Lavoratore:PRE_SceltaPrevidenza>valore</CNCE_Lavoratore:PRE_SceltaPrevidenza>
+        <CNCE_Lavoratore:PRE_DataSorroscrTFR>valore</CNCE_Lavoratore:PRE_DataSorroscrTFR>
       </CNCE_Lavoratore:OpzioniPREVIDENZACOMPLEMENTARE>
       <CNCE_Lavoratore:RecuperoPREVCOMPL>
-        <CNCE_Lavoratore:PREP_AnnoDa />
-        <CNCE_Lavoratore:PREP_MeseDa />
-        <CNCE_Lavoratore:PREP_AnnoA />
-        <CNCE_Lavoratore:PREP_MeseA />
-        <CNCE_Lavoratore:PREP_ContribLavoratore />
-        <CNCE_Lavoratore:PREP_ContribVolontario />
-        <CNCE_Lavoratore:PREP_ContribDitta />
-        <CNCE_Lavoratore:PREP_ContribContrattuale />
-        <CNCE_Lavoratore:PREP_QuotaTFR />
-        <CNCE_Lavoratore:PREP_Rivalutazione />
+        <CNCE_Lavoratore:PREP_AnnoDa>valore</CNCE_Lavoratore:PREP_AnnoDa>
+        <CNCE_Lavoratore:PREP_MeseDa>valore</CNCE_Lavoratore:PREP_MeseDa>
+        <CNCE_Lavoratore:PREP_AnnoA>valore</CNCE_Lavoratore:PREP_AnnoA>
+        <CNCE_Lavoratore:PREP_MeseA>valore</CNCE_Lavoratore:PREP_MeseA>
+        <CNCE_Lavoratore:PREP_ContribLavoratore>valore</CNCE_Lavoratore:PREP_ContribLavoratore>
+        <CNCE_Lavoratore:PREP_ContribVolontario>valore</CNCE_Lavoratore:PREP_ContribVolontario>
+        <CNCE_Lavoratore:PREP_ContribDitta>valore</CNCE_Lavoratore:PREP_ContribDitta>
+        <CNCE_Lavoratore:PREP_ContribContrattuale>valore</CNCE_Lavoratore:PREP_ContribContrattuale>
+        <CNCE_Lavoratore:PREP_QuotaTFR>valore</CNCE_Lavoratore:PREP_QuotaTFR>
+        <CNCE_Lavoratore:PREP_Rivalutazione>valore</CNCE_Lavoratore:PREP_Rivalutazione>
       </CNCE_Lavoratore:RecuperoPREVCOMPL>
       <CNCE_Lavoratore:DatiIstitutoTFR>
-        <CNCE_Lavoratore:TFR_TFRDaVersare />
-        <CNCE_Lavoratore:TFR_OreFigurative />
-        <CNCE_Lavoratore:TFR_GiorniLavorabili />
-        <CNCE_Lavoratore:TFR_ImportoFAP />
-        <CNCE_Lavoratore:TFR_ImportoAumDim />
-        <CNCE_Lavoratore:TFR_SegnoImportoAD />
-        <CNCE_Lavoratore:TFR_OreUtili />
-        <CNCE_Lavoratore:TFR_PagaOraria />
+        <CNCE_Lavoratore:TFR_TFRDaVersare>valore</CNCE_Lavoratore:TFR_TFRDaVersare>
+        <CNCE_Lavoratore:TFR_OreFigurative>valore</CNCE_Lavoratore:TFR_OreFigurative>
+        <CNCE_Lavoratore:TFR_GiorniLavorabili>valore</CNCE_Lavoratore:TFR_GiorniLavorabili>
+        <CNCE_Lavoratore:TFR_ImportoFAP>valore</CNCE_Lavoratore:TFR_ImportoFAP>
+        <CNCE_Lavoratore:TFR_ImportoAumDim>valore</CNCE_Lavoratore:TFR_ImportoAumDim>
+        <CNCE_Lavoratore:TFR_SegnoImportoAD>valore</CNCE_Lavoratore:TFR_SegnoImportoAD>
+        <CNCE_Lavoratore:TFR_OreUtili>valore</CNCE_Lavoratore:TFR_OreUtili>
+        <CNCE_Lavoratore:TFR_PagaOraria>valore</CNCE_Lavoratore:TFR_PagaOraria>
       </CNCE_Lavoratore:DatiIstitutoTFR>
-      <CNCE_Lavoratore:LV_ImportoRimborsoCIG />
-      <CNCE_Lavoratore:LV_OreTrimPreced />
-      <CNCE_Lavoratore:LV_SantoPatrono />
-      <CNCE_Lavoratore:LV_NormaPremiali />
-      <CNCE_Lavoratore:LV_Note />
+      <CNCE_Lavoratore:LV_ImportoRimborsoCIG>valore</CNCE_Lavoratore:LV_ImportoRimborsoCIG>
+      <CNCE_Lavoratore:LV_OreTrimPreced>valore</CNCE_Lavoratore:LV_OreTrimPreced>
+      <CNCE_Lavoratore:LV_SantoPatrono>valore</CNCE_Lavoratore:LV_SantoPatrono>
+      <CNCE_Lavoratore:LV_NormaPremiali>valore</CNCE_Lavoratore:LV_NormaPremiali>
+      <CNCE_Lavoratore:LV_Note>valore</CNCE_Lavoratore:LV_Note>
       <CNCE_Malattia:CNCE_Malattia xmlns:CNCE_Malattia="http://mut.cnce.it/schemas/denunce/malattia">
-        <CNCE_Malattia:MAL_DataInizio />
-        <CNCE_Malattia:MAL_GiornoFine />
-        <CNCE_Malattia:MAL_ContinuazMalattia />
-        <CNCE_Malattia:MAL_Tipo />
-        <CNCE_Malattia:MAL_Ricaduta />
-        <CNCE_Malattia:MAL_GiornoInizio />
-        <CNCE_Malattia:MAL_OreCarenza />
-        <CNCE_Malattia:MAL_OreMalattiaInfort />
-        <CNCE_Malattia:MAL_OreAssenzaIngiust />
-        <CNCE_Malattia:MAL_ConguaglioRimborso />
-        <CNCE_Malattia:MAL_NumProtocolloCert1 />
-        <CNCE_Malattia:MAL_NumProtocolloCert2 />
-        <CNCE_Malattia:MAL_NumProtocolloCert3 />
-        <CNCE_Malattia:MAL_NumProtocolloCert4 />
-        <CNCE_Malattia:MAL_NumProtocolloCert5 />
-        <CNCE_Malattia:elem_MAL_RetrGGINPSS />
+        <CNCE_Malattia:MAL_DataInizio>valore</CNCE_Malattia:MAL_DataInizio>
+        <CNCE_Malattia:MAL_GiornoFine>valore</CNCE_Malattia:MAL_GiornoFine>
+        <CNCE_Malattia:MAL_ContinuazMalattia>valore</CNCE_Malattia:MAL_ContinuazMalattia>
+        <CNCE_Malattia:MAL_Tipo>valore</CNCE_Malattia:MAL_Tipo>
+        <CNCE_Malattia:MAL_Ricaduta>valore</CNCE_Malattia:MAL_Ricaduta>
+        <CNCE_Malattia:MAL_GiornoInizio>valore</CNCE_Malattia:MAL_GiornoInizio>
+        <CNCE_Malattia:MAL_OreCarenza>valore</CNCE_Malattia:MAL_OreCarenza>
+        <CNCE_Malattia:MAL_OreMalattiaInfort>valore</CNCE_Malattia:MAL_OreMalattiaInfort>
+        <CNCE_Malattia:MAL_OreAssenzaIngiust>valore</CNCE_Malattia:MAL_OreAssenzaIngiust>
+        <CNCE_Malattia:MAL_ConguaglioRimborso>valore</CNCE_Malattia:MAL_ConguaglioRimborso>
+        <CNCE_Malattia:MAL_NumProtocolloCert1>valore</CNCE_Malattia:MAL_NumProtocolloCert1>
+        <CNCE_Malattia:MAL_NumProtocolloCert2>valore</CNCE_Malattia:MAL_NumProtocolloCert2>
+        <CNCE_Malattia:MAL_NumProtocolloCert3>valore</CNCE_Malattia:MAL_NumProtocolloCert3>
+        <CNCE_Malattia:MAL_NumProtocolloCert4>valore</CNCE_Malattia:MAL_NumProtocolloCert4>
+        <CNCE_Malattia:MAL_NumProtocolloCert5>valore</CNCE_Malattia:MAL_NumProtocolloCert5>
+        <CNCE_Malattia:elem_MAL_RetrGGINPSS>valore</CNCE_Malattia:elem_MAL_RetrGGINPSS>
       </CNCE_Malattia:CNCE_Malattia>
       <CNCE_RecupPrevCompl:CNCE_RecupPrevCompl xmlns:CNCE_RecupPrevCompl="http://mut.cnce.it/schemas/denunce/recupPrevCompl">
-        <CNCE_RecupPrevCompl:PRER_Anno />
-        <CNCE_RecupPrevCompl:PRER_Mese />
-        <CNCE_RecupPrevCompl:PRER_ContribLavoratore />
-        <CNCE_RecupPrevCompl:PRER_ContribVolontario />
-        <CNCE_RecupPrevCompl:PRER_ContribDitta />
-        <CNCE_RecupPrevCompl:PRER_ContribContrattuale />
-        <CNCE_RecupPrevCompl:PRER_QuotaTFR />
-        <CNCE_RecupPrevCompl:PRER_Rivalutazione />
+        <CNCE_RecupPrevCompl:PRER_Anno>valore</CNCE_RecupPrevCompl:PRER_Anno>
+        <CNCE_RecupPrevCompl:PRER_Mese>valore</CNCE_RecupPrevCompl:PRER_Mese>
+        <CNCE_RecupPrevCompl:PRER_ContribLavoratore>valore</CNCE_RecupPrevCompl:PRER_ContribLavoratore>
+        <CNCE_RecupPrevCompl:PRER_ContribVolontario>valore</CNCE_RecupPrevCompl:PRER_ContribVolontario>
+        <CNCE_RecupPrevCompl:PRER_ContribDitta>valore</CNCE_RecupPrevCompl:PRER_ContribDitta>
+        <CNCE_RecupPrevCompl:PRER_ContribContrattuale>valore</CNCE_RecupPrevCompl:PRER_ContribContrattuale>
+        <CNCE_RecupPrevCompl:PRER_QuotaTFR>valore</CNCE_RecupPrevCompl:PRER_QuotaTFR>
+        <CNCE_RecupPrevCompl:PRER_Rivalutazione>valore</CNCE_RecupPrevCompl:PRER_Rivalutazione>
       </CNCE_RecupPrevCompl:CNCE_RecupPrevCompl>
     </CNCE_Lavoratore:CNCE_Lavoratore>
     <CNCE_LavoratoreNonDipendente:CNCE_LavoratoreNonDipendente xmlns:CNCE_LavoratoreNonDipendente="http://mut.cnce.it/schemas/denunce/lavoratorenondipendente">
-      <CNCE_LavoratoreNonDipendente:ND_TipoLavoratore />
-      <CNCE_LavoratoreNonDipendente:ND_CodiceFiscale />
-      <CNCE_LavoratoreNonDipendente:ND_Cognome />
-      <CNCE_LavoratoreNonDipendente:ND_Nome />
-      <CNCE_LavoratoreNonDipendente:ND_DataDiNascita />
-      <CNCE_LavoratoreNonDipendente:ND_CodiceFiscaleAltraImpresa />
-      <CNCE_LavoratoreNonDipendente:ND_RagioneSocialeAltraImpresa />
+      <CNCE_LavoratoreNonDipendente:ND_TipoLavoratore>valore</CNCE_LavoratoreNonDipendente:ND_TipoLavoratore>
+      <CNCE_LavoratoreNonDipendente:ND_CodiceFiscale>valore</CNCE_LavoratoreNonDipendente:ND_CodiceFiscale>
+      <CNCE_LavoratoreNonDipendente:ND_Cognome>valore</CNCE_LavoratoreNonDipendente:ND_Cognome>
+      <CNCE_LavoratoreNonDipendente:ND_Nome>valore</CNCE_LavoratoreNonDipendente:ND_Nome>
+      <CNCE_LavoratoreNonDipendente:ND_DataDiNascita>valore</CNCE_LavoratoreNonDipendente:ND_DataDiNascita>
+      <CNCE_LavoratoreNonDipendente:ND_CodiceFiscaleAltraImpresa>valore</CNCE_LavoratoreNonDipendente:ND_CodiceFiscaleAltraImpresa>
+      <CNCE_LavoratoreNonDipendente:ND_RagioneSocialeAltraImpresa>valore</CNCE_LavoratoreNonDipendente:ND_RagioneSocialeAltraImpresa>
       <CNCE_LavoratoreNonDipendente:CNCE_OreLavoratoreND />
     </CNCE_LavoratoreNonDipendente:CNCE_LavoratoreNonDipendente>
     <CNCE_Riepilogo:CNCE_Riepilogo xmlns:CNCE_Riepilogo="http://mut.cnce.it/schemas/denunce/riepilogo">
-      <CNCE_Riepilogo:RI_PercContributi />
-      <CNCE_Riepilogo:RI_ImportoContributi />
-      <CNCE_Riepilogo:RI_ContributoAPE />
-      <CNCE_Riepilogo:RI_IntegrazioneAPE />
-      <CNCE_Riepilogo:RI_TContributoSanitarioSanitarioNaz />
-      <CNCE_Riepilogo:RI_ContributoSanitarioSanitarioNaz201810 />
-      <CNCE_Riepilogo:RI_ContributoSanitarioSanitarioNaz201811 />
-      <CNCE_Riepilogo:RI_ContributoSanitarioSanitarioNaz201812 />
-      <CNCE_Riepilogo:RI_ContributoSanitarioSanitarioNaz201901 />
-      <CNCE_Riepilogo:RI_VersaFondoSanNazImpiegati />
-      <CNCE_Riepilogo:RI_PercContrAssImpr />
-      <CNCE_Riepilogo:RI_TImportoContrAssImpr />
-      <CNCE_Riepilogo:RI_PercContrAssImprFP />
-      <CNCE_Riepilogo:RI_ImportoContrAssImprFP />
-      <CNCE_Riepilogo:RI_ImportoConguaglio />
-      <CNCE_Riepilogo:RI_ImportoCreditoPrec />
-      <CNCE_Riepilogo:RI_ImportoDebitoPrec />
-      <CNCE_Riepilogo:RI_ImportoAltriDebiti />
-      <CNCE_Riepilogo:RI_FondoPrepensionamento201810 />
-      <CNCE_Riepilogo:RI_FondoPrepensionamento201811 />
-      <CNCE_Riepilogo:RI_FondoPrepensionamento201812 />
-      <CNCE_Riepilogo:RI_FondoPrepensionamento201901 />
-      <CNCE_Riepilogo:RI_FondoOccupazione />
-      <CNCE_Riepilogo:RI_FondoOccupazione201810 />
-      <CNCE_Riepilogo:RI_FondoOccupazione201811 />
-      <CNCE_Riepilogo:RI_FondoOccupazione201812 />
-      <CNCE_Riepilogo:RI_FondoOccupazione201901 />
-      <CNCE_Riepilogo:RI_TotaleDaVersare />
-      <CNCE_Riepilogo:RI_TotaleaCredito />
+      <CNCE_Riepilogo:RI_PercContributi>valore</CNCE_Riepilogo:RI_PercContributi>
+      <CNCE_Riepilogo:RI_ImportoContributi>valore</CNCE_Riepilogo:RI_ImportoContributi>
+      <CNCE_Riepilogo:RI_ContributoAPE>valore</CNCE_Riepilogo:RI_ContributoAPE>
+      <CNCE_Riepilogo:RI_IntegrazioneAPE>valore</CNCE_Riepilogo:RI_IntegrazioneAPE>
+      <CNCE_Riepilogo:RI_TContributoSanitarioSanitarioNaz>valore</CNCE_Riepilogo:RI_TContributoSanitarioSanitarioNaz>
+      <CNCE_Riepilogo:RI_ContributoSanitarioSanitarioNaz201810>valore</CNCE_Riepilogo:RI_ContributoSanitarioSanitarioNaz201810>
+      <CNCE_Riepilogo:RI_ContributoSanitarioSanitarioNaz201811>valore</CNCE_Riepilogo:RI_ContributoSanitarioSanitarioNaz201811>
+      <CNCE_Riepilogo:RI_ContributoSanitarioSanitarioNaz201812>valore</CNCE_Riepilogo:RI_ContributoSanitarioSanitarioNaz201812>
+      <CNCE_Riepilogo:RI_ContributoSanitarioSanitarioNaz201901>valore</CNCE_Riepilogo:RI_ContributoSanitarioSanitarioNaz201901>
+      <CNCE_Riepilogo:RI_VersaFondoSanNazImpiegati>valore</CNCE_Riepilogo:RI_VersaFondoSanNazImpiegati>
+      <CNCE_Riepilogo:RI_PercContrAssImpr>valore</CNCE_Riepilogo:RI_PercContrAssImpr>
+      <CNCE_Riepilogo:RI_TImportoContrAssImpr>valore</CNCE_Riepilogo:RI_TImportoContrAssImpr>
+      <CNCE_Riepilogo:RI_PercContrAssImprFP>valore</CNCE_Riepilogo:RI_PercContrAssImprFP>
+      <CNCE_Riepilogo:RI_ImportoContrAssImprFP>valore</CNCE_Riepilogo:RI_ImportoContrAssImprFP>
+      <CNCE_Riepilogo:RI_ImportoConguaglio>valore</CNCE_Riepilogo:RI_ImportoConguaglio>
+      <CNCE_Riepilogo:RI_ImportoCreditoPrec>valore</CNCE_Riepilogo:RI_ImportoCreditoPrec>
+      <CNCE_Riepilogo:RI_ImportoDebitoPrec>valore</CNCE_Riepilogo:RI_ImportoDebitoPrec>
+      <CNCE_Riepilogo:RI_ImportoAltriDebiti>valore</CNCE_Riepilogo:RI_ImportoAltriDebiti>
+      <CNCE_Riepilogo:RI_FondoPrepensionamento201810>valore</CNCE_Riepilogo:RI_FondoPrepensionamento201810>
+      <CNCE_Riepilogo:RI_FondoPrepensionamento201811>valore</CNCE_Riepilogo:RI_FondoPrepensionamento201811>
+      <CNCE_Riepilogo:RI_FondoPrepensionamento201812>valore</CNCE_Riepilogo:RI_FondoPrepensionamento201812>
+      <CNCE_Riepilogo:RI_FondoPrepensionamento201901>valore</CNCE_Riepilogo:RI_FondoPrepensionamento201901>
+      <CNCE_Riepilogo:RI_FondoOccupazione>valore</CNCE_Riepilogo:RI_FondoOccupazione>
+      <CNCE_Riepilogo:RI_FondoOccupazione201810>valore</CNCE_Riepilogo:RI_FondoOccupazione201810>
+      <CNCE_Riepilogo:RI_FondoOccupazione201811>valore</CNCE_Riepilogo:RI_FondoOccupazione201811>
+      <CNCE_Riepilogo:RI_FondoOccupazione201812>valore</CNCE_Riepilogo:RI_FondoOccupazione201812>
+      <CNCE_Riepilogo:RI_FondoOccupazione201901>valore</CNCE_Riepilogo:RI_FondoOccupazione201901>
+      <CNCE_Riepilogo:RI_TotaleDaVersare>valore</CNCE_Riepilogo:RI_TotaleDaVersare>
+      <CNCE_Riepilogo:RI_TotaleaCredito>valore</CNCE_Riepilogo:RI_TotaleaCredito>
       <CNCE_AltriContributi:CNCE_AltriContributi xmlns:CNCE_AltriContributi="http://mut.cnce.it/schemas/denunce/altricontributi">
-        <CNCE_AltriContributi:AC_CodiceContributo />
-        <CNCE_AltriContributi:AC_DescrContributo />
-        <CNCE_AltriContributi:AC_PercContributo />
-        <CNCE_AltriContributi:AC_ImportoContributo />
+        <CNCE_AltriContributi:AC_CodiceContributo>valore</CNCE_AltriContributi:AC_CodiceContributo>
+        <CNCE_AltriContributi:AC_DescrContributo>valore</CNCE_AltriContributi:AC_DescrContributo>
+        <CNCE_AltriContributi:AC_PercContributo>valore</CNCE_AltriContributi:AC_PercContributo>
+        <CNCE_AltriContributi:AC_ImportoContributo>valore</CNCE_AltriContributi:AC_ImportoContributo>
       </CNCE_AltriContributi:CNCE_AltriContributi>
     </CNCE_Riepilogo:CNCE_Riepilogo>
   </CNCE_Denuncia:CNCE_Denuncia>
